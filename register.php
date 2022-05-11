@@ -16,7 +16,7 @@ include_once('connection.php');
         <input type="text" name="voornaam" placeholder="Voornaam">
         <input type="text" name="achternaam" placeholder="Achternaam">
         <input type="text" name="username" placeholder="Username">
-        <input type="text" name="password" placeholder="Password">
+        <input type="password" name="password" placeholder="Password">
         <button type="submit" name="submitRegister">Submit your data</button>
     </form>
 
