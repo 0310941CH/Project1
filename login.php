@@ -34,7 +34,7 @@ include_once("connection.php");
             if ($user === false) {
                 $output = "There is no user with that name!";
             } else {
-                $passwordCheck = password_verify($password, $user["password"]);
+                $passwordCheck = password_verify($_POST["password"], $user["passwords"]);
 
                 if ($passwordCheck == true) {
                     $_SESSION["loggedInUser"] = $user["id"];
