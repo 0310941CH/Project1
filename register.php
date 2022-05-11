@@ -19,4 +19,25 @@ include_once('connection.php');
         <input type="text" name="password" placeholder="Password">
         <button type="submit" name="submitRegister">Submit your data</button>
     </form>
+
+    <?php
+    if (isset($_POST['submitRegister'])) {
+        $voornaam = $_POST['voornaam'];
+        $achternaam = $_POST['achternaam'];
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $hash = password_hash($password, PASSWORD_DEFAULT);
+
+        $query = 'INSERT INTO users (voornaam, achternaam, username, passwords) VALUES (:vname, :aname, :uname, :pswrd)';
+        $values = [':vname' => $voornaam, ':aname' => $achternaam, ':uname' => $username, ':pswrd' => $hash];
+
+
+        $execute = $pdo->prepare($query);
+        $execute->execute($values);
+        header('Location: login.php');
+        exit();
+    }
+
+
+    ?>
 </body>
