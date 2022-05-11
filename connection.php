@@ -1,6 +1,6 @@
 <?php
 $host = 'localhost';
-$db   = 'netland';
+$db   = 'notch';
 $user = 'bit_academy';
 $pass = 'bit_academy';
 $charset = 'utf8mb4';
