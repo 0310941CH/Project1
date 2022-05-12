@@ -83,4 +83,9 @@ INSERT INTO `products` (`productname`, `price`, `pictures`, `summary`, `maincate
 ("OMEN Encoder Customizable Mechanical Gaming Keyboard", 49.00 , "keyboard2.jpg", "", "keyboardMouse", "keyboard"),
 ("Mars Gaming MKREVOES", 27.50 , "keyboard3.jpg", "", "keyboardMouse", "keyboard"),
 
-/* Muizen en Beschrijvingen moeten nog gedaan worden. */
+("Corsair Harpoon Rgb Pro", 29.90 , "muis1.jpg", "", "keyboardMouse", "mouse"),
+("Razer DeathAdder V2 Gaming Mouse", 39.99 , "muis2.jpg", "", "keyboardMouse", "mouse"),
+("Razer Basilisk X Hyperspeed", 37.21 , "muis3.jpg", "", "keyboardMouse", "mouse");
+
+
+/* Beschrijvingen moeten nog gedaan worden. */
