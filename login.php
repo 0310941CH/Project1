@@ -58,6 +58,7 @@ include_once("connection.php");
         <input type="submit" name="submitLogin" value="login">
     </form>
     <?php echo $output ?>
+    <a href="register.php">New customer? Register here!</a>
 </body>
 
 </html>
