@@ -132,5 +132,32 @@ INSERT INTO `specsLaptop` (`id`, `productname`, `screenSize`, `resolution`, `pro
 /* Specificaties CPU */
 
 CREATE TABLE `specsCPU` (
-
+    id MEDIUMINT NOT NULL PRIMARY KEY,
+    productname VARCHAR(255) NOT NULL,
+    brand VARCHAR(255) NOT NULL,
+    processorType VARCHAR(255) NOT NULL,
+    processorSpeed VARCHAR(255) NOT NULL,
+    wattage VARCHAR(200) NOT NULL,
+    categorie VARCHAR(255) NOT NULL
 );
+
+INSERT INTO `specsCPU` (`id`, `productname`, `brand`, `processorType`, `processorSpeed`, `wattage`, `categorie`) VALUES
+(7, "AMD Ryzen 5 5600X", "AMD", "Ryzen 5", "4.6 GHz", "65 watt", "cpu"),
+(8, "Intel Core i5-9400F", "Intel", "Core i5-9400F", "2.9 GHz", "65 watt", "cpu"),
+(9, "Intel CPU BX8070110100F Core i3", "Intel", "Core i3", "3.6 GHz", "65 watt", "cpu");
+
+/*  Specificaties GPU*/
+
+CREATE TABLE `specsGPU` (
+    id MEDIUMINT NOT NULL PRIMARY KEY,
+    productname VARCHAR(255) NOT NULL,
+    brand VARCHAR(255) NOT NULL,
+    graphicsRam VARCHAR(255) NOT NULL,
+    clockSpeed VARCHAR(255) NOT NULL,
+    categorie VARCHAR(255) NOT NULL
+);
+
+INSERT INTO `specsGPU` (`id`, `productname`, `brand`, `graphicsRam`, `clockSpeed`, `categorie`) VALUES
+(10, "MSI Radeon RX 6500 XT MECH 2X 4G OC", "MSi", "4GB", "2.7 GHz", "gpu"),
+(11, "PNY NVIDIA Quadro P5000 Graphics Card", "PNY", "16GB", "2 GHz", "gpu"),
+(12, "Gigabyte GeForce RTX 3070 GAMING OC 8G", "Gigabyte", "8GB", "1.7 GHz", "gpu");
