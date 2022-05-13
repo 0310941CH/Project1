@@ -37,7 +37,7 @@ CREATE TABLE `products` (
     subcategorie VARCHAR(255) NOT NULL
 );
 
-INSERT INTO `products` (`productname`, `price`, `pictures`, `summary`, `maincategorie`, `subcategorie`) VALUES
+INSERT INTO `products` (`productname`, `price`, `pictures`, `maincategorie`, `subcategorie`) VALUES
 ("Captiva High End Gaming PC", 8330.77 , "pc1.jpg", "pcLaptop", "pc"),
 ("Game PC Redux Gamer Entry i210 R65XT", 954.74 , "pc2.jpg", "pcLaptop", "pc"),
 ("Game PC Redux Gamer i230 R37", 1836.20 , "pc3.jpg", "pcLaptop", "pc"),
@@ -87,4 +87,4 @@ INSERT INTO `products` (`productname`, `price`, `pictures`, `summary`, `maincate
 ("Razer Basilisk X Hyperspeed", 37.21 , "muis3.jpg", "peripheralskeyboardMouse", "mouse");
 
 
-/* Beschrijvingen moeten nog gedaan worden. */
+/* Specificatie tables moeten nog: Doet Thomas */
