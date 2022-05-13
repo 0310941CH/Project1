@@ -52,7 +52,7 @@ INSERT INTO `products` (`productname`, `price`, `pictures`, `maincategorie`, `su
 
 ("MSI Radeon RX 6500 XT MECH 2X 4G OC", 217.00 , "gpu1.jpg", "components", "gpu"),
 ("PNY NVIDIA Quadro P5000 Graphics Card", 1999.99 , "gpu2.jpg", "components", "gpu"),
-("Gigabyte GeForce RTX 3070 GAMING OC 8G", 1059.00 , "gpu3.jpg", "gpu"),
+("Gigabyte GeForce RTX 3070 GAMING OC 8G", 1059.00 , "gpu3.jpg", "components", "gpu"),
 
 ("GIGABYTE Z590 AORUS Master", 299.99 , "moederbord1.jpg", "components", "moederbord"),
 ("MSI MPG B550 Gaming Plus", 117.00 , "moederbord2.jpg", "components", "moederbord"),
