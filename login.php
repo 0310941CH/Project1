@@ -10,6 +10,7 @@ include_once("connection.php");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -49,16 +50,20 @@ include_once("connection.php");
         }
     }
     ?>
-
+    <div class="test">
     <form method="POST">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username">
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password">
-        <input type="submit" name="submitLogin" value="login">
+       <h2>LOGIN PAGE</h2>
+       <img src="lock.png" class="lock">
+        <input type="text" id="username" name="username" placeholder="USERNAME">
+        <input type="password" id="password" name="password" placeholder="PASSWORD">
+        <input type="submit" name="submitLogin" value="LOGIN" class="login">
     </form>
-    <?php echo $output ?>
-    <a href="register.php">New customer? Register here!</a>
+
+
+       <a href="register.php">NEW CUSTOMER? REGISTER HERE!</a>
+    <?php echo '<p class="fout" >' . $output . "</p>" ?>
+    </div>
+    
 </body>
 
 </html>
