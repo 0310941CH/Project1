@@ -1,6 +1,6 @@
 form {
     background-color: #053868;
-    border-radius: 40px;
+    border-radius: 40px 40px 27px 27px;
     display: flex;
     align-items: center;
     justify-content: center;
