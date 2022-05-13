@@ -88,3 +88,49 @@ INSERT INTO `products` (`productname`, `price`, `pictures`, `maincategorie`, `su
 
 
 /* Specificatie tables moeten nog: Doet Thomas */
+/* Specificaties PC Table */
+CREATE TABLE `specsPC` (
+    id MEDIUMINT NOT NULL PRIMARY KEY,
+    productname VARCHAR(255) NOT NULL,
+    operatingsystem VARCHAR(255) NOT NULL,
+    motherboard VARCHAR(255) NULL,
+    ramtype VARCHAR(255) NOT NULL,
+    ramMemory VARCHAR(255) NOT NULL,
+    cpu VARCHAR(255) NOT NULL,
+    cpuModel VARCHAR(255) NOT NULL,
+    gpu VARCHAR(255) NOT NULL, 
+    ssd VARCHAR(255) NULL,
+    hdd VARCHAR(255) NULL,
+    categorie VARCHAR(255) NOT NULL
+);
+
+INSERT INTO `specsPC` (`id`, `productname`, `operatingsystem`, `motherboard`, `ramtype`, `ramMemory`, `cpu`, `cpuModel`, `gpu`, `ssd`, `hdd`, `categorie`) VALUES
+(1, "Captiva High End Gaming PC", "None", "B460M motherboard", "DDR4", "16GB", "Intel", "Core i9 10900KF", "NVIDIA RTX 3090 24GB", "1TB SSD", "", "pc"),
+(2, "Game PC Redux Gamer Entry i210 R65XT", "Windows", "", "DIMM", "8GB", "Intel", "Core i5", "AMD Radeon RX 6500 XT", "500GB SSD", "", "pc"),
+(3, "Game PC Redux Gamer i230 R37", "Windows", "", "DIMM", "16GB", "Intel", "Core i5", "NVIDIA GeForce RTX 3070", "1TB SSD", "", "pc");
+
+/* Specificaties Laptop Table */
+/* Bluetooth is alleen ja of nee input */
+CREATE TABLE `specsLaptop` (
+    id MEDIUMINT NOT NULL PRIMARY KEY,
+    productname VARCHAR(255) NOT NULL,
+    screenSize VARCHAR(255) NOT NULL,
+    resolution VARCHAR(255) NOT NULL,
+    processor VARCHAR(255) NOT NULL,
+    ram VARCHAR(255) NOT NULL,
+    hardDrive VARCHAR(255) NOT NULL,
+    operatingSystem VARCHAR(255) NOT NULL,
+    bluetooth VARCHAR(20) NOT NULL,
+    categorie VARCHAR(255) NOT NULL
+);
+
+INSERT INTO `specsLaptop` (`id`, `productname`, `screenSize`, `resolution`, `processor`, `ram`, `hardDrive`, `operatingSystem`, `bluetooth`, `categorie`) VALUES
+(4, "HP SGIN Laptop", "14.1 Inch", "1920 × 1080", "Intel Celeron B830", "12GB DDR4", "512GB SSD", "Windows 11", "Ja", "laptop"),
+(5, "Lenovo Laptop IdeaPad 5 Pro", "14.1 Inch", "2880 x 1800", "AMD Ryzen 5", "16GB DDR4", "512GB SSD", "Windows 11", "Ja", "laptop"),
+(6, "MSI GS66 Stealth", "15.6 Inch", "Unkown", "Intel Core i7", "32GB DDR4", "1TB SSD", "Windows 10", "Ja", "laptop");
+
+/* Specificaties CPU */
+
+CREATE TABLE `specsCPU` (
+
+);
