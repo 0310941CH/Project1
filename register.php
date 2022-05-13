@@ -1,5 +1,5 @@
 <?php
-include_once('connection.php');
+include_once('config/connection.php');
 ?>
 <!DOCTYPE html>
 
@@ -9,22 +9,12 @@ include_once('connection.php');
     <title>Register Page</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="stylesheet" href="style.css">
+    <script defer src="js/searchbar.js"></script>
 </head>
 
 <body>
-    <!-- HTML Gedeelte: Moet nog gestyled worden! -->
-    <div class="test">
-    <form action="" method="POST">
-        <h2>Apply here</h2>
-        <input type="text" name="voornaam" placeholder="VOORNAAM">
-        <input type="text" name="achternaam" placeholder="ACHTERNAAM">
-        <input type="text" name="username" placeholder="USERNAME">
-        <input type="password" name="password" placeholder="PASSWORD">
-        <input type="submit" name="submitLogin" value="SUBMIT YOUR DATA" class="login">
-    </form>
-    </div>
-
     <?php
+    $output = "";
     // Checked met eerste if of submit button ingedrukt is.
     if (isset($_POST['submitLogin'])) {
         // Checked of de input velden ingevuld zijn zo ja gaat die door het naar de database pushen.
@@ -46,10 +36,56 @@ include_once('connection.php');
             header('Location: login.php');
             exit();
         } else {
-            echo "<h1> Invalid Input </h1>";
+            $output = "Invalid input, fill in everything!";
         }
     }
 
 
     ?>
+    <nav>
+        <a href="index.php"><img src="images/notchLogo.png" class="notchlogo"></a>
+        <div class="middlenav">
+            <div class="buttons">
+                <p class="selectedtab tabs">COMPONENTS <img src="images/caret-down-solidblack.png" alt="" class="dropdownicon"></p>
+            </div>
+
+
+            <p class="tabs">PERIPHERALS <img src="images/caret-down-solidwhite.png" alt="" class="dropdownicon"></p>
+            <p class="tabs">PC'S AND LAPTOPS <img src="images/caret-down-solidwhite.png" alt="" class="dropdownicon"></p>
+        </div>
+        <div class="endnav">
+            <img class="xicon" src="images/xicon.png" alt="xicon" id="xicon" onclick="searchbarhider()">
+            <div id="divdiv">
+
+                <form class="search2" id="search2" onclick="searchbarshower()" method="get">
+
+                    <input type="text" class="searchinput" id="search" name="searchinput">
+                    <img src="images/blacksearch.png">
+                    <input type="submit" id="submitbutton">
+
+                </form>
+            </div>
+        </div>
+        <img src="images/dots.png" alt="options" class="icon">
+        <img src="images/register.png" class="icon">
+        <img src="images/shoppingCard.png" class="icon">
+        </div>
+
+    </nav>
+
+    <div class="test">
+        <div class="container">
+            <h2>Apply here</h2>
+            <form action="" method="POST">
+                <div class="loginform">
+                    <input class="inputlogin" type="text" name="voornaam" placeholder="VOORNAAM">
+                    <input class="inputlogin" type="text" name="achternaam" placeholder="ACHTERNAAM">
+                    <input class="inputlogin" type="text" name="username" placeholder="USERNAME">
+                    <input class="inputlogin" type="password" name="password" placeholder="PASSWORD">
+                </div>
+                <input class="login" type="submit" name="submitLogin" value="SUBMIT YOUR DATA">
+            </form>
+        </div>
+        <?php echo '<p class="fout" >' . $output . "</p>" ?>
+    </div>
 </body>
