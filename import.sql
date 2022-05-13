@@ -84,7 +84,7 @@ INSERT INTO `products` (`productname`, `price`, `pictures`, `maincategorie`, `su
 
 ("Corsair Harpoon Rgb Pro", 29.90 , "muis1.jpg", "peripherals", "mouse"),
 ("Razer DeathAdder V2 Gaming Mouse", 39.99 , "muis2.jpg", "peripherals", "mouse"),
-("Razer Basilisk X Hyperspeed", 37.21 , "muis3.jpg", "peripheralskeyboardMouse", "mouse");
+("Razer Basilisk X Hyperspeed", 37.21 , "muis3.jpg", "peripherals", "mouse");
 
 
 /* Specificatie tables moeten nog: Doet Thomas */
