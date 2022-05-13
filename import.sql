@@ -161,3 +161,34 @@ INSERT INTO `specsGPU` (`id`, `productname`, `brand`, `graphicsRam`, `clockSpeed
 (10, "MSI Radeon RX 6500 XT MECH 2X 4G OC", "MSi", "4GB", "2.7 GHz", "gpu"),
 (11, "PNY NVIDIA Quadro P5000 Graphics Card", "PNY", "16GB", "2 GHz", "gpu"),
 (12, "Gigabyte GeForce RTX 3070 GAMING OC 8G", "Gigabyte", "8GB", "1.7 GHz", "gpu");
+
+/* Specificaties Motherboard */
+
+CREATE TABLE `specsMotherboard` (
+    id MEDIUMINT NOT NULL PRIMARY KEY,
+    productname VARCHAR(255) NOT NULL,
+    brand VARCHAR(255) NOT NULL,
+    ramTechnology VARCHAR(255) NOT NULL,
+    categorie VARCHAR(255) NOT NULL,
+);
+
+INSERT INTO `specsMotherboard` (`id`, `productname`, `brand`, `ramTechnology`, `categorie`) VALUES
+(13, "GIGABYTE Z590 AORUS Master", "Gigabyte", "DDR4", "moederbord"),
+(14, "MSI MPG B550 Gaming Plus", "Msi", "DDR4", "moederbord"),
+(15, "Andifany X79 Moederbord", "Andifany", "DDR3", "moederbord");
+
+/* Specificaties RAM */
+
+CREATE TABLE `specsRAM` (
+    id MEDIUMINT NOT NULL PRIMARY KEY,
+    productname VARCHAR(255) NOT NULL,
+    brand VARCHAR(255) NOT NULL,
+    memory VARCHAR(255) NOT NULL,
+    clockSpeed VARCHAR(255) NOT NULL,
+    categorie VARCHAR(255) NOT NULL
+);
+
+INSERT INTO `specsRAM` (`id`, `productname`, `brand`, `memory`, `clockSpeed`, `categorie`) VALUES 
+(16, "OFFTEK 8GB Vervanging RAM", "OFFTEK", "8GB", "3.2 GHz", "ram"),
+(17, "Corsair Vengeance LPX 16GB", "Corsair", "16GB", "2.6 GHz", "ram"),
+(18, "Corsair Vengeance RGB Pro 32GB", "Corsair", "32GB", "3.2 GHz", "ram");
