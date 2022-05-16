@@ -16,13 +16,12 @@ include_once("config/connection.php");
 
 <body>
     <?php
-    // login form
     $output = "";
-    if (isset($_POST["submitLogin"])) {
+    if (isset($_POST["submitLogin"])) { //Controleer of submitLogin geset is.
         $username = $_POST["username"];
         $password = $_POST["password"];
 
-        if ($username != "" && $password != "") {
+        if ($username != "" && $password != "") { // controleer of gebruikersnaam en wachtwoord niet leeg zijn
             $login = "SELECT * FROM users WHERE username=:username";
             $prepare = $pdo->prepare($login);
 
@@ -36,7 +35,7 @@ include_once("config/connection.php");
             if ($user === false) {
                 $output = "There is no user with that name!";
             } else {
-                $passwordCheck = password_verify($_POST["password"], $user["passwords"]);
+                $passwordCheck = password_verify($_POST["password"], $user["passwords"]); // controleer ingevoerde wachtwoord met gehashde wachtwoord in db
 
                 if ($passwordCheck == true) {
                     $_SESSION["loggedInUser"] = $user["id"];
@@ -51,6 +50,9 @@ include_once("config/connection.php");
         }
     }
     ?>
+
+    <!-- nav bar -->
+
     <nav>
         <a href="index.php"><img src="images/notchLogo.png" class="notchlogo"></a>
         <div class="middlenav">
@@ -66,7 +68,7 @@ include_once("config/connection.php");
             <img class="xicon" src="images/xicon.png" alt="xicon" id="xicon" onclick="searchbarhider()">
             <div id="divdiv">
 
-                <form class="search2" id="search2" onclick="searchbarshower()" method="get">
+                <form class="search2" id="search2" onclick="searchbarshower()" method="get" action="search.php">
 
                     <input type="text" class="searchinput" id="search" name="searchinput">
                     <img src="images/blacksearch.png">
@@ -82,6 +84,7 @@ include_once("config/connection.php");
 
     </nav>
 
+    <!-- login form -->
     <div class="test">
         <div class="container">
             <h2>LOGIN PAGE <img src="images/lock.png" class="lock"></h2>

@@ -42,6 +42,7 @@ include_once('config/connection.php');
 
 
     ?>
+    <!-- nav bar -->
     <nav>
         <a href="index.php"><img src="images/notchLogo.png" class="notchlogo"></a>
         <div class="middlenav">
@@ -57,7 +58,7 @@ include_once('config/connection.php');
             <img class="xicon" src="images/xicon.png" alt="xicon" id="xicon" onclick="searchbarhider()">
             <div id="divdiv">
 
-                <form class="search2" id="search2" onclick="searchbarshower()" method="get">
+                <form class="search2" id="search2" onclick="searchbarshower()" method="get" action="search.php">
 
                     <input type="text" class="searchinput" id="search" name="searchinput">
                     <img src="images/blacksearch.png">
@@ -72,7 +73,7 @@ include_once('config/connection.php');
         </div>
 
     </nav>
-
+    <!-- register form -->
     <div class="test">
         <div class="container">
             <h2>Apply here</h2>
