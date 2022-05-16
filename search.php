@@ -55,7 +55,7 @@ include_once("config/connection.php");
         $data = $stmt->fetchAll();
 
         foreach ($data as $product) {
-            echo "<img src='/project/images/" . $product['pictures'] . "' alt='productAfbeelding'" . "<br>";
+            echo "<img src='/images/" . $product['pictures'] . "' alt='productAfbeelding'" . "<br>";
             echo $product["productname"] . "<br>";
             echo $product["price"] . "<br>";
         }
