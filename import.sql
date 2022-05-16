@@ -192,3 +192,104 @@ INSERT INTO `specsRAM` (`id`, `productname`, `brand`, `memory`, `clockSpeed`, `c
 (16, "OFFTEK 8GB Vervanging RAM", "OFFTEK", "8GB", "3.2 GHz", "ram"),
 (17, "Corsair Vengeance LPX 16GB", "Corsair", "16GB", "2.6 GHz", "ram"),
 (18, "Corsair Vengeance RGB Pro 32GB", "Corsair", "32GB", "3.2 GHz", "ram");
+
+/* Specificaties SSD */
+
+CREATE TABLE `specsSSD` (
+    id MEDIUMINT NOT NULL PRIMARY KEY,
+    productname VARCHAR(255) NOT NULL,
+    brand VARCHAR(255) NOT NULL,
+    storagecapacity VARCHAR(255) NOT NULL,
+    wattage VARCHAR(255) NOT NULL,
+    categorie VARCHAR(255) NOT NULL
+);
+
+INSERT INTO `specsSSD` (`id`, `productname`, `brand`, `storagecapacity`, `wattage`, `categorie`) VALUES
+(19, "Samsung 980 M.2 NVME 500GB SSD", "Samsung", "500GB", "5.9 Watt", "ssd"),
+(20, "Seagate Firecuda 510 500GB SSD", "Seagate", "500GB", "Unknown", "ssd"),
+(21, "Samsung 970 EVO Interne SSD: 1TB", "Samsung", "1TB", "Unknown", "ssd");
+
+/* Specificaties Vent */
+
+CREATE TABLE `specsVent` (
+    id MEDIUMINT NOT NULL PRIMARY KEY,
+    productname VARCHAR(255) NOT NULL,
+    brand VARCHAR(255) NOT NULL,
+    totalFans VARCHAR(255) NOT NULL,
+    fanSpeed VARCHAR(255) NOT NULL,
+    categorie VARCHAR(255) NOT NULL
+);
+
+INSERT INTO `specsVent` (`id`, `productname`, `brand`, `totalFans`, `fanSpeed`, `categorie`) VALUES
+(22, "Gembird FANPS hardwarekoeling Computer behuizing Ventilator", "Gembird", "1", "2500 RPM", "vent"),
+(23, "Noctua NF-A8 PWM, 80mm", "Noctua", "1", "1500 RPM", "vent"),
+(24, "Titan TFD-8025M12B hardwarekoeling Computer behuizing Ventilator", "Titan", "1", "Unknown", "vent");
+
+/* Specificaties Voeding */
+
+CREATE TABLE `specsVoeding` (
+    id MEDIUMINT NOT NULL PRIMARY KEY,
+    productname VARCHAR(255) NOT NULL,
+    brand VARCHAR(255) NOT NULL,
+    wattage VARCHAR(255) NOT NULL,
+    fanSize VARCHAR(255) NOT NULL,
+    categorie VARCHAR(255) NOT NULL
+);
+
+INSERT INTO `specsVoeding` (`id`, `productname`, `brand`, `wattage`, `fanSize`, `categorie`) VALUES
+(25, "Gigabyte Modulaire - 850W", "Gigabyte", "850 watts", "120 Millimeters", "voeding"),
+(26, "Aerocool LUX850 - 850W", "Aerocool", "850 watts", "120 Millimeters", "voeding"),
+(27, "MSI MPG A850GF - 850W", "MSI", "850 watts", "Unknown", "voeding");
+
+/* Specificaties headset */
+/* Wired , Bluetooth en NoiceCancelation is alleen ja of nee */
+
+CREATE TABLE `specsHeadset` (
+    id MEDIUMINT NOT NULL PRIMARY KEY,
+    productname VARCHAR(255) NOT NULL,
+    brand VARCHAR(255) NOT NULL,
+    wired VARCHAR(20) NOT NULL,
+    bluetooth VARCHAR(20) NOT NULL,
+    noicecancelation VARCHAR(20) NOT NULL,
+    categorie VARCHAR(255) NOT NULL
+);
+
+INSERT INTO `specsHeadset` (`id`, `productname`, `brand`, `wired`, `bluetooth`, `noicecancelation`, `categorie`) VALUES
+(28, "Sennheiser Consumer Audio Headset", "Sennheiser", "Yes", "No", "No", "headset"),
+(29, "EPOS Audio H6PRO Closed Acoustic Gaming Headset", "EPOS Gaming", "Yes", "No", "No", "headset"),
+(30, "HyperX Cloud II - Gaming Headset", "HyperX", "Yes", "No", "Yes", "headset");
+
+/* Specificaties keyboard */
+/* RGB is ja of nee */
+CREATE TABLE `specsKeyboard` (
+    id MEDIUMINT NOT NULL PRIMARY KEY,
+    productname VARCHAR(255) NOT NULL,
+    brand VARCHAR(255) NOT NULL,
+    keyboardtype VARCHAR(255) NOT NULL,
+    inputtype VARCHAR(255) NOT NULL,
+    rgb VARCHAR(255) NOT NULL, 
+    categorie VARCHAR(255) NOT NULL
+);
+
+INSERT INTO `specsKeyboard` (`id`, `productname`, `brand`, `keyboardtype`, `inputtype`, `rgb`, `categorie`) VALUES
+(31, "HP Pavilion Gaming Keyboard 500 EURO QWERTY", "HP", "Gaming", "USB", "Yes", "keyboard"),
+(32, "OMEN Encoder Customizable Mechanical Gaming Keyboard", "OMEN", "Gaming", "USB", "No", "keyboard"),
+(33, "Mars Gaming MKREVOES", "MarsGaming", "Gaming", "USB", "Yes", "keyboard");
+
+/* Specificaties Mouse */
+/* Bluetooth is alleen ja of nee */
+CREATE TABLE `specsMouse` (
+    id MEDIUMINT NOT NULL PRIMARY KEY,
+    productname VARCHAR(255) NOT NULL,
+    brand VARCHAR(255) NOT NULL,
+    buttons VARCHAR(255) NOT NULL,
+    dpi VARCHAR(255) NOT NULL,
+    mousetype VARCHAR(255) NOT NULL,
+    bluetooth VARCHAR(255) NOT NULL,
+    categorie VARCHAR(255) NOT NULL
+);
+
+INSERT INTO `specsMouse` (`id`, `productname`, `brand`, `buttons`, `dpi`, `mousetype`, `bluetooth`, `categorie`) VALUES
+(34, "Corsair Harpoon Rgb Pro", "Corsair", "6 buttons", "12000 DPI", "Gaming", "No", "mouse"),
+(35, "Razer DeathAdder V2 Gaming Mouse", "Razer", "8 Buttons", "20000 DPI", "Gaming", "No", "mouse"),
+(36, "Razer Basilisk X Hyperspeed", "Razer", "6 Buttons", "16000 DPI", "Gaming", "Yes", "mouse");
