@@ -5,10 +5,10 @@ USE `notch`;
 
 CREATE TABLE `users` (
     id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    voornaam varchar(100) NOT NULL,
-    achternaam varchar(100) NOT NULL,
-    username char(100) NOT NULL,
-    passwords varchar(255) NOT NULL,
+    voornaam varchar(100) NOT NULL UNIQUE,
+    achternaam varchar(100) NOT NULL UNIQUE,
+    username char(100) NOT NULL UNIQUE,
+    passwords varchar(255) NOT NULL UNIQUE,
     rank integer(10) NOT NULL
 );
 
