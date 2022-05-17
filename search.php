@@ -64,13 +64,16 @@ include_once("config/connection.php");
             echo $product["productname"] . "<br>";
             echo "</div> " . "<br>";
             echo "<div class='pricebutton'>";
-            echo "€ " . $product["price"];  
+            echo "€ " . $product["price"];
+            echo "<br>";  
+            echo "<br>";  
             echo "<input type='submit' class='shopbutton' value='Add to cart'>";
             echo "</div>";
             echo "</div>";
         }
     }
   echo "</div>";
+  
   ?>
 
 </body>

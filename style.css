@@ -219,7 +219,6 @@ nav {
     max-height: 175px;
     width: auto;
     height: auto; 
-
 }
 .productplace {
     margin-top: 25px;
@@ -242,13 +241,24 @@ nav {
     width: 200px;
     height: 290px;
 }
+.productinner:hover {
+    background-color: #07417a;
+}
 .shopbutton {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 200px;
     border-radius: 15px;
+    border-color: #05386B;
 }
+.shopbutton:hover {
+    background-color:#244362 ;
+    color: white;
+    border-color: white;
+}
+
+
 .imagesize {
     display: flex;
     align-items: center;
