@@ -59,12 +59,14 @@ include_once("config/connection.php");
             echo "<div class='productinner'>";
             echo "<div class='imagesize'>";
             echo "<img src='/images/" . $product['pictures'] . "' alt='productAfbeelding'" . "class='products'>". "<br>" ;
-            echo "</div>";
+            echo "</div>" . "<br>";
             echo "<div class='innerinfo'>";
             echo $product["productname"] . "<br>";
             echo "</div> " . "<br>";
+            echo "<div class='pricebutton'>";
             echo "€ " . $product["price"];  
             echo "<input type='submit' class='shopbutton' value='Add to cart'>";
+            echo "</div>";
             echo "</div>";
         }
     }

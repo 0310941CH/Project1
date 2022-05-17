@@ -215,8 +215,8 @@ nav {
 
 .products {
     display: flex;
-    max-width: 200px;
-    max-height: 200px;
+    max-width: 175px;
+    max-height: 175px;
     width: auto;
     height: auto; 
 
@@ -228,19 +228,19 @@ nav {
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;   
-    gap: 100px;
+    gap: 50px;
 }
 .productinner {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     padding: 80px 80px 80px 80px;
-    width: auto;
     background-color: #05386B;
     border-radius: 25px;
     color: white;
     flex-direction: column;
-    height: 300px;
+    width: 200px;
+    height: 290px;
 }
 .shopbutton {
     display: flex;
@@ -254,14 +254,23 @@ nav {
     align-items: center;
     justify-content: center;
     background-color: white;
-    height: 275px;
-    width: 275px;
+    min-width: 300px;
+    min-height: 200px;
+    width: auto;
+    height: auto; 
     border-radius: 25px;
 }
 .innerinfo {
-    display: flex;  
+    display: flex;
+    width: 350px;
+    justify-content: center;  
     align-items: center;
     flex-wrap: wrap;
-    width: 150px;
     text-align: center;
+}
+.pricebutton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
 }

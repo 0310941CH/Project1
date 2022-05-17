@@ -66,9 +66,9 @@ INSERT INTO `products` (`productname`, `price`, `pictures`, `maincategorie`, `su
 ("Seagate Firecuda 510 500GB SSD", 89.98 , "ssd2.jpg", "components", "ssd"),
 ("Samsung 970 EVO Interne SSD: 1TB", 157.47 , "ssd3.jpg", "components", "ssd"),
 
-("Gembird FANPS hardwarekoeling Computer behuizing Ventilator", 4.95 , "vent1.jpg", "components", "vent"),
+("Gembird FANPS Computer behuizing Ventilator", 4.95 , "vent1.jpg", "components", "vent"),
 ("Noctua NF-A8 PWM, 80mm", 15.95 , "vent2.jpg", "components", "vent"),
-("Titan TFD-8025M12B hardwarekoeling Computer behuizing Ventilator", 29.95 , "vent3.jpg", "components", "vent"),
+("Titan TFD-8025M12B Computer Ventilator", 29.95 , "vent3.jpg", "components", "vent"),
 
 ("Gigabyte Modulaire - 850W", 124.55 , "voeding1.jpg", "components", "voeding"),
 ("Aerocool LUX850 - 850W", 75.90 , "voeding2.jpg", "components", "voeding"),
@@ -79,7 +79,7 @@ INSERT INTO `products` (`productname`, `price`, `pictures`, `maincategorie`, `su
 ("HyperX Cloud II - Gaming Headset", 99.99 , "headset3.jpg", "peripherals", "headset"),
 
 ("HP Pavilion Gaming Keyboard 500 EURO QWERTY", 59.99 , "keyboard1.jpg", "peripherals", "keyboard"),
-("OMEN Encoder Customizable Mechanical Gaming Keyboard", 49.00 , "keyboard2.jpg", "peripherals", "keyboard"),
+("OMEN Encoder Mechanical Gaming Keyboard", 49.00 , "keyboard2.jpg", "peripherals", "keyboard"),
 ("Mars Gaming MKREVOES", 27.50 , "keyboard3.jpg", "peripherals", "keyboard"),
 
 ("Corsair Harpoon Rgb Pro", 29.90 , "muis1.jpg", "peripherals", "mouse"),
