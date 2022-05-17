@@ -211,3 +211,11 @@ nav {
 
     border-radius: 15px 15px 0px 0px
 }
+
+
+.products {
+    width: 150px;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+}
