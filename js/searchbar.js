@@ -9,9 +9,9 @@ function searchbarshower() {
 
 }
 function searchbarshower2() {
-    document.getElementById('search').style.display = 'inline-block';
+    document.getElementById('search').style.display = 'block';
     document.getElementById('search').style.width = '150px';
-    document.getElementById('xicon').style.display = 'inline-block';
+    document.getElementById('xicon').style.display = 'block';
 }
 
 function searchbarhider() {
@@ -20,10 +20,4 @@ function searchbarhider() {
     document.getElementById('xicon').style.display = 'none';
     document.getElementById('search2').style.padding = ' 5px 5px 5px 5px';
     document.getElementById('submitbutton').style.display = 'none';
-}
-function a()
-{
-document.write("<form id='form1' name='form1'action=''>");
-document.write(" <td><input name='name' type='text' id='name'/></td>");
- document.write("<td><input name='address' type='text' id='address'/></td>");
 }
