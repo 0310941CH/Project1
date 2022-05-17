@@ -27,6 +27,7 @@ include_once('config/connection.php');
             $hash = password_hash($password, PASSWORD_DEFAULT);
 
             // PDO Gedeelte
+            try {
             $query = 'INSERT INTO users (voornaam, achternaam, username, passwords) VALUES (:vname, :aname, :uname, :pswrd)';
             $values = [':vname' => $voornaam, ':aname' => $achternaam, ':uname' => $username, ':pswrd' => $hash];
 
@@ -35,6 +36,9 @@ include_once('config/connection.php');
             $execute->execute($values);
             header('Location: login.php');
             exit();
+            } catch (PDOException $e) {
+                echo "This username";
+            }
         } else {
             $output = "Invalid input, fill in everything!";
         }
