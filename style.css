@@ -214,8 +214,54 @@ nav {
 
 
 .products {
-    width: 150px;
-    height: auto;
     display: flex;
+    max-width: 200px;
+    max-height: 200px;
+    width: auto;
+    height: auto; 
+
+}
+.productplace {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
     flex-direction: row;
+    flex-wrap: wrap;   
+    gap: 100px;
+}
+.productinner {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 80px 80px 80px 80px;
+    width: auto;
+    background-color: #05386B;
+    border-radius: 25px;
+    color: white;
+    flex-direction: column;
+    height: 300px;
+}
+.shopbutton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    border-radius: 15px;
+}
+.imagesize {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    height: 275px;
+    width: 275px;
+    border-radius: 25px;
+}
+.innerinfo {
+    display: flex;  
+    align-items: center;
+    flex-wrap: wrap;
+    width: 150px;
+    text-align: center;
 }

@@ -54,14 +54,21 @@ include_once("config/connection.php");
         $stmt->execute(['pname' => "%$search%", 'mcategorie' => "%$search%", 'scategorie' => "%$search%"]);
         $data = $stmt->fetchAll();
 
-      
+      echo "<div class='productplace'>"  ;
         foreach ($data as $product) {
-            echo "<img src='/images/" . $product['pictures'] . "' alt='productAfbeelding'" . "class='products'>". "<br>";
+            echo "<div class='productinner'>";
+            echo "<div class='imagesize'>";
+            echo "<img src='/images/" . $product['pictures'] . "' alt='productAfbeelding'" . "class='products'>". "<br>" ;
+            echo "</div>";
+            echo "<div class='innerinfo'>";
             echo $product["productname"] . "<br>";
-            echo $product["price"] . "<br>";
+            echo "</div> " . "<br>";
+            echo "€ " . $product["price"];  
+            echo "<input type='submit' class='shopbutton' value='Add to cart'>";
+            echo "</div>";
         }
     }
-  
+  echo "</div>";
   ?>
 
 </body>
