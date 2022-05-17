@@ -1,3 +1,4 @@
+/* Login & Register*/
 .loginform {
     background-color: #05386B;
     border-radius: 40px 40px 29px 29px;
@@ -71,6 +72,7 @@ input[type=submit] {
     font-weight: bold;
 }
 
+/* Body */
 body {
     background-color: white;
     font-family: Segoe UI, Frutiger, Frutiger Linotype, Dejavu Sans, Helvetica Neue, Arial, sans-serif;
@@ -79,6 +81,7 @@ body {
     padding: 0;
 }
 
+/* Navbar */
 .lock {
     height: 18px;
     width: auto;
@@ -211,8 +214,7 @@ nav {
 
     border-radius: 15px 15px 0px 0px
 }
-
-
+/* Search pagina */
 .products {
     display: flex;
     max-width: 175px;
@@ -283,4 +285,19 @@ nav {
     flex-direction: column;
     align-items: center;
     margin-bottom: 20px;
+}
+
+.sortproducts {
+    display: flex;
+    justify-content: center;  
+    align-items: center;
+    padding: 5px;
+}
+
+.noitems {
+    display: flex;
+    justify-content: center;  
+    align-items: center;
+    flex-direction: column;
+    padding: 5px;
 }
