@@ -211,7 +211,6 @@ nav {
     width: auto;
     padding: 5px 50px 15px 50px;
     margin-top: 26px;
-
     border-radius: 15px 15px 0px 0px
 }
 /* Search pagina */
@@ -242,9 +241,11 @@ nav {
     flex-direction: column;
     width: 200px;
     height: 290px;
+    transition: transform .2s;
 }
 .productinner:hover {
     background-color: #07417a;
+    transform: scale(1.05);
 }
 .shopbutton {
     display: flex;
@@ -258,6 +259,7 @@ nav {
     background-color:#244362 ;
     color: white;
     border-color: white;
+    cursor: pointer;
 }
 
 
@@ -318,5 +320,5 @@ nav {
     background-color: white ;
     color: #244362;
     border-color: #244362;
+    cursor: pointer;
 }
-

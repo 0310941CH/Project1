@@ -88,7 +88,7 @@ include_once('config/connection.php');
         <div class="container">
             <h2>Apply here</h2>
             <form action="" method="POST">
-                <div class="loginform">
+                <div class="loginform"> 
                     <input class="inputlogin" type="text" name="voornaam" placeholder="VOORNAAM">
                     <input class="inputlogin" type="text" name="achternaam" placeholder="ACHTERNAAM">
                     <input class="inputlogin" type="text" name="username" placeholder="USERNAME">
@@ -96,6 +96,7 @@ include_once('config/connection.php');
                     <input class="inputlogin" type="password" name="confirmpassword" placeholder="CONFIRM PASSWORD">
                 </div>
                 <input class="login" type="submit" name="submitLogin" value="SUBMIT YOUR DATA">
+             
             </form>
         </div>
         <?php echo '<p class="fout" >' . $output . "</p>" ?>

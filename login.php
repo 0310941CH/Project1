@@ -101,7 +101,6 @@ include_once("config/connection.php");
         <a class="gray" href="register.php">NEW CUSTOMER? REGISTER HERE!</a>
         <?php echo '<p class="fout" >' . $output . "</p>" ?>
     </div>
-
 </body>
 
 </html>
