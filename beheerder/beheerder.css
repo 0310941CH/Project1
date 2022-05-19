@@ -1,0 +1,23 @@
+.alignitems {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 270px;
+}
+.images {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    width: 250px;
+    height: auto; 
+}
+
+.info {
+    text-align: center;
+}
+
+.innerflex {
+    display: flex;
+    flex-direction: column;
+}

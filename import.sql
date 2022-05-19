@@ -34,7 +34,8 @@ CREATE TABLE `products` (
     price FLOAT(10, 2) NOT NULL,
     pictures VARCHAR(255) NOT NULL,
     maincategorie VARCHAR(255) NOT NULL,
-    subcategorie VARCHAR(255) NOT NULL
+    subcategorie VARCHAR(255) NOT NULL,
+    specificaties BLOB(65535) DEFAULT NULL
 );
 
 INSERT INTO `products` (`productname`, `price`, `pictures`, `maincategorie`, `subcategorie`) VALUES

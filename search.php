@@ -75,5 +75,23 @@ include_once("config/connection.php");
         <img src="navbarimages/shoppingCard.png" class="icon">
 
     </nav>
+
+    <!-- Search output -->
+    <?php
+    if (isset($_GET["searchinput"])) {
+        $search = $_GET["searchinput"];
+        $stmt  = $pdo->prepare("SELECT * FROM products WHERE productname LIKE :pname OR maincategorie LIKE :mcategorie OR subcategorie LIKE :scategorie");
+        $stmt->execute(['pname' => "%$search%", 'mcategorie' => "%$search%", 'scategorie' => "%$search%"]);
+        $data = $stmt->fetchAll();
+
+        foreach ($data as $product) {
+            echo "<img src='/images/" . $product['pictures'] . "' alt='productAfbeelding'" . "<br>";
+            echo $product["productname"] . "<br>";
+            echo $product["price"] . "<br>";
+        }
+    }
+    ?>
+
 </body>
+
 </html>

@@ -1,9 +1,9 @@
 :root {
     --bluebackgroundcolor: #05386B;
-    --blackorwhitebackground: #282828;
-    --blackorwhitetextcolor: white;
-    --imagefilterwhite: invert(0%) sepia(90%) saturate(0%) hue-rotate(295deg) brightness(100%) contrast(101%);
-    --imagefilterblack: invert(97%) sepia(0%) saturate(7461%) hue-rotate(54deg) brightness(111%) contrast(101%);
+    --blackorwhitebackground: white;
+    --blackorwhitetextcolor: black;
+    --imagefilterblack: invert(0%) sepia(90%) saturate(0%) hue-rotate(295deg) brightness(100%) contrast(101%);
+    --imagefilterwhite: invert(97%) sepia(0%) saturate(7461%) hue-rotate(54deg) brightness(111%) contrast(101%);
     --imagefilterblue: invert(20%) sepia(34%) saturate(2363%) hue-rotate(185deg) brightness(89%) contrast(105%);
   }
 
@@ -122,9 +122,10 @@ a > li {
 }
 
 a:link {
-    color: white;
+    color: var(--blackorwhitetextcolor);
 }
 a, ul{
+    color: var(--blackorwhitetextcolor);
     list-style-type: none;
     text-decoration: none;
 }
@@ -216,7 +217,7 @@ nav {
     width: auto;
     padding: 5px 50px 15px 50px;
     margin-top: 26px;
-
+    color: var(--blackorwhitetextcolor);
     border-radius: 15px 15px 0px 0px
 }
 .selectedtab {
