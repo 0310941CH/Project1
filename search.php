@@ -74,7 +74,7 @@ include_once("config/connection.php");
 
             // search order manieren
             echo '<div class="results">';
-            echo count($data) . ' results for "' . $search . '"';
+            echo count($data) . ' results for ' . $search . '';
             echo '</div>';
             echo '<div class="sortproducts">';
             if (count($data) != 0) {
@@ -112,7 +112,7 @@ include_once("config/connection.php");
 
             // search order manieren
             echo '<div class="results">';
-            echo count($data) . ' results for "' . $search . '"';
+            echo count($data) . ' results for ' . $search . '';
             echo '</div>';
             echo '<div class="sortproducts">';
             if (count($data) != 0) {
