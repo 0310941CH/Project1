@@ -229,7 +229,7 @@ nav {
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;   
-    gap: 50px;
+    gap: 20px;
 }
 .productinner {
     display: flex;
@@ -290,10 +290,15 @@ nav {
 .sortproducts {
     display: flex;
     justify-content: center;  
-    align-items: center;
     padding: 5px;
+    margin-top: 30px;
+    gap: 5px;
 }
-
+.results {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
 .noitems {
     display: flex;
     justify-content: center;  
@@ -301,3 +306,17 @@ nav {
     flex-direction: column;
     padding: 5px;
 }
+.orderbutton {
+    background-color: #05386B;
+    border-color: #05386B;
+    color: white;
+    border-radius: 10px;
+    width: 80px;
+    justify-content: center;
+}
+.orderbutton:hover {
+    background-color: white ;
+    color: #244362;
+    border-color: #244362;
+}
+

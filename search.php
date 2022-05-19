@@ -73,13 +73,15 @@ include_once("config/connection.php");
     $data = $stmt->fetchAll();
 
     // search order manieren
-    echo '<div class="sortproducts">';
+    echo '<div class="results">';
     echo count($data) .' results for "'. $search. '"';
+    echo '</div>';
+    echo '<div class="sortproducts">';
     if (count($data) != 0) {
-    echo '<a href="search.php?searchinput=' . $search . '&sort=nAsc">Name Ascending</a>
-    <a href="search.php?searchinput=' . $search . '&sort=nDesc">Name Descending</a>
-    <a href="search.php?searchinput=' . $search . '&sort=pAsc">Price Ascending</a>
-    <a href="search.php?searchinput=' . $search . '&sort=pDesc">Price Descending</a>';
+        echo '<a href="search.php?searchinput=' . $search . '&sort=nAsc"><button class ="orderbutton">ABC▲</button></a>
+        <a href="search.php?searchinput=' . $search . '&sort=nDesc"><button class ="orderbutton">ABC▼</button></a>
+        <a href="search.php?searchinput=' . $search . '&sort=pAsc"><button class ="orderbutton">€▲</button></a>
+        <a href="search.php?searchinput=' . $search . '&sort=pDesc"><button class ="orderbutton">€▼</button></a>';
     }
     echo '</div>';
 
@@ -109,13 +111,17 @@ include_once("config/connection.php");
     $data = $stmt->fetchAll();
 
     // search order manieren
-    echo '<div class="sortproducts">';
+    echo '<div class="results">';
     echo count($data) .' results for "'. $search. '"';
+    echo '</div>';
+    echo '<div class="sortproducts">';
     if (count($data) != 0) {
-    echo '<a href="search.php?searchinput=' . $search . '&sort=nAsc">Name Ascending</a>
-    <a href="search.php?searchinput=' . $search . '&sort=nDesc">Name Descending</a>
-    <a href="search.php?searchinput=' . $search . '&sort=pAsc">Price Ascending</a>
-    <a href="search.php?searchinput=' . $search . '&sort=pDesc">Price Descending</a>';
+        if (isset($_GET["sort"])) {
+        }
+        echo '<a href="search.php?searchinput=' . $search . '&sort=nAsc"><button class ="orderbutton">ABC▲</button></a>
+        <a href="search.php?searchinput=' . $search . '&sort=nDesc"><button class ="orderbutton">ABC▼</button></a>
+        <a href="search.php?searchinput=' . $search . '&sort=pAsc"><button class ="orderbutton">€▲</button></a>
+        <a href="search.php?searchinput=' . $search . '&sort=pDesc"><button class ="orderbutton">€▼</button></a>';
     }
     echo '</div>';
 
@@ -139,8 +145,10 @@ include_once("config/connection.php");
 }
     }
     echo "</div>";
+    
 
-    if (count($data) == 0) {
+    if (empty($data)) {
+        $search = 0;
         echo '<div class="noitems">';
         echo '<h1> Oops! Looks like we dont have any results for "' . $search . '"</h1><br>';
         echo 'Check your spelling or use more general terms.</div>';
