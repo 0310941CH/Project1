@@ -109,30 +109,34 @@ $subcat = "specs" . $_POST['subcat'];
 
     </nav>
     <?php
-        $stmt = $pdo->prepare('SELECT * FROM products WHERE productname=:productname');
-        $stmt->execute([":productname" => $_POST['title']]);
-        $data = $stmt->fetchAll();
-        echo "<div class=alignitems>";
-        foreach ($data as $product) {
-            echo "<div class=innerflex>";
-            echo "<img src='/images/" . $product['pictures'] . "' alt='productAfbeelding'" . "class = 'images' >" . "<br>";
-            echo "<div class='info'>";
-            echo $product["productname"] . "<br>";
-            echo "€" . $product["price"] . "<br>";
-            echo "</div>";
-            echo "</div>";
-        }
+    // Createn van specs
+    $stmt = $pdo->prepare('SELECT * FROM products WHERE productname=:productname');
+    $stmt->execute([":productname" => $_POST['title']]);
+    $data = $stmt->fetchAll();
+    echo "<div class=alignitems>";
+    foreach ($data as $product) {
+
+        echo "<div class=innerflex>";
+        echo "<img src='/images/" . $product['pictures'] . "' alt='productAfbeelding'" . "class = 'images' >" . "<br>";
+        echo "<div class='info'>";
+        echo $product["productname"] . "<br>";
+        echo "€" . $product["price"] . "<br>";
         echo "</div>";
+        echo "</div>";
+    }
 
-        // Showen van specs
-
-        $test = $pdo->prepare('SELECT * FROM test=:test WHERE productname=:productname');
-        $test->execute([":productname" => $_POST['title'],
-        ":test" => $subcat
-        ]);
-        $specs = $test->fetchAll();
-        foreach ($specs as $spec) {
-            echo $spec['productname'];
-        }
+    echo "<table>";
+    echo "<tr>";
+    echo "<th>" . "<h1>" . "Specificaties" . "</h2>" . "</th>";
+    echo "<th>" . "<h1>" . "Specificaties" . "</h2>" . "</th>";
+    echo "<tr>";
+    $specData = json_decode($product['specificaties'], true);
+    foreach ($specData as $specName => $specData) {
+        echo "<td>" . "<h2>" . $specName . ":" . "</h2>" . "</td>";
+        echo "<td>" . $specData . "</td>";
+        echo "</tr>";
+    };
+    echo "</table>";
+    echo "</div>";
     ?>
 </body>

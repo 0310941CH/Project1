@@ -2,9 +2,9 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin-top: 270px;
 }
 .images {
+    margin-top: 270px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -20,4 +20,18 @@
 .innerflex {
     display: flex;
     flex-direction: column;
+}
+table {
+    margin-top: 250px;
+}
+table, th {
+    border-spacing: 0px;
+    padding: 5px;
+    border-style: solid;
+    text-align: center;
+}
+td {
+    padding: 5px;
+    border-style: solid;
+    text-align: center;
 }
