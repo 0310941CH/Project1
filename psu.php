@@ -90,7 +90,7 @@ include_once("config/connection.php");
         echo "<div class='pricebutton'>";
         echo "€ " . $product["price"];
         echo "<br>";
-        echo "<a href='product.php?pid=" . $product["id"] . "&category=psu'>Details werkt nog niet</a>";
+            echo "<a href='product.php?pid=" . $product["id"] . "'>Details moet nog styling</a>";
         echo "<br>";  
         echo "<input type='submit' class='shopbutton' value='Add to cart'>";
         echo "</div>";
