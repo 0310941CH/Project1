@@ -8,8 +8,11 @@ include_once('config/connection.php');
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Register Page</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="search.css">
+    <link rel="stylesheet" href="navbar.css">
     <script defer src="js/searchbar.js"></script>
+    <script src="js/zoom.js"></script>
+    <script src="js/dropdown.js"></script>
 </head>
 
 <body>
