@@ -198,3 +198,19 @@ body {
 .logintext {
     color: white;
 }
+.detailbutton {
+    display: flex;
+    justify-content: center;
+    width: 50px;
+    background-color: white;
+    border-radius: 5px;
+    color: black;
+    border-color: #05386B;
+}
+.detailbutton:hover {
+    background-color:#244362;
+    border-radius: 5px;
+    color: white;
+    border-color: white;
+    cursor: pointer;
+}
