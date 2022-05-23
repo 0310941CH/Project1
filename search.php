@@ -18,7 +18,7 @@ include_once("config/connection.php");
 </head>
 
 <body>
-<?php include "navbar.php"?>
+    <?php include "navbar.php" ?>
     <?php
     if (isset($_GET["searchinput"])) {
         // Variables nodig voor werking
@@ -99,7 +99,7 @@ include_once("config/connection.php");
             echo '</div>';
             echo "<div class='productplace'>";
             foreach ($data as $product) {
-                echo "<div class='productinner'>";  
+                echo "<div class='productinner'>";
                 echo "<div class='imagesize'>";
                 echo "<img src='/images/" . $product['pictures'] . "' alt='productAfbeelding'" . "class='products'>" . "<br>";
                 echo "</div>" . "<br>";
@@ -120,7 +120,6 @@ include_once("config/connection.php");
 
 
     if (empty($data)) {
-        $search = 0;
         echo '<div class="noitems">';
         echo '<h1> Oops! Looks like we dont have any results for "' . $search . '"</h1><br>';
         echo 'Check your spelling or use more general terms.</div>';
