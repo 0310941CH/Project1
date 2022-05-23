@@ -51,7 +51,7 @@
             <img onclick="dropdown(4)"  id="tab4" onclick="dropdown4()" src="images/register.png" alt="" class=" tabs2"> <img onclick="dropdown4()" src="images/caret-down-solidblack.png" alt="" class="dropdownicon " id="dropdownicon4">
             <ul id="list4">
                     <a href="/login.php"><li class="accountbuttons">LOGIN</li></a>
-                    <a href="/gpu.php"><li class="accountbuttons">DARKMODE</li></a>
+                    <li class="accountbuttons">DARKMODE</li>
                 </ul>
                 <div id="colorbottom4"></div>
             </div>

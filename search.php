@@ -47,7 +47,7 @@ include_once("config/connection.php");
 
             // search order manieren
             echo '<div class="results">';
-            echo count($data) . ' results for "' . $search . '"';
+            echo count($data) . ' results for ' . $search . '';
             echo '</div>';
             echo '<div class="sortproducts">';
             if (count($data) != 0) {
@@ -86,7 +86,7 @@ include_once("config/connection.php");
 
             // search order manieren
             echo '<div class="results">';
-            echo count($data) . ' results for "' . $search . '"';
+            echo count($data) . ' results for ' . $search . '';
             echo '</div>';
             echo '<div class="sortproducts">';
             if (count($data) != 0) {
@@ -122,7 +122,7 @@ include_once("config/connection.php");
 
     if (empty($data)) {
         echo '<div class="noitems">';
-        echo '<h1> Oops! Looks like we dont have any results for "' . $search . '"</h1><br>';
+        echo '<h1> Oops! Looks like we dont have any results for ' . $search . '</h1><br>';
         echo 'Check your spelling or use more general terms.</div>';
     }
     ?>
