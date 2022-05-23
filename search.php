@@ -118,7 +118,6 @@ include_once("config/connection.php");
     }
     echo "</div>";
 
-
     if (empty($data)) {
         echo '<div class="noitems">';
         echo '<h1> Oops! Looks like we dont have any results for "' . $search . '"</h1><br>';
