@@ -111,8 +111,8 @@ include_once("../config/connection.php");
 <?php // Showen productname & price & foto product?>
 <form action="beheerderDetail.php" method="POST">
     <?php
-    $stmt = $pdo->prepare('SELECT * FROM products WHERE subcategorie=:moederbord');
-    $stmt->execute([":moederbord" => 'moederbord']);
+    $stmt = $pdo->prepare('SELECT * FROM products WHERE subcategorie=:motherboard');
+    $stmt->execute([":motherboard" => 'motherboard']);
     $data = $stmt->fetchAll();
     echo "<div class=alignitems>";
     foreach ($data as $product) {

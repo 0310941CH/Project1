@@ -31,7 +31,7 @@ CREATE TABLE `users` (
 CREATE TABLE `products` (
     id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     productname VARCHAR(255) NOT NULL,
-    price DECIMAL NOT NULL,
+    price DECIMAL(10,2) NOT NULL,
     pictures VARCHAR(255) NOT NULL,
     maincategorie VARCHAR(255) NOT NULL,
     subcategorie VARCHAR(255) NOT NULL,

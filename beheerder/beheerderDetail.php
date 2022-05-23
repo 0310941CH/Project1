@@ -139,4 +139,8 @@ $subcat = "specs" . $_POST['subcat'];
     echo "</table>";
     echo "</div>";
     ?>
+    <form action="beheerderUpdate.php" method="POST">
+       <?php $_SESSION['productname'] = $product['productname']; ?>
+        <button type="submit" class="beheerderUpdate" name="toUpdate">Update Product</button>
+    </form>
 </body>
