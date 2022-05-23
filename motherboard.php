@@ -9,7 +9,7 @@ include_once("config/connection.php");
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notch | GPU</title>
+    <title>Notch | Motherboard</title>
     <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="search.css">
     <script defer src="js/searchbar.js"></script>
@@ -38,16 +38,16 @@ include_once("config/connection.php");
 
         // Output met toegepast filter
         $stmt  = $pdo->prepare("SELECT * FROM products WHERE subcategorie = :scategorie ORDER BY $columnName $sortBy");
-        $stmt->execute(['scategorie' => "gpu"]);
+        $stmt->execute(['scategorie' => "moederbord"]);
         $data = $stmt->fetchAll();
 
         // search order manieren
         echo '<div class="sortproducts">';
         if (count($data) != 0) {
-            echo '<a href="gpu.php?sort=nAsc"><button class ="orderbutton">ABC▲</button></a>
-        <a href="gpu.php?sort=nDesc"><button class ="orderbutton">ABC▼</button></a>
-        <a href="gpu.php?sort=pAsc"><button class ="orderbutton">€▲</button></a>
-        <a href="gpu.php?sort=pDesc"><button class ="orderbutton">€▼</button></a>';
+            echo '<a href="motherboard.php?sort=nAsc"><button class ="orderbutton">ABC▲</button></a>
+        <a href="motherboard.php?sort=nDesc"><button class ="orderbutton">ABC▼</button></a>
+        <a href="motherboard.php?sort=pAsc"><button class ="orderbutton">€▲</button></a>
+        <a href="motherboard.php?sort=pDesc"><button class ="orderbutton">€▼</button></a>';
         }
         echo '</div>';
 
@@ -63,7 +63,7 @@ include_once("config/connection.php");
             echo "<div class='pricebutton'>";
             echo "€ " . $product["price"];
             echo "<br>";
-            echo "<a href='product.php?pid=" . $product["id"] . "'>Details moet nog styling</a>";
+            echo "<a href='product.php?pid=" . $product["id"] . "'>Details</a>";
             echo "<br>";
             echo "<input type='submit' class='shopbutton' value='Add to cart'>";
             echo "</div>";
@@ -72,16 +72,16 @@ include_once("config/connection.php");
     } else {
         // output zonder toegepast filter
         $stmt  = $pdo->prepare("SELECT * FROM products WHERE subcategorie = :scategorie");
-        $stmt->execute(['scategorie' => "gpu"]);
+        $stmt->execute(['scategorie' => "moederbord"]);
         $data = $stmt->fetchAll();
 
         // search order manieren
         echo '<div class="sortproducts">';
         if (count($data) != 0) {
-            echo '<a href="gpu.php?sort=nAsc"><button class ="orderbutton">ABC▲</button></a>
-        <a href="gpu.php?sort=nDesc"><button class ="orderbutton">ABC▼</button></a>
-        <a href="gpu.php?sort=pAsc"><button class ="orderbutton">€▲</button></a>
-        <a href="gpu.php?sort=pDesc"><button class ="orderbutton">€▼</button></a>';
+            echo '<a href="motherboard.php?sort=nAsc"><button class ="orderbutton">ABC▲</button></a>
+        <a href="motherboard.php?sort=nDesc"><button class ="orderbutton">ABC▼</button></a>
+        <a href="motherboard.php?sort=pAsc"><button class ="orderbutton">€▲</button></a>
+        <a href="motherboard.php?sort=pDesc"><button class ="orderbutton">€▼</button></a>';
         }
         echo '</div>';
 
@@ -97,7 +97,7 @@ include_once("config/connection.php");
             echo "<div class='pricebutton'>";
             echo "€ " . $product["price"];
             echo "<br>";
-            echo "<a href='product.php?pid=" . $product["id"] . "'>Details moet nog styling</a>";
+            echo "<a href='product.php?pid=" . $product["id"] . "'>Details</a>";
             echo "<br>";
             echo "<input type='submit' class='shopbutton' value='Add to cart'>";
             echo "</div>";
