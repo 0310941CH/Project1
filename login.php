@@ -54,6 +54,22 @@ include_once("config/connection.php");
         }
     }
     ?>
+<div class="test">
+        <div class="container">
+            <h2 class="logintext">LOGIN PAGE <img src="images/lock.png" class="lock"></h2>
+            <form method="POST">
+                <div class="loginform">
+                    <input class="inputlogin" type="text" id="username" name="username" placeholder="USERNAME">
+                    <input class="inputlogin" type="password" id="password" name="password" placeholder="PASSWORD">
+                </div>
+                <input class="login" type="submit" name="submitLogin" value="LOGIN">
+            </form>
+        </div>
+
+        <BR></BR>
+        <a class="gray" href="register.php">NEW CUSTOMER? REGISTER HERE!</a>
+        <?php echo '<p class="fout" >' . $output . "</p>" ?>
+    </div>
 
 
 </body>

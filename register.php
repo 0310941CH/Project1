@@ -58,7 +58,7 @@ include_once('config/connection.php');
     <!-- register form -->
     <div class="test">
         <div class="container">
-            <h2>Apply here</h2>
+            <h2 class="logintext">Apply here</h2>
             <form action="" method="POST">
                 <div class="loginform">
                     <input class="inputlogin" type="text" name="voornaam" placeholder="VOORNAAM">
