@@ -50,7 +50,7 @@
             <img class="xicon" src="images/xicon.png" alt="xicon" id="xicon" onclick="searchbarhider()">
             <div id="divdiv">
 
-                <form class="search2" id="search2" onclick="searchbarshower()" method="get">
+                <form class="search2" id="search2" onclick="searchbarshower()" method="get" action="search.php">
 
                     <input type="text" class="searchinput" id="search" name="searchinput">
                     <img src="images/blacksearch.png" id="searchimage">
