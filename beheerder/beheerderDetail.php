@@ -1,7 +1,10 @@
 <?php
 session_start();
 include_once("../config/connection.php");
-$subcat = "specs" . $_POST['subcat'];
+$id = $_SESSION['updateID'];
+if (isset($_POST['id'])) {
+    $id = $_POST['id'];
+};   
 ?>
 
 <!DOCTYPE html>
@@ -110,8 +113,8 @@ $subcat = "specs" . $_POST['subcat'];
     </nav>
     <?php
     // Createn van specs
-    $stmt = $pdo->prepare('SELECT * FROM products WHERE productname=:productname');
-    $stmt->execute([":productname" => $_POST['title']]);
+    $stmt = $pdo->prepare('SELECT * FROM products WHERE id=:id');
+    $stmt->execute([":id" => $id]);
     $data = $stmt->fetchAll();
     echo "<div class=alignitems>";
     foreach ($data as $product) {
@@ -140,7 +143,7 @@ $subcat = "specs" . $_POST['subcat'];
     echo "</div>";
     ?>
     <form action="beheerderUpdate.php" method="POST">
-       <?php $_SESSION['productname'] = $product['productname']; ?>
+       <?php $_SESSION['id'] = $product['id']; ?>
         <button type="submit" class="beheerderUpdate" name="toUpdate">Update Product</button>
     </form>
 </body>

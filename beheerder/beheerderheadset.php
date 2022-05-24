@@ -122,7 +122,7 @@ include_once("../config/connection.php");
         echo "<input type=hidden value='$product[subcategorie]' name=subcat >";
         echo $product["productname"] . "<br>";
         echo "€" . $product["price"] . "<br>";
-        echo "<button type=submit value='$product[productname]' name=title>Watch Details</button>";
+        echo "<button type=submit value='$product[id]' name=id>Watch Details</button>";
         echo "</div>";
         echo "</div>";
     }
