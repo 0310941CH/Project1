@@ -61,8 +61,8 @@ include_once('config/connection.php');
             <h2 class="logintext">Apply here</h2>
             <form action="" method="POST">
                 <div class="loginform">
-                    <input class="inputlogin" type="text" name="voornaam" placeholder="VOORNAAM">
-                    <input class="inputlogin" type="text" name="achternaam" placeholder="ACHTERNAAM">
+                    <input class="inputlogin" type="text" name="voornaam" placeholder="FIRSTNAME">
+                    <input class="inputlogin" type="text" name="achternaam" placeholder="SURNAME">
                     <input class="inputlogin" type="text" name="username" placeholder="USERNAME">
                     <input class="inputlogin" type="password" name="password" placeholder="PASSWORD">
                     <input class="inputlogin" type="password" name="confirmpassword" placeholder="CONFIRM PASSWORD">
