@@ -71,13 +71,13 @@ include_once("config/connection.php");
         <div class="buttons">
             <img onclick="dropdown(4)"  id="tab4" onclick="dropdown4()" src="images/register.png" alt="" class=" tabs2"> <img onclick="dropdown4()" src="images/caret-down-solidblack.png" alt="" class="dropdownicon " id="dropdownicon4">
             <ul id="list4">
-                    <a href="/cpu.php"><li class="accountbuttons">LOGIN</li></a>
+                    <a href="/login.php"><li class="accountbuttons">LOGIN</li></a>
                     <a href="/gpu.php"><li class="accountbuttons">DARKMODE</li></a>
                 </ul>
                 <div id="colorbottom4"></div>
             </div>
         </div>
-        <img src="images/shoppingCard.png" class="icon">
+        <a href="shoppingcart.php"><img src="images/shoppingCard.png" class="icon" ></a>
 
     </nav>
     <?php
