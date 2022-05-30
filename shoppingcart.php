@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,69 +12,36 @@
     <script src="/js/dropdown.js"></script>
     <script src="/js/zoom.js"></script>
 </head>
+
 <body>
-<?php include "navbar.php" ?>
+    <?php include "navbar.php" ?>
 
-<div class="shoppingcart">
-    <div class="topshop">
-<p class="amount">PRODUCTS</p>
-<p class="amount">AMOUNT</p>
-<p>PRICE</p>
-</div>
-<!---- voorbeeld1 ---->
-    <div class="firstrowshop">
-        <div class="productandimage">
-<img class="imageshop" src="/images/cpu1.jpg" alt="">
-<p>PRODUCT</p>
+    <div class="shoppingcart">
+        <div class="topshop">
+            <p class="amount">PRODUCTS</p>
+            <p class="amount">AMOUNT</p>
+            <p>PRICE</p>
+        </div>
+        <div class="firstrowshop">
+            <div class="productandimage">
+                <img class="imageshop" src="/images/cpu1.jpg" alt="">
+                <p>PRODUCT</p>
 
-</div>
-<div class="plusminbutton">
-    <button class="plusbutton">-</button>
-    <p>1</p>
-    <button class="minbutton">+</button>
-</div>
-<p>€5,75</p>
+            </div>
+            <div class="plusminbutton">
+                <button class="plusbutton">-</button>
+                <p>1</p>
+                <button class="minbutton">+</button>
+            </div>
+            <p>€5,75</p>
+        </div>
+        <!----Total en Price ---->
+        <div class="topshop">
+            <p class="amount">PRODUCTS</p>
+            <p class="amount">3</p>
+            <p> €17.25</p>
+        </div>
     </div>
-<!---- voorbeeld1 ---->
-<div class="firstrowshop">
-        <div class="productandimage">
-<img class="imageshop" src="/images/cpu1.jpg" alt="">
-<p>PRODUCT</p>
-
-</div>
-<div class="plusminbutton">
-    <button class="plusbutton">-</button>
-    <p>1</p>
-    <button class="minbutton">+</button>
-</div>
-<p>€5,75</p>
-    </div>
-    <!---- voorbeeld1 ---->
-    <div class="firstrowshop">
-        <div class="productandimage">
-<img class="imageshop" src="/images/cpu1.jpg" alt="">
-<p>PRODUCT</p>
-
-</div>
-<div class="plusminbutton">
-    <button class="plusbutton">-</button>
-    <p>1</p>
-    <button class="minbutton">+</button>
-</div>
-<p>€5,75</p>
-    </div>
-    <!----Total en Price ---->
-    <div class="topshop">
-<p class="amount">PRODUCTS</p>
-<p class="amount">3</p>
-<p> €17.25</p>
-</div>
- 
-    
-
-
-
-
-</div>
 </body>
+
 </html>
