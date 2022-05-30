@@ -11,8 +11,8 @@ $id = $_SESSION['id'];
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../beheerderpage.css">
-    <link rel="stylesheet" href="beheerder.css">
+    <link rel="stylesheet" href="../adminpage.css">
+    <link rel="stylesheet" href="admin.css">
     <script src="/js/searchbar.js"></script>
     <script src="/js/dropdown.js"></script>
     <title>Admin Panel</title>
@@ -47,7 +47,7 @@ $id = $_SESSION['id'];
         $updateCPU->execute($information);
         // Doorsturen naar de Detail page van admins. Met session ID zodat het weer geladen kan worden.
         $_SESSION['updateID'] = $_POST['submitCPU'];
-        header("Location: beheerderDetail.php");
+        header("Location: adminDetail.php");
         exit();
     } elseif (isset($_POST['submitGPU'])) {
         // Foreach loop data van table omzetten naar losse gedeeltes. Handig voor UPDATEN.
@@ -70,7 +70,7 @@ $id = $_SESSION['id'];
         $updateGPU->execute($information);
         // Doorsturen naar de Detail page van admins. Met session ID zodat het weer geladen kan worden.
         $_SESSION['updateID'] = $_POST['submitGPU'];
-        header("Location: beheerderDetail.php");
+        header("Location: adminDetail.php");
         exit();
     } elseif (isset($_POST['submitMotherboard'])) {
         // Foreach loop data van table omzetten naar losse gedeeltes. Handig voor UPDATEN.
@@ -92,7 +92,7 @@ $id = $_SESSION['id'];
         $updateMotherboard->execute($information);
         // Doorsturen naar de Detail page van admins. Met session ID zodat het weer geladen kan worden.
         $_SESSION['updateID'] = $_POST['submitMotherboard'];
-        header("Location: beheerderDetail.php");
+        header("Location: adminDetail.php");
         exit();
     } elseif (isset($_POST['submitRAM'])) {
         // Foreach loop data van table omzetten naar losse gedeeltes. Handig voor UPDATEN.
@@ -115,7 +115,7 @@ $id = $_SESSION['id'];
         $updateRam->execute($information);
         // Doorsturen naar de Detail page van admins. Met session ID zodat het weer geladen kan worden.
         $_SESSION['updateID'] = $_POST['submitRAM'];
-        header("Location: beheerderDetail.php");
+        header("Location: adminDetail.php");
         exit();
     } elseif (isset($_POST['submitSSD'])) {
         // Foreach loop data van table omzetten naar losse gedeeltes. Handig voor UPDATEN.
@@ -138,7 +138,7 @@ $id = $_SESSION['id'];
         $updateSSD->execute($information);
         // Doorsturen naar de Detail page van admins. Met session ID zodat het weer geladen kan worden.
         $_SESSION['updateID'] = $_POST['submitSSD'];
-        header("Location: beheerderDetail.php");
+        header("Location: adminDetail.php");
         exit();
     } elseif (isset($_POST['submitFans'])) {
         // De specificaties hier weer decoden zodat je de array kan aanpassen met gegevens.
@@ -159,7 +159,7 @@ $id = $_SESSION['id'];
         $updateFans->execute($information);
         // Doorsturen naar de Detail page van admins. Met session ID zodat het weer geladen kan worden.
         $_SESSION['updateID'] = $_POST['submitFans'];
-        header("Location: beheerderDetail.php");
+        header("Location: adminDetail.php");
         exit();
     } elseif (isset($_POST['submitPowersupply'])) {
         // De specificaties hier weer decoden zodat je de array kan aanpassen met gegevens.
@@ -180,7 +180,7 @@ $id = $_SESSION['id'];
         $updatePowersupply->execute($information);
         // Doorsturen naar de Detail page van admins. Met session ID zodat het weer geladen kan worden.
         $_SESSION['updateID'] = $_POST['submitPowersupply'];
-        header("Location: beheerderDetail.php");
+        header("Location: adminDetail.php");
         exit();
     } elseif (isset($_POST['submitPC'])) {
         // De specificaties hier weer decoden zodat je de array kan aanpassen met gegevens.
@@ -207,7 +207,7 @@ $id = $_SESSION['id'];
         $updatePC->execute($information);
         // Doorsturen naar de Detail page van admins. Met session ID zodat het weer geladen kan worden.
         $_SESSION['updateID'] = $_POST['submitPC'];
-        header("Location: beheerderDetail.php");
+        header("Location: adminDetail.php");
         exit();
     } elseif (isset($_POST['submitLaptop'])) {
         // De specificaties hier weer decoden zodat je de array kan aanpassen met gegevens.
@@ -233,7 +233,7 @@ $id = $_SESSION['id'];
         $updateLaptop->execute($information);
         // Doorsturen naar de Detail page van admins. Met session ID zodat het weer geladen kan worden.
         $_SESSION['updateID'] = $_POST['submitLaptop'];
-        header("Location: beheerderDetail.php");
+        header("Location: adminDetail.php");
         exit();
     } elseif (isset($_POST['submitKeyboard'])) {
         // De specificaties hier weer decoden zodat je de array kan aanpassen met gegevens.
@@ -255,7 +255,7 @@ $id = $_SESSION['id'];
         $updateKeyboard->execute($information);
         // Doorsturen naar de Detail page van admins. Met session ID zodat het weer geladen kan worden.
         $_SESSION['updateID'] = $_POST['submitKeyboard'];
-        header("Location: beheerderDetail.php");
+        header("Location: adminDetail.php");
         exit();
     } elseif (isset($_POST['submitMouse'])) {
         // De specificaties hier weer decoden zodat je de array kan aanpassen met gegevens.
@@ -278,7 +278,7 @@ $id = $_SESSION['id'];
         $updateMouse->execute($information);
         // Doorsturen naar de Detail page van admins. Met session ID zodat het weer geladen kan worden.
         $_SESSION['updateID'] = $_POST['submitMouse'];
-        header("Location: beheerderDetail.php");
+        header("Location: adminDetail.php");
         exit();
     } elseif (isset($_POST['submitHeadset'])) {
         // De specificaties hier weer decoden zodat je de array kan aanpassen met gegevens.
@@ -300,7 +300,7 @@ $id = $_SESSION['id'];
         $updateHeadset->execute($information);
         // Doorsturen naar de Detail page van admins. Met session ID zodat het weer geladen kan worden.
         $_SESSION['updateID'] = $_POST['submitHeadset'];
-        header("Location: beheerderDetail.php");
+        header("Location: adminDetail.php");
         exit();
     }
     ?>

@@ -1,10 +1,7 @@
 <?php
 session_start();
 include_once("../config/connection.php");
-$id = $_SESSION['updateID'];
-if (isset($_POST['id'])) {
-    $id = $_POST['id'];
-};   
+
 ?>
 
 <!DOCTYPE html>
@@ -14,8 +11,8 @@ if (isset($_POST['id'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../beheerderpage.css">
-    <link rel="stylesheet" href="beheerder.css">
+    <link rel="stylesheet" href="../adminpage.css">
+    <link rel="stylesheet" href="admin.css">
     <script src="/js/searchbar.js"></script>
     <script src="/js/dropdown.js"></script>
     <title>Admin Panel</title>
@@ -28,25 +25,25 @@ if (isset($_POST['id'])) {
             <div class="buttons">
                 <p onclick="dropdown(1)" id="tab1" class="selectedtab tabs">COMPONENTS <img src="../navbarimages/caret-down-solidblack.png" alt="" class="dropdownicon" id="dropdownicon1"></p>
                 <ul id="list1">
-                    <a href="/beheerder/beheerdercpu.php">
+                    <a href="/admin/admincpu.php">
                         <li>CPU</li>
                     </a>
-                    <a href="/beheerder/beheerdergpu.php">
+                    <a href="/admin/admingpu.php">
                         <li>GPU</li>
                     </a>
-                    <a href="/beheerder/beheerdermotherboard.php">
+                    <a href="/admin/adminmotherboard.php">
                         <li>MOTHERBOARD</li>
                     </a>
-                    <a href="/beheerder/beheerderram.php">
+                    <a href="/admin/adminram.php">
                         <li>RAM</li>
                     </a>
-                    <a href="/beheerder/beheerderssd.php">
+                    <a href="/admin/adminssd.php">
                         <li>SSD</li>
                     </a>
-                    <a href="/beheerder/beheerderfans.php">
+                    <a href="/admin/adminfans.php">
                         <li>FANS</li>
                     </a>
-                    <a href="/beheerder/beheerderpowersupply.php">
+                    <a href="/admin/adminpowersupply.php">
                         <li>POWER SUPPLY</li>
                     </a>
                 </ul>
@@ -56,13 +53,13 @@ if (isset($_POST['id'])) {
             <div class="buttons">
                 <p onclick="dropdown(2)" class="tabs" id="tab2">PERIPHERALS <img onclick="dropdown2()" src="../navbarimages/caret-down-solidblack.png" alt="" class="dropdownicon " id="dropdownicon2"></p>
                 <ul id="list2">
-                    <a href="/beheerder/beheerdermouse.php">
+                    <a href="/admin/adminmouse.php">
                         <li>MOUSE</li>
                     </a>
-                    <a href="/beheerder/beheerderkeyboard.php">
+                    <a href="/admin/adminkeyboard.php">
                         <li>KEYBOARD</li>
                     </a>
-                    <a href="/beheerder/beheerderheadset.php">
+                    <a href="/admin/adminheadset.php">
                         <li>HEADSET</li>
                     </a>
                 </ul>
@@ -71,10 +68,10 @@ if (isset($_POST['id'])) {
             <div class="buttons">
                 <p onclick="dropdown(3)" class="tabs" id="tab3">PC'S AND LAPTOPS <img onclick="dropdown3()" src="../navbarimages/caret-down-solidblack.png" alt="" class="dropdownicon " id="dropdownicon3"></p>
                 <ul id="list3">
-                    <a href="/beheerder/beheerderpc.php">
+                    <a href="/admin/adminpc.php">
                         <li>PC</li>
                     </a>
-                    <a href="/beheerder/beheerderlaptop.php">
+                    <a href="/admin/adminlaptop.php">
                         <li>LAPTOPS</li>
                     </a>
                 </ul>
@@ -111,39 +108,28 @@ if (isset($_POST['id'])) {
         <img src="../navbarimages/shoppingCard.png" class="icon">
 
     </nav>
+<?php // Showen productname & price & foto product?>
+<form action="adminDetail.php" method="POST">
     <?php
-    // Createn van specs
-    $stmt = $pdo->prepare('SELECT * FROM products WHERE id=:id');
-    $stmt->execute([":id" => $id]);
+    $stmt = $pdo->prepare('SELECT * FROM products WHERE subcategorie=:pc');
+    $stmt->execute([":pc" => 'pc']);
     $data = $stmt->fetchAll();
     echo "<div class=alignitems>";
     foreach ($data as $product) {
-
         echo "<div class=innerflex>";
         echo "<img src='/images/" . $product['pictures'] . "' alt='productAfbeelding'" . "class = 'images' >" . "<br>";
         echo "<div class='info'>";
+        echo "<input type=hidden value='$product[subcategorie]' name=subcat >";
         echo $product["productname"] . "<br>";
         echo "€" . $product["price"] . "<br>";
+        echo "<button type=submit value='$product[id]' name=id>Watch Details</button>";
         echo "</div>";
         echo "</div>";
     }
-
-    echo "<table>";
-    echo "<tr>";
-    echo "<th>" . "<h1>" . "Specificaties" . "</h2>" . "</th>";
-    echo "<th>" . "<h1>" . "Specificaties" . "</h2>" . "</th>";
-    echo "<tr>";
-    $specData = json_decode($product['specificaties'], true);
-    foreach ($specData as $specName => $specData) {
-        echo "<td>" . "<h2>" . $specName . ":" . "</h2>" . "</td>";
-        echo "<td>" . $specData . "</td>";
-        echo "</tr>";
-    };
-    echo "</table>";
     echo "</div>";
+
     ?>
-    <form action="beheerderUpdate.php" method="POST">
-       <?php $_SESSION['id'] = $product['id']; ?>
-        <button type="submit" class="beheerderUpdate" name="toUpdate">Update Product</button>
-    </form>
+</form>
 </body>
+
+</html>

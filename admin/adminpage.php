@@ -8,7 +8,7 @@ include_once("config/connection.php");
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="beheerderpage.css">
+    <link rel="stylesheet" href="adminpage.css">
     <script src="/js/searchbar.js"></script>
     <script src="/js/dropdown.js"></script>
     <title>Admin Panel</title>
@@ -20,13 +20,13 @@ include_once("config/connection.php");
             <div class="buttons">
                 <p onclick="dropdown(1)" id="tab1" class="selectedtab tabs">COMPONENTS <img src="navbarimages/caret-down-solidblack.png" alt="" class="dropdownicon" id="dropdownicon1"></p>
                 <ul id="list1">
-                    <a href="/beheerder/beheerdercpu.php"><li>CPU</li></a>
-                    <a href="/beheerder/beheerdergpu.php"><li>GPU</li></a>
-                    <a href="/beheerder/beheerdermotherboard.php"><li>MOTHERBOARD</li></a>
-                    <a href="/beheerder/beheerderram.php"><li>RAM</li></a>
-                    <a href="/beheerder/beheerderssd.php"><li>SSD</li></a>
-                    <a href="/beheerder/beheerderfans.php"><li>FANS</li></a>
-                    <a href="/beheerder/beheerderpowersupply.php"><li>POWER SUPPLY</li></a>
+                    <a href="/admin/adminProducts/admincpu.php"><li>CPU</li></a>
+                    <a href="/admin/adminProducts/admingpu.php"><li>GPU</li></a>
+                    <a href="/admin/adminProducts/adminmotherboard.php"><li>MOTHERBOARD</li></a>
+                    <a href="/admin/adminProducts/adminram.php"><li>RAM</li></a>
+                    <a href="/admin/adminssd.php"><li>SSD</li></a>
+                    <a href="/admin/adminfans.php"><li>FANS</li></a>
+                    <a href="/admin/adminpowersupply.php"><li>POWER SUPPLY</li></a>
                 </ul>
                 <div id="colorbottom1"></div>
             </div>
@@ -34,17 +34,17 @@ include_once("config/connection.php");
             <div class="buttons">
             <p onclick="dropdown(2)" class="tabs" id="tab2">PERIPHERALS <img  onclick="dropdown2()" src="navbarimages/caret-down-solidblack.png" alt="" class="dropdownicon " id="dropdownicon2" ></p>
             <ul id="list2">
-                    <a href="/beheerder/beheerdermouse.php"><li>MOUSE</li></a>
-                    <a href="/beheerder/beheerderkeyboard.php"><li>KEYBOARD</li></a>
-                    <a href="/beheerder/beheerderheadset.php"><li>HEADSET</li></a>
+                    <a href="/admin/adminmouse.php"><li>MOUSE</li></a>
+                    <a href="/admin/adminkeyboard.php"><li>KEYBOARD</li></a>
+                    <a href="/admin/adminheadset.php"><li>HEADSET</li></a>
                 </ul>
                 <div id="colorbottom2"></div>
             </div>
             <div class="buttons">
             <p onclick="dropdown(3)" class="tabs" id="tab3">PC'S AND LAPTOPS <img onclick="dropdown3()" src="navbarimages/caret-down-solidblack.png" alt="" class="dropdownicon " id="dropdownicon3"></p>
             <ul id="list3">
-                    <a href="/beheerder/beheerderpc.php"><li>PC</li></a>
-                    <a href="/beheerder/beheerderlaptop.php"><li>LAPTOPS</li></a>
+                    <a href="/admin/adminpc.php"><li>PC</li></a>
+                    <a href="/admin/adminlaptop.php"><li>LAPTOPS</li></a>
                 </ul>
                 <div id="colorbottom3"></div>
             </div>

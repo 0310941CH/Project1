@@ -41,7 +41,7 @@ include_once("config/connection.php");
 
                 if ($passwordCheck == true) {
                     $_SESSION["loggedInUser"] = $user["id"];
-                    header("Location: beheerderpage.php");
+                    header("Location: adminpage.php");
                     exit(0);
                 } else {
                     $output = "The password wasn't correct";

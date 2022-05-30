@@ -11,8 +11,8 @@ $id = $_SESSION['id'];
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../beheerderpage.css">
-    <link rel="stylesheet" href="beheerder.css">
+    <link rel="stylesheet" href="../adminpage.css">
+    <link rel="stylesheet" href="admin.css">
     <script src="/js/searchbar.js"></script>
     <script src="/js/dropdown.js"></script>
     <title>Admin Panel</title>
@@ -25,25 +25,25 @@ $id = $_SESSION['id'];
             <div class="buttons">
                 <p onclick="dropdown(1)" id="tab1" class="selectedtab tabs">COMPONENTS <img src="../navbarimages/caret-down-solidblack.png" alt="" class="dropdownicon" id="dropdownicon1"></p>
                 <ul id="list1">
-                    <a href="/beheerder/beheerdercpu.php">
+                    <a href="/admin/admincpu.php">
                         <li>CPU</li>
                     </a>
-                    <a href="/beheerder/beheerdergpu.php">
+                    <a href="/admin/admingpu.php">
                         <li>GPU</li>
                     </a>
-                    <a href="/beheerder/beheerdermotherboard.php">
+                    <a href="/admin/adminmotherboard.php">
                         <li>MOTHERBOARD</li>
                     </a>
-                    <a href="/beheerder/beheerderram.php">
+                    <a href="/admin/adminram.php">
                         <li>RAM</li>
                     </a>
-                    <a href="/beheerder/beheerderssd.php">
+                    <a href="/admin/adminssd.php">
                         <li>SSD</li>
                     </a>
-                    <a href="/beheerder/beheerderfans.php">
+                    <a href="/admin/adminfans.php">
                         <li>FANS</li>
                     </a>
-                    <a href="/beheerder/beheerderpowersupply.php">
+                    <a href="/admin/adminpowersupply.php">
                         <li>POWER SUPPLY</li>
                     </a>
                 </ul>
@@ -53,13 +53,13 @@ $id = $_SESSION['id'];
             <div class="buttons">
                 <p onclick="dropdown(2)" class="tabs" id="tab2">PERIPHERALS <img onclick="dropdown2()" src="../navbarimages/caret-down-solidblack.png" alt="" class="dropdownicon " id="dropdownicon2"></p>
                 <ul id="list2">
-                    <a href="/beheerder/beheerdermouse.php">
+                    <a href="/admin/adminmouse.php">
                         <li>MOUSE</li>
                     </a>
-                    <a href="/beheerder/beheerderkeyboard.php">
+                    <a href="/admin/adminkeyboard.php">
                         <li>KEYBOARD</li>
                     </a>
-                    <a href="/beheerder/beheerderheadset.php">
+                    <a href="/admin/adminheadset.php">
                         <li>HEADSET</li>
                     </a>
                 </ul>
@@ -68,10 +68,10 @@ $id = $_SESSION['id'];
             <div class="buttons">
                 <p onclick="dropdown(3)" class="tabs" id="tab3">PC'S AND LAPTOPS <img onclick="dropdown3()" src="../navbarimages/caret-down-solidblack.png" alt="" class="dropdownicon " id="dropdownicon3"></p>
                 <ul id="list3">
-                    <a href="/beheerder/beheerderpc.php">
+                    <a href="/admin/adminpc.php">
                         <li>PC</li>
                     </a>
-                    <a href="/beheerder/beheerderlaptop.php">
+                    <a href="/admin/adminlaptop.php">
                         <li>LAPTOPS</li>
                     </a>
                 </ul>
@@ -122,7 +122,7 @@ $id = $_SESSION['id'];
         // NAMEN MOETEN NOG GEGEVEN WORDEN VOOR DAT UPDATE TESTEN!!!!!!!
         echo "<div class=innerflex>";
         echo "<div class='info'>";
-        echo "<form method=POST action='update.php'>";
+        echo "<form method=POST action='adminUpdateBack.php'>";
         echo "<tr>" . "<td>" . "Productname" . "</td>" .  "<td>" .  "<input type=text name=product size=50 value='$product[productname]'>" .  "</td>" . "</tr>";
         echo "<tr>" . "<td>" . "Price" . "</td>" .  "<td>" .  "<input type=text name=price value='$product[price]'>" .  "</td>" . "</tr>";
         echo "</div>";
