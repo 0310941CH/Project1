@@ -96,12 +96,12 @@ include_once("config/connection.php");
         echo '<div class="line">';
         echo "</div>";
     }
-
-    $specData = json_decode($product['specificaties'], true);
     echo '<div class="productright">';
     echo "<h1>SPECIFICATIES</h1>";
     echo "<table>";
+    // JSON decode zodat je alle specs kan laten zien en showen
     $specData = json_decode($product['specificaties'], true);
+    // foreach loop om alle specificaties te showen
     foreach ($specData as $specName => $specData) {
         echo "<td>" . "<p> <b>" . strtoupper($specName) . ":" . " </b><p>" . "</td>";
         echo "<td>" . strtoupper($specData) . "</td>";
@@ -111,7 +111,7 @@ include_once("config/connection.php");
     ?>
     <div class="detailbuttons">
     <button class="likebutton"> <img class="likebuttonimage" src="images/heart-regular.png" alt="wtf"></button>
-    <button class="chartbutton"> ADD TO CHART <img class="chartimage" src="images/shoppingCard.png" alt="wtf"></button>
+    <button class="chartbutton"> ADD TO CART <img class="chartimage" src="images/shoppingCard.png" alt="wtf"></button>
     </div>
     </div>
     </div>
