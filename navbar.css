@@ -105,6 +105,7 @@ input{
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
+    cursor: pointer;
 }
 #list1, #list2, #list3, #list4{
     transition: 0.4s ease-in-out;
@@ -164,8 +165,13 @@ a, ul{
     width: 30px;
     height: 30px;
     background-color: none;
+    cursor: pointer;
+}
+#tab4:hover {
+    cursor: pointer;
 }
 .tabs2{
+    cursor: pointer;
     filter: var(--imagefilterwhite);
     transition: 0.4s ease-in-out;
     text-align: center;
@@ -178,6 +184,7 @@ a, ul{
     background-color: none;
 
 }
+
 #dropdownicon4{
     display: none;
 }
