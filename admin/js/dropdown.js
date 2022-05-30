@@ -1,4 +1,3 @@
-
 function dropdown(number) {
     var dropdownnumber = 'dropdownicon' + number;
     var dropdownlist = 'list' + number;
@@ -14,10 +13,15 @@ function dropdown(number) {
     opacitychanger();
     function opacitychanger() {
         if(opacity<1) {
-            opacity = opacity + 0.01;
+            if(document.getElementById(tab).classList.contains('tabs2')) {
+                document.getElementById('tab4').style.filter  = 'none';
 
-            setInterval(opacitychanger,20)
+            }
+            opacity = opacity + 0.01;
+            document.getElementById(tab).style.color = 'black';
             document.getElementById(tab).style.backgroundColor = 'var(--blackorwhitebackground)';
+            document.getElementById(dropdownnumber).style.filter  = 'none';
+            setInterval(opacitychanger,20)
             document.getElementById(dropdownlist).style.opacity = opacity;
             document.getElementById(colorbottom).style.opacity = opacity;
         
@@ -32,10 +36,20 @@ function dropdown(number) {
         if(opacity>0) {
             opacity = opacity - 1;
             document.getElementById(dropdownlist).style.opacity = opacity;
+
+            if(!document.getElementById(tab).classList.contains('selectedtab')) {
+                document.getElementById(dropdownnumber).style.filter  = 'var(--imagefilterwhite)';
+                document.getElementById(tab).style.color = 'white';
+                document.getElementById(tab).style.backgroundColor = 'rgba(0, 0, 0, 0)';
+            }
+            if(document.getElementById(tab).classList.contains('tabs2')) {
+                document.getElementById('tab4').style.filter  = 'var(--imagefilterwhite)';
+
+            }
+
+            
             document.getElementById(colorbottom).style.opacity = opacity;
             setTimeout(() => {
-                document.getElementById(tab).style.backgroundColor = 'var(--bluebackgroundcolor)';
-                document.getElementById(tab).style.backgroundColor = 'none';
                 document.getElementById(dropdownlist).style.display = 'none';
                 document.getElementById(colorbottom).style.display = 'none';
                 console.log("close");

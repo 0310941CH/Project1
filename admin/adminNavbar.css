@@ -1,7 +1,7 @@
 :root {
     --bluebackgroundcolor: #05386B;
     --blackorwhitebackground: white;
-    --blackorwhitetextcolor: black;
+    --blackorwhitetextcolor: #282828;
     --imagefilterblack: invert(0%) sepia(90%) saturate(0%) hue-rotate(295deg) brightness(100%) contrast(101%);
     --imagefilterwhite: invert(97%) sepia(0%) saturate(7461%) hue-rotate(54deg) brightness(111%) contrast(101%);
     --imagefilterblue: invert(20%) sepia(34%) saturate(2363%) hue-rotate(185deg) brightness(89%) contrast(105%);
@@ -18,6 +18,9 @@ body {
 
 .dropdownicon {
     height: 7px;
+    filter: var(--imagefilterwhite);
+}
+.selecteddropdownicon {
     filter: var(--imagefilterblack);
 }
 
@@ -53,7 +56,6 @@ body {
     display: flex;
     flex-direction: column;
 }
-
 #search {
     position: absolute;
     right: 220px;
@@ -118,7 +120,12 @@ input{
 
 }
 a > li {
-    margin-bottom: 15px;
+    padding-bottom: 15px;
+    width: 200px;
+    background-color: var(--blackorwhitebackground);
+}
+.accountbuttons {
+    width: 125px;
 }
 
 a:link {
@@ -143,22 +150,23 @@ a, ul{
 }
 #colorbottom2 {
     padding: 5px 198px 15px 0px;
-    top: 160px;
+    top: 155px;
 }
 #colorbottom3{
     padding: 5px 236px 15px 0px;
-    top: 125px;
+    top: 120px;
 }
 #colorbottom4{
     padding: 5px 125px 15px 0px;
-    top: 125px;
+    top: 120px;
 }
 #tab4 {
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
     background-color: none;
 }
 .tabs2{
+    filter: var(--imagefilterwhite);
     transition: 0.4s ease-in-out;
     text-align: center;
     width: auto;
@@ -168,6 +176,7 @@ a, ul{
     margin-right: 5px;
     border-radius: 15px 15px 0px 0px;
     background-color: none;
+
 }
 #dropdownicon4{
     display: none;
@@ -186,7 +195,8 @@ nav {
 
 .notchlogo {
     display: flex;
-    margin-left: 20px;
+    margin-right: 125px;
+    margin-left: 80px;
     height: 40px;
     width: auto;
 }
@@ -196,7 +206,8 @@ nav {
     width: auto;
     padding: 5px 50px 15px 50px;
     margin-top: 26px;
-    border-radius: 15px 15px 0px 0px
+    border-radius: 15px 15px 0px 0px;
+    transition: 0.4s ease-in-out;
 }
 
 
@@ -207,17 +218,18 @@ nav {
 
 .middlenav {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 100%;
     align-items: center;
 }
 
 .tabs {
+    transition: 0.4s ease-in-out;
     text-align: center;
     width: auto;
     padding: 5px 50px 15px 50px;
     margin-top: 26px;
-    color: var(--blackorwhitetextcolor);
+    color: var(--blackorwhitebackground);
     border-radius: 15px 15px 0px 0px
 }
 .selectedtab {
@@ -229,15 +241,18 @@ nav {
 
     border-radius: 15px 15px 0px 0px
 }
-.tabs:hover {
-    background-color: var(--blackorwhitebackground);
-    color: var(--blackorwhitetextcolor);
-    transition: 0.4s ease-in-out;
-    
-}
+
+
 .search2:hover{
     cursor: pointer;
 }
 #searchimage{
     filter: var(--imagefilterblack);
 }
+@media screen and (max-width: 1260px) {
+    .buttons {
+        opacity: 0;
+        display: none;
+    }
+    
+    }
