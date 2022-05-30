@@ -49,7 +49,7 @@ include_once("config/connection.php");
             <p onclick="dropdown(3)" class="tabs" id="tab3">PC'S AND LAPTOPS <img src="images/caret-down-solidblack.png" alt="" class="dropdownicon " id="dropdownicon3"></p>
             <ul id="list3">
                     <a href="/pc.php"><li>PC</li></a>
-                    <a href="/laptops.php"><li>LAPTOPS</li></a>
+                    <a href="/laptop.php"><li>LAPTOPS</li></a>
                 </ul>
                 <div id="colorbottom3"></div>
             </div>
