@@ -1,6 +1,10 @@
 <?php
 session_start();
 include_once("../config/connection.php");
+if (!isset($_SESSION['loggedInAdmin'])) {
+    header("Location: ../adminlogin.php");
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,6 +25,8 @@ include_once("../config/connection.php");
     <?php include "../adminNavbarProduct.php" ?>
 
     <?php
+
+
     if (isset($_GET["sort"])) {
 
         if (strpos($_GET["sort"], 'nAsc') !== false) { // als $_GET["sort"] nAsc bevat dan..

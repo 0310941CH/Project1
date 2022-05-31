@@ -1,7 +1,10 @@
 <?php
 session_start();
 include_once("./config/connection.php");
-$id = $_SESSION['id'];
+if (isset($_SESSION['id'])) {
+    $id = $_SESSION['id'];
+    
+};   
 ?>
 
 <!DOCTYPE html>

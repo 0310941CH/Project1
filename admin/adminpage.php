@@ -1,10 +1,14 @@
 <?php
 session_start();
 include_once("./config/connection.php");
-
+if (!isset($_SESSION['loggedInAdmin'])) {
+    header("Location: adminlogin.php");
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,6 +18,7 @@ include_once("./config/connection.php");
     <script src="./js/dropdown.js"></script>
     <title>Admin Panel</title>
 </head>
+
 <body>
-<?php include "adminNavbar.php" ?>
+    <?php include "adminNavbar.php" ?>
 </body>

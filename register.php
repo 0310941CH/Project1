@@ -9,10 +9,13 @@ include_once('config/connection.php');
     <title>Register Page</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="navbar.css">
     <script defer src="js/searchbar.js"></script>
+    <script defer src="js/dropdown.js"></script>
 </head>
 
 <body>
+    <?php include "navbar.php"; ?>
     <?php
     $output = "";
     // Checked met eerste if of submit button ingedrukt is.
@@ -52,37 +55,6 @@ include_once('config/connection.php');
 
 
     ?>
-    <!-- nav bar -->
-    <nav>
-        <a href="index.php"><img src="images/notchLogo.png" class="notchlogo"></a>
-        <div class="middlenav">
-            <div class="buttons">
-                <p class="selectedtab tabs">COMPONENTS <img src="images/caret-down-solidblack.png" alt="" class="dropdownicon"></p>
-            </div>
-
-
-            <p class="tabs">PERIPHERALS <img src="images/caret-down-solidwhite.png" alt="" class="dropdownicon"></p>
-            <p class="tabs">PC'S AND LAPTOPS <img src="images/caret-down-solidwhite.png" alt="" class="dropdownicon"></p>
-        </div>
-        <div class="endnav">
-            <img class="xicon" src="images/xicon.png" alt="xicon" id="xicon" onclick="searchbarhider()">
-            <div id="divdiv">
-
-                <form class="search2" id="search2" onclick="searchbarshower()" method="get" action="search.php">
-
-                    <input type="text" class="searchinput" id="search" name="searchinput">
-                    <img src="images/blacksearch.png">
-                    <input type="submit" id="submitbutton">
-
-                </form>
-            </div>
-        </div>
-        <img src="images/dots.png" alt="options" class="icon">
-        <img src="images/register.png" class="icon">
-        <img src="images/shoppingCard.png" class="icon">
-        </div>
-
-    </nav>
     <!-- register form -->
     <div class="test">
         <div class="container">
