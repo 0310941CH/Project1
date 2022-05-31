@@ -1,9 +1,7 @@
 <?php
 session_start();
 include_once("../config/connection.php");
-
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,37 +9,105 @@ include_once("../config/connection.php");
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../adminpage.css">
+    <title>Notch | headset</title>
     <link rel="stylesheet" href="../adminNavbar.css">
-    <script src="../js/searchbar.js"></script>
+    <link rel="stylesheet" href="../styles/search.css">
+    <script defer src="../js/searchbar.js"></script>
+    <script src="../js/zoom.js"></script>
     <script src="../js/dropdown.js"></script>
-    <title>Admin Panel</title>
 </head>
 
 <body>
-<?php include "../adminNavbarProduct.php" ?>
-<?php // Showen productname & price & foto product?>
-<form action="adminDetail.php" method="POST">
+    <?php include "../adminNavbarProduct.php" ?>
+
     <?php
-    $stmt = $pdo->prepare('SELECT * FROM products WHERE subcategorie=:headset');
-    $stmt->execute([":headset" => 'headset']);
-    $data = $stmt->fetchAll();
-    echo "<div class=alignitems>";
-    foreach ($data as $product) {
-        echo "<div class=innerflex>";
-        echo "<img src='./images/" . $product['pictures'] . "' alt='productAfbeelding'" . "class = 'images' >" . "<br>";
-        echo "<div class='info'>";
-        echo "<input type=hidden value='$product[subcategorie]' name=subcat >";
-        echo $product["productname"] . "<br>";
-        echo "€" . $product["price"] . "<br>";
-        echo "<button type=submit value='$product[id]' name=id>Watch Details</button>";
-        echo "</div>";
-        echo "</div>";
+    if (isset($_GET["sort"])) {
+
+        if (strpos($_GET["sort"], 'nAsc') !== false) { // als $_GET["sort"] nAsc bevat dan..
+            $columnName = "productname";
+            $sortBy = "asc";
+        } else if (strpos($_GET["sort"], 'nDesc') !== false) {
+            $columnName = "productname";
+            $sortBy = "desc";
+        } else if (strpos($_GET["sort"], 'pDesc') !== false) {
+            $columnName = "price";
+            $sortBy = "desc";
+        } else if (strpos($_GET["sort"], 'pAsc') !== false) {
+            $columnName = "price";
+            $sortBy = "asc";
+        }
+    
+        // Output met toegepast filter
+        $stmt  = $pdo->prepare("SELECT * FROM products WHERE subcategorie = :scategorie ORDER BY $columnName $sortBy");
+        $stmt->execute(['scategorie' => "headset"]);
+        $data = $stmt->fetchAll();
+
+        // search order manieren
+        echo '<div class="sortproducts">';
+        if (count($data) != 0) {
+            echo '<a href="adminheadset.php?sort=nAsc"><button class ="orderbutton">ABC▲</button></a>
+        <a href="adminheadset.php?sort=nDesc"><button class ="orderbutton">ABC▼</button></a>
+        <a href="adminheadset.php?sort=pAsc"><button class ="orderbutton">€▲</button></a>
+        <a href="adminheadset.php?sort=pDesc"><button class ="orderbutton">€▼</button></a>';
+        }
+        echo '</div>';
+        echo '<form action="../adminDetail.php" method="POST">';
+        echo "<div class='productplace'>";
+        foreach ($data as $product) {
+            echo "<div class='productinner'>";
+            echo "<div class='imagesize'>";
+            echo "<img src='./images/" . $product['pictures'] . "' alt='productAfbeelding'" . "class='products'>" . "<br>";
+            echo "</div>" . "<br>";
+            echo "<div class='innerinfo'>";
+            echo $product["productname"] . "<br>";
+            echo "</div> " . "<br>";
+            echo "<div class='pricebutton'>";
+            echo "€ " . $product["price"];
+            echo "<br>";
+            echo "<a class='detailbutton' href='product.php?pid=" . $product["id"] . "'>Details</a>";
+            echo "<br>";
+            echo "<input type='submit' class='shopbutton' value='Add to cart'>";
+            echo "</div>";
+            echo "</div>";
+        }
+        echo "</form>";
+    } else {
+        // output zonder toegepast filter
+        $stmt  = $pdo->prepare("SELECT * FROM products WHERE subcategorie = :scategorie");
+        $stmt->execute(['scategorie' => "headset"]);
+        $data = $stmt->fetchAll();
+
+        // search order manieren
+        echo '<div class="sortproducts">';
+        if (count($data) != 0) {
+            echo '<a href="adminheadset.php?sort=nAsc"><button class ="orderbutton">ABC▲</button></a>
+        <a href="adminheadset.php?sort=nDesc"><button class ="orderbutton">ABC▼</button></a>
+        <a href="adminheadset.php?sort=pAsc"><button class ="orderbutton">€▲</button></a>
+        <a href="adminheadset.php?sort=pDesc"><button class ="orderbutton">€▼</button></a>';
+        }
+        echo '</div>';
+        echo '<form action="../adminDetail.php" method="POST">';
+        echo "<div class='productplace'>";
+        foreach ($data as $product) {
+            echo "<div class='productinner'>";
+            echo "<div class='imagesize'>";
+            echo "<img src='./images/" . $product['pictures'] . "' alt='productAfbeelding'" . "class='products'>" . "<br>";
+            echo "</div>" . "<br>";
+            echo "<div class='innerinfo'>";
+            echo $product["productname"] . "<br>";
+            echo "</div> " . "<br>";
+            echo "<div class='pricebutton'>";
+            echo "€ " . $product["price"];
+            echo "<br>";
+            echo "<button type=submit value='$product[id]' name=id>Watch Details</button>";
+            echo "<br>";
+            echo "</div>";
+            echo "</div>";
+        }
+        echo "</form>";
     }
     echo "</div>";
-
     ?>
-</form>
 </body>
 
 </html>

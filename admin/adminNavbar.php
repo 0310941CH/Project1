@@ -9,7 +9,7 @@
                     <a href="/admin/adminProducts/adminmotherboard.php"><li>MOTHERBOARD</li></a>
                     <a href="/admin/adminProducts/adminram.php"><li>RAM</li></a>
                     <a href="/admin/adminProducts/adminssd.php"><li>SSD</li></a>
-                    <a href="/admin/adminProducts/adminvent.php"><li>FANS</li></a>
+                    <a href="/admin/adminProducts/adminfans.php"><li>FANS</li></a>
                     <a href="/admin/adminProducts/adminpowersupply.php"><li>POWER SUPPLY</li></a>
                 </ul>
                 <div id="colorbottom1"></div>
