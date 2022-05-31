@@ -166,6 +166,7 @@ a, ul{
     width: 30px;
     height: 30px;
     background-color: none;
+    cursor: pointer;
 }
 .tabs2{
     filter: var(--imagefilterwhite);

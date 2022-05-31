@@ -49,7 +49,7 @@ include_once("config/connection.php");
             <p onclick="dropdown(3)" class="tabs" id="tab3">PC'S AND LAPTOPS <img src="images/caret-down-solidblack.png" alt="" class="dropdownicon " id="dropdownicon3"></p>
             <ul id="list3">
                     <a href="/pc.php"><li>PC</li></a>
-                    <a href="/laptops.php"><li>LAPTOPS</li></a>
+                    <a href="/laptop.php"><li>LAPTOPS</li></a>
                 </ul>
                 <div id="colorbottom3"></div>
             </div>
@@ -71,13 +71,13 @@ include_once("config/connection.php");
         <div class="buttons">
             <img onclick="dropdown(4)"  id="tab4" onclick="dropdown4()" src="images/register.png" alt="" class=" tabs2"> <img onclick="dropdown4()" src="images/caret-down-solidblack.png" alt="" class="dropdownicon " id="dropdownicon4">
             <ul id="list4">
-                    <a href="/cpu.php"><li class="accountbuttons">LOGIN</li></a>
+                    <a href="/login.php"><li class="accountbuttons">LOGIN</li></a>
                     <a href="/gpu.php"><li class="accountbuttons">DARKMODE</li></a>
                 </ul>
                 <div id="colorbottom4"></div>
             </div>
         </div>
-        <img src="images/shoppingCard.png" class="icon">
+        <a href="shoppingcart.php"><img src="images/shoppingCard.png" class="icon" ></a>
 
     </nav>
     <?php
@@ -96,12 +96,12 @@ include_once("config/connection.php");
         echo '<div class="line">';
         echo "</div>";
     }
-
-    $specData = json_decode($product['specificaties'], true);
     echo '<div class="productright">';
     echo "<h1>SPECIFICATIES</h1>";
     echo "<table>";
+    // JSON decode zodat je alle specs kan laten zien en showen
     $specData = json_decode($product['specificaties'], true);
+    // foreach loop om alle specificaties te showen
     foreach ($specData as $specName => $specData) {
         echo "<td>" . "<p> <b>" . strtoupper($specName) . ":" . " </b><p>" . "</td>";
         echo "<td>" . strtoupper($specData) . "</td>";
@@ -111,7 +111,7 @@ include_once("config/connection.php");
     ?>
     <div class="detailbuttons">
     <button class="likebutton"> <img class="likebuttonimage" src="images/heart-regular.png" alt="wtf"></button>
-    <button class="chartbutton"> ADD TO CHART <img class="chartimage" src="images/shoppingCard.png" alt="wtf"></button>
+    <button class="chartbutton"> ADD TO CART <img class="chartimage" src="images/shoppingCard.png" alt="wtf"></button>
     </div>
     </div>
     </div>
