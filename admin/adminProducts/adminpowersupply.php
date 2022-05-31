@@ -9,7 +9,7 @@ include_once("../config/connection.php");
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notch | CPU</title>
+    <title>Notch | powersupply</title>
     <link rel="stylesheet" href="../adminNavbar.css">
     <link rel="stylesheet" href="../styles/search.css">
     <script defer src="../js/searchbar.js"></script>
@@ -39,16 +39,16 @@ include_once("../config/connection.php");
     
         // Output met toegepast filter
         $stmt  = $pdo->prepare("SELECT * FROM products WHERE subcategorie = :scategorie ORDER BY $columnName $sortBy");
-        $stmt->execute(['scategorie' => "cpu"]);
+        $stmt->execute(['scategorie' => "powersupply"]);
         $data = $stmt->fetchAll();
 
         // search order manieren
         echo '<div class="sortproducts">';
         if (count($data) != 0) {
-            echo '<a href="admincpu.php?sort=nAsc"><button class ="orderbutton">ABC▲</button></a>
-        <a href="admincpu.php?sort=nDesc"><button class ="orderbutton">ABC▼</button></a>
-        <a href="admincpu.php?sort=pAsc"><button class ="orderbutton">€▲</button></a>
-        <a href="admincpu.php?sort=pDesc"><button class ="orderbutton">€▼</button></a>';
+            echo '<a href="adminpowersupply.php?sort=nAsc"><button class ="orderbutton">ABC▲</button></a>
+        <a href="adminpowersupply.php?sort=nDesc"><button class ="orderbutton">ABC▼</button></a>
+        <a href="adminpowersupply.php?sort=pAsc"><button class ="orderbutton">€▲</button></a>
+        <a href="adminpowersupply.php?sort=pDesc"><button class ="orderbutton">€▼</button></a>';
         }
         echo '</div>';
         echo '<form action="../adminDetail.php" method="POST">';
@@ -64,9 +64,8 @@ include_once("../config/connection.php");
             echo "<div class='pricebutton'>";
             echo "€ " . $product["price"];
             echo "<br>";
-            echo "<a class='detailbutton' href='product.php?pid=" . $product["id"] . "'>Details</a>";
+            echo "<button type='submit' class='detailbutton' name='id' value='$product[id]'>Details</button>";
             echo "<br>";
-            echo "<input type='submit' class='shopbutton' value='Add to cart'>";
             echo "</div>";
             echo "</div>";
         }
@@ -74,16 +73,16 @@ include_once("../config/connection.php");
     } else {
         // output zonder toegepast filter
         $stmt  = $pdo->prepare("SELECT * FROM products WHERE subcategorie = :scategorie");
-        $stmt->execute(['scategorie' => "cpu"]);
+        $stmt->execute(['scategorie' => "powersupply"]);
         $data = $stmt->fetchAll();
 
         // search order manieren
         echo '<div class="sortproducts">';
         if (count($data) != 0) {
-            echo '<a href="admincpu.php?sort=nAsc"><button class ="orderbutton">ABC▲</button></a>
-        <a href="admincpu.php?sort=nDesc"><button class ="orderbutton">ABC▼</button></a>
-        <a href="admincpu.php?sort=pAsc"><button class ="orderbutton">€▲</button></a>
-        <a href="admincpu.php?sort=pDesc"><button class ="orderbutton">€▼</button></a>';
+            echo '<a href="adminpowersupply.php?sort=nAsc"><button class ="orderbutton">ABC▲</button></a>
+        <a href="adminpowersupply.php?sort=nDesc"><button class ="orderbutton">ABC▼</button></a>
+        <a href="adminpowersupply.php?sort=pAsc"><button class ="orderbutton">€▲</button></a>
+        <a href="adminpowersupply.php?sort=pDesc"><button class ="orderbutton">€▼</button></a>';
         }
         echo '</div>';
         echo '<form action="../adminDetail.php" method="POST">';

@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once("../config/connection.php");
+include_once("./config/connection.php");
 $id = $_SESSION['id'];
 ?>
 
