@@ -1,6 +1,12 @@
 <?php
 session_start();
 include_once("./config/connection.php");
+if ($_SESSION['loggedInAdmin'] == 1) {
+    
+} else {
+    header("Location: adminlogin.php");
+    exit();
+}
 if (isset($_SESSION['id'])) {
     $id = $_SESSION['id'];
     
