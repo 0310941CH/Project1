@@ -1,7 +1,9 @@
 <?php
 session_start();
 include_once("../config/connection.php");
-if (!isset($_SESSION['loggedInAdmin'])) {
+if ($_SESSION['loggedInAdmin'] == 1) {
+    
+} else {
     header("Location: ../adminlogin.php");
     exit();
 }

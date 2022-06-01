@@ -43,7 +43,7 @@ include_once("./config/connection.php");
                     $passwordCheck = password_verify($_POST["password"], $user["passwords"]);
 
                     if ($passwordCheck == true) {
-                        $_SESSION["loggedInAdmin"] = $user["id"];
+                        $_SESSION["loggedInAdmin"] = 1;
                         header("Location: adminpage.php");
                         exit(0);
                     } else {
