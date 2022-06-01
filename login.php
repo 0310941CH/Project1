@@ -11,7 +11,7 @@ include_once("config/connection.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notch | Login</title>
     <link rel="stylesheet" href="navbar.css">
-    <link rel="stylesheet" href="search.css">
+    <link rel="stylesheet" href="loginRegister.css">
     <script defer src="js/searchbar.js"></script>
     <script src="js/zoom.js"></script>
     <script src="js/dropdown.js"></script>

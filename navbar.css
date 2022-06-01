@@ -19,6 +19,7 @@ body {
 .dropdownicon {
     height: 7px;
     filter: var(--imagefilterwhite);
+    transition: ease-in-out;
 }
 .selecteddropdownicon {
     filter: var(--imagefilterblack);

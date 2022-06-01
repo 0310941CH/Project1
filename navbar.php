@@ -1,3 +1,11 @@
+<?php
+
+if (!isset($_SESSION["shoppingcart"])) {
+    $_SESSION["shoppingcart"] = array();
+}
+
+include_once("config/connection.php");
+?>
     <nav>
         <a href="index.php"><img src="images/notchLogo.png" class="notchlogo"></a>
         <div class="middlenav">
