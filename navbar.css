@@ -36,8 +36,24 @@ body {
     margin-right: 10px;
     padding: 5px;
 }
+.cart {
+    position: relative;
+}
 
-
+.cartproducts {
+    background-color: #FC0F6E;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    z-index: 3;
+    opacity: 85%;
+    position: absolute;
+    bottom: 15px;
+    left: 30px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+}
 
 .search2,
 .xicon {

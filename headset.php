@@ -22,7 +22,7 @@ include_once("config/connection.php");
     <?php
     if (isset($_GET["sort"])) {
     
-    if (strpos($_GET["sort"], 'nAsc') !== false) { // als $_GET["sort"] nAsc bevat dan..
+    if (strpos($_GET["sort"], 'nAsc') !== false) { // if $_GET["sort"] nAsc includes then..
         $columnName = "productname";
         $sortBy = "asc";
     } else if (strpos($_GET["sort"], 'nDesc') !== false) {
@@ -36,7 +36,7 @@ include_once("config/connection.php");
         $sortBy = "asc";
     }
 
-    // Output met toegepast filter
+    // Output with added filter
     $stmt  = $pdo->prepare("SELECT * FROM products WHERE subcategorie = :scategorie ORDER BY $columnName $sortBy");
     $stmt->execute(['scategorie' => "headset"]);
     $data = $stmt->fetchAll();
@@ -70,12 +70,12 @@ include_once("config/connection.php");
         echo "</div>";
     }
     } else {
-    // output zonder toegepast filter
+    // output without added filter
     $stmt  = $pdo->prepare("SELECT * FROM products WHERE subcategorie = :scategorie");
     $stmt->execute(['scategorie' => "headset"]);
     $data = $stmt->fetchAll();
 
-    // search order manieren
+    // search order options
     echo '<div class="sortproducts">';
     if (count($data) != 0) {
         echo '<a href="headset.php?sort=nAsc"><button class ="orderbutton">ABC▲</button></a>

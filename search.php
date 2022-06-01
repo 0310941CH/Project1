@@ -21,11 +21,11 @@ include_once("config/connection.php");
     <?php include "navbar.php" ?>
     <?php
     if (isset($_GET["searchinput"])) {
-        // Variables nodig voor werking
+        // Variables needed for running code
         $search = $_GET["searchinput"];
         if (isset($_GET["sort"])) {
 
-            if (strpos($_GET["sort"], 'nAsc') !== false) { // als $_GET["sort"] nAsc bevat dan..
+            if (strpos($_GET["sort"], 'nAsc') !== false) { // if $_GET["sort"] nAsc includes then..
                 $columnName = "productname";
                 $sortBy = "asc";
             } else if (strpos($_GET["sort"], 'nDesc') !== false) {
@@ -45,7 +45,7 @@ include_once("config/connection.php");
             $stmt->execute(['pname' => "%$search%", 'mcategorie' => "%$search%", 'scategorie' => "%$search%"]);
             $data = $stmt->fetchAll();
 
-            // search order manieren
+            // search order options
             echo '<div class="results">';
             echo count($data) . ' results for ' . $search . '';
             echo '</div>';
@@ -77,14 +77,14 @@ include_once("config/connection.php");
                 echo "</div>";
             }
         } else {
-            // Search output zonder toegepast filter
+            // Search output without added filter
             $_SESSION["search"] = $_GET["searchinput"];
             $search = $_SESSION["search"];
             $stmt  = $pdo->prepare("SELECT * FROM products WHERE productname LIKE :pname OR maincategorie LIKE :mcategorie OR subcategorie LIKE :scategorie");
             $stmt->execute(['pname' => "%$search%", 'mcategorie' => "%$search%", 'scategorie' => "%$search%"]);
             $data = $stmt->fetchAll();
 
-            // search order manieren
+            // search order options
             echo '<div class="results">';
             echo count($data) . ' results for ' . $search . '';
             echo '</div>';
