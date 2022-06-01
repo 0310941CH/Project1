@@ -39,6 +39,7 @@
     width: 200px;
     border-radius: 15px;
     border-color: #05386B;
+    background-color: white;
 }
 .shopbutton:hover {
     background-color:#244362 ;
