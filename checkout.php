@@ -7,11 +7,8 @@ if (!isset($_SESSION["shoppingcart"])) {
 
 include_once("config/connection.php");
 
-if (!isset($_SESSION["loggedInUser"])) {
-    // isn't logged in, redirect to login.php
-    header("location: login.php");
-    exit(0);
-}
+header("refresh:8;url=index.php");
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,22 +24,17 @@ if (!isset($_SESSION["loggedInUser"])) {
     <script defer src="js/searchbar.js"></script>
     <script src="js/zoom.js"></script>
     <script src="js/dropdown.js"></script>
-    <script src="js/cart.js"></script>
 </head>
 
 <body>
     <?php include "navbar.php" ?>
     <div class="centertext">
-        <h1>Order processing</h1>
-        <p>Your payment is processing, aanvulling</p>
+        <h1>We have no way of processing your payment</h1>
+        <p>We can't process your payment, your cart will be emptied and you will be redirected to the index.</p>
         <div>
 
             <?php
-            if (isset($_SESSION["loggedInUser"])) {
-            } else {
-                header("Location: login.php");
-                exit(0);
-            }
+            unset($_SESSION["shoppingcart"]); // unset it to empty, redirect to index.php to set a empty session again
             ?>
 </body>
 
