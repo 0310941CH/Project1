@@ -38,14 +38,14 @@ include_once("config/connection.php");
         <p class="amount">AMOUNT</p>
         <p class="righttext">PRICE</p>
         </div>';
-
+        $loop = 0;
         foreach ($_SESSION["shoppingcart"] as $id) {
             $stmt  = $pdo->prepare("SELECT * FROM products WHERE id = :pid");
             $stmt->execute(['pid' => $id]);
             $data = $stmt->fetchAll();
-
             foreach ($data as $product) {
-                echo '<form method="POST">';
+                $loop = $loop + 1;
+                echo '<form method="POST" action="checkout.php">';
                 echo '<input type="hidden" name="productid" value="' . $product["id"] . '">';
                 echo '<div class="firstrowshop">';
                 echo '<div class="productandimage">';
@@ -54,9 +54,9 @@ include_once("config/connection.php");
                 echo "<a href='delete_cart.php?pid=" . $product["id"] . "'><img src='images/trash.png' class='binicon'></a>";
                 echo '</div>';
                 echo '<div class="plusminbutton">';
-                echo '<button type="button" class="plusbutton" onclick="cartDown()">-</button>';
-                echo '<input type="number" class="quantity" id="quantity" min="1" max="10" value="1">';
-                echo '<button type="button" class="minbutton" onclick="cartUp()">+</button></div>'; // Buttons to substract and add to the quantity of a product
+                echo '<button type="button" class="plusbutton" onclick="cartDown('. $loop .')">-</button>';
+                echo '<input type="number" class="quantity" id="quantity'. $loop .'" min="1" max="10" value="1">';
+                echo '<button type="button" class="minbutton" onclick="cartUp('. $loop .')">+</button></div>'; // Buttons to substract and add to the quantity of a product
                 echo '<p class="righttext"><input type="text" class="inputtext" readonly="readonly" value="€ ' . $product["price"] . '"/></p></div>';
                 $total += $product["price"];
             }

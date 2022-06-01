@@ -1,7 +1,11 @@
-function cartUp() {
-    document.getElementById("quantity").stepUp();
+function cartUp(number) {
+    var quantity = "quantity" + number;
+    console.log(quantity)
+    document.getElementById(quantity).stepUp();
 }
 
-function cartDown() {
-    document.getElementById("quantity").stepDown();
+function cartDown(number) {
+    var quantity = "quantity" + number;
+    console.log(quantity)
+    document.getElementById(quantity).stepDown();
 }
