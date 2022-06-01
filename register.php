@@ -18,12 +18,12 @@ include_once('config/connection.php');
     <?php include "navbar.php" ?>
     <?php
     $output = "";
-    // Checked met eerste if of submit button ingedrukt is.
+    // Checks with first if if submit button is pushed.
     if (isset($_POST['submitLogin'])) {
-        // Checked of de input velden ingevuld zijn zo ja gaat die door het naar de database pushen.
+        // Checks if the input fields are filled , if so it pushes to the database.
         if ($_POST['voornaam'] != "" && $_POST['achternaam'] != "" && $_POST['username'] != "" && $_POST['password'] != "" && $_POST['confirmpassword'] != "") {
             if ($_POST['password'] == $_POST['confirmpassword']) {
-                // Verifying if password reaches te goals of th secure password.
+                // Verifying if password reaches te goals of the secure password.
                 $uppercase = preg_match('@[A-Z]@', $_POST['password']);
                 $lowercase = preg_match('@[a-z]@', $_POST['password']);
                 $number    = preg_match('@[0-9]@', $_POST['password']);
@@ -36,7 +36,7 @@ include_once('config/connection.php');
                     //Password Encryption
                     $hash = password_hash($passwordCommit, PASSWORD_DEFAULT);
 
-                    // PDO Gedeelte
+                    // PDO part
                     try {
                         $query = 'INSERT INTO users (voornaam, achternaam, username, passwords) VALUES (:vname, :aname, :uname, :pswrd)';
                         $values = [':vname' => $firstname, ':aname' => $surname, ':uname' => $username, ':pswrd' => $hash];

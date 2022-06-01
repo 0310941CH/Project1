@@ -1,6 +1,6 @@
 <?php
-/* Deze page alleen openen als je alle producten wilt toevoegen aan de database van de table products.
-Anders afblijven van deze pagina. */
+/*Open this page only if you want to added all products to the database of the table products, 
+otherwise don't touch this code. */
 $host = 'localhost';
 $db   = 'notch';
 $user = 'bit_academy';

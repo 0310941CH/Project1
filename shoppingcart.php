@@ -20,7 +20,7 @@
 <p class="amount">AMOUNT</p>
 <p>PRICE</p>
 </div>
-<!---- voorbeeld1 ---->
+<!---- example1 ---->
     <div class="firstrowshop">
         <div class="productandimage">
 <img class="imageshop" src="/images/cpu1.jpg" alt="">
@@ -34,7 +34,7 @@
 </div>
 <p>€5,75</p>
     </div>
-<!---- voorbeeld1 ---->
+<!---- example2 ---->
 <div class="firstrowshop">
         <div class="productandimage">
 <img class="imageshop" src="/images/cpu1.jpg" alt="">
@@ -48,7 +48,7 @@
 </div>
 <p>€5,75</p>
     </div>
-    <!---- voorbeeld1 ---->
+    <!---- example3 ---->
     <div class="firstrowshop">
         <div class="productandimage">
 <img class="imageshop" src="/images/cpu1.jpg" alt="">
@@ -62,7 +62,7 @@
 </div>
 <p>€5,75</p>
     </div>
-    <!----Total en Price ---->
+    <!----Total and Price ---->
     <div class="topshop">
 <p class="amount">PRODUCTS</p>
 <p class="amount">3</p>
