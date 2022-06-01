@@ -88,7 +88,9 @@ include_once("config/connection.php");
                 <a href="/admin/adminlogin.php">
                     <li class="accountbuttons">BEHEERDER</li>
                 </a>
-                <li class="accountbuttons">DARKMODE</li>
+
+                    <li class="accountbuttons">DARKMODE</li>
+                
             </ul>
             <div id="colorbottom4"></div>
         </div>
