@@ -59,7 +59,7 @@ include_once("config/connection.php");
             <h2 class="logintext">LOGIN PAGE <img src="images/lock.png" class="lock"></h2>
             <form method="POST">
                 <div class="loginform">
-                    <input class="inputlogin" type="text" id="username" name="username" placeholder="USERNAME">
+                    <input class="inputlogin" type="text" id="username"  <?php if (!empty($_POST["username"])) { echo 'value="' . $_POST["username"] . '"' ; $_SESSION['username'] = $_POST["username"];}  elseif (!empty($_SESSION['username'])) { echo 'value="' . $_SESSION['username'] . '"' ;}?> name="username" placeholder="USERNAME">
                     <input class="inputlogin" type="password" id="password" name="password" placeholder="PASSWORD">
                 </div>
                 <input class="login" type="submit" name="submitLogin" value="LOGIN">

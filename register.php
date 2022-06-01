@@ -28,7 +28,7 @@ include_once('config/connection.php');
                 $lowercase = preg_match('@[a-z]@', $_POST['password']);
                 $number    = preg_match('@[0-9]@', $_POST['password']);
                 $specialChars = preg_match('@[^\w]@', $_POST['password']);
-                if ($uppercase && $lowercase && $number && $specialChars && strlen($password) < 5) {
+                if ($uppercase && $lowercase && $number && $specialChars && strlen($_POST['password']) > 5) {
                     $firstname = $_POST['voornaam'];
                     $surname = $_POST['achternaam'];
                     $username = $_POST['username'];
@@ -39,12 +39,14 @@ include_once('config/connection.php');
                     // PDO Gedeelte
                     try {
                         $query = 'INSERT INTO users (voornaam, achternaam, username, passwords) VALUES (:vname, :aname, :uname, :pswrd)';
-                        $values = [':vname' => $voornaam, ':aname' => $achternaam, ':uname' => $username, ':pswrd' => $hash];
+                        $values = [':vname' => $firstname, ':aname' => $surname, ':uname' => $username, ':pswrd' => $hash];
 
 
                         $execute = $pdo->prepare($query);
                         $execute->execute($values);
                         header('Location: login.php');
+                        session_start();
+                        $_SESSION['username'] = $_POST['username'];
                         exit();
                     } catch (PDOException $e) {
                         $output = "This username is already in use!";
@@ -68,9 +70,9 @@ include_once('config/connection.php');
             <h2 class="logintext">Apply here</h2>
             <form action="" method="POST">
                 <div class="loginform">
-                    <input class="inputlogin" type="text" name="voornaam" placeholder="FIRSTNAME">
-                    <input class="inputlogin" type="text" name="achternaam" placeholder="SURNAME">
-                    <input class="inputlogin" type="text" name="username" placeholder="USERNAME">
+                    <input class="inputlogin" type="text" <?php if (!empty($_POST["voornaam"])) { echo 'value="' . $_POST["voornaam"] . '"' ;}?>  name="voornaam" placeholder="FIRSTNAME">
+                    <input class="inputlogin" type="text" <?php if (!empty($_POST["achternaam"])) { echo 'value="' . $_POST["achternaam"] . '"' ;}?> name="achternaam" placeholder="SURNAME">
+                    <input class="inputlogin" type="text" <?php if (!empty($_POST["username"])) { echo 'value="' . $_POST["username"] . '"' ;}?> name="username" placeholder="USERNAME">
                     <input class="inputlogin" type="password" name="password" placeholder="PASSWORD">
                     <input class="inputlogin" type="password" name="confirmpassword" placeholder="CONFIRM PASSWORD">
                 </div>
