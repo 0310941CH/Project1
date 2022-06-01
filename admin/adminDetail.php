@@ -30,7 +30,7 @@ if (isset($_POST['id'])) {
 <body>
 <?php include "./adminNavbar.php" ?>
     <?php
-    // Createn van specs
+    // Loading the specs when looking at the id of the product loads that row. 
     $stmt = $pdo->prepare('SELECT * FROM products WHERE id=:id');
     $stmt->execute([":id" => $id]);
     $data = $stmt->fetchAll();
@@ -45,13 +45,13 @@ if (isset($_POST['id'])) {
         echo '<div class="line">';
         echo "</div>";
     }
-
+    // Letting all specs showing in a table
     echo '<div class="productright">';
     echo "<h1>SPECIFICATIES</h1>";
     echo "<table>";
     $specData = json_decode($product['specificaties'], true);
         foreach ($specData as $specName => $specData) {
-            echo "<td>" . "<p> <b>" . strtoupper($specName) . ":" . " </b><p>" . "</td>";
+            echo "<td>" . "<p> <b>" . strtoupper($specName) . ":" . " </b><p>" . "</td>"; // strtoupper is making it all caps
             echo "<td>" . strtoupper($specData) . "</td>";
             echo "</tr>";
         };

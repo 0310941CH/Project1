@@ -1,6 +1,7 @@
 <?php
 session_start();
 include_once("./config/connection.php");
+// Checking if admin is logged in otherwise sending it back to adminlogin.php
 if ($_SESSION['loggedInAdmin'] == 1) {
     
 } else {

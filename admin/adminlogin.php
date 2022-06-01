@@ -24,7 +24,7 @@ include_once("./config/connection.php");
     if (isset($_POST["submitLogin"])) {
             $username = $_POST["username"];
             $password = $_POST["password"];
-
+        // Checking if password is not a blank string
             if ($username != "" && $password != "") {
                 $login = "SELECT * FROM users WHERE username=:username AND rank=:rank";
                 $prepare = $pdo->prepare($login);
@@ -36,12 +36,12 @@ include_once("./config/connection.php");
 
                 $prepare->execute($data);
                 $user = $prepare->fetch(PDO::FETCH_ASSOC);
-
+                // Checking username when false you get a message. If right goes further with checking password.
                 if ($user === false) {
                     $output = "This isn't a valid admin login!";
                 } else {
                     $passwordCheck = password_verify($_POST["password"], $user["passwords"]);
-
+                    // If password is true it sends you to the admin homepage.
                     if ($passwordCheck == true) {
                         $_SESSION["loggedInAdmin"] = 1;
                         header("Location: adminpage.php");
@@ -69,6 +69,7 @@ include_once("./config/connection.php");
         </div>
 
         <BR></BR>
+        <!-- echos when there is a wrong input when logging in.  -->
         <?php echo '<p class="fout" >' . $output . "</p>" ?>
     </div>
 

@@ -1,6 +1,7 @@
 <?php
 session_start();
 include_once("../config/connection.php");
+// Checking if hes signed in with a valid admin account otherwise redirect to the login page. 
 if ($_SESSION['loggedInAdmin'] == 1) {
     
 } else {
@@ -31,7 +32,7 @@ if ($_SESSION['loggedInAdmin'] == 1) {
 
     if (isset($_GET["sort"])) {
 
-        if (strpos($_GET["sort"], 'nAsc') !== false) { // als $_GET["sort"] nAsc bevat dan..
+        if (strpos($_GET["sort"], 'nAsc') !== false) {
             $columnName = "productname";
             $sortBy = "asc";
         } else if (strpos($_GET["sort"], 'nDesc') !== false) {
@@ -45,12 +46,12 @@ if ($_SESSION['loggedInAdmin'] == 1) {
             $sortBy = "asc";
         }
     
-        // Output met toegepast filter
+        // Output with filter
         $stmt  = $pdo->prepare("SELECT * FROM products WHERE subcategorie = :scategorie ORDER BY $columnName $sortBy");
         $stmt->execute(['scategorie' => "cpu"]);
         $data = $stmt->fetchAll();
 
-        // search order manieren
+        // search order methods
         echo '<div class="sortproducts">';
         if (count($data) != 0) {
             echo '<a href="admincpu.php?sort=nAsc"><button class ="orderbutton">ABC▲</button></a>
@@ -79,12 +80,12 @@ if ($_SESSION['loggedInAdmin'] == 1) {
         }
         echo "</form>";
     } else {
-        // output zonder toegepast filter
+        // output without filter
         $stmt  = $pdo->prepare("SELECT * FROM products WHERE subcategorie = :scategorie");
         $stmt->execute(['scategorie' => "cpu"]);
         $data = $stmt->fetchAll();
 
-        // search order manieren
+        // search order methods
         echo '<div class="sortproducts">';
         if (count($data) != 0) {
             echo '<a href="admincpu.php?sort=nAsc"><button class ="orderbutton">ABC▲</button></a>

@@ -1,6 +1,7 @@
 <?php
 session_start();
 include_once("./config/connection.php");
+// Checked if admin is logged in. Otherwise send back to adminlogin.php
 if ($_SESSION['loggedInAdmin'] == 1) {
     
 } else {
@@ -40,7 +41,8 @@ if (isset($_SESSION['id'])) {
     echo "<th>" . "<h1>" . "Specificaties" . "</h2>" . "</th>";
     echo "<tr>";
     foreach ($data as $product) {
-        // NAMEN MOETEN NOG GEGEVEN WORDEN VOOR DAT UPDATE TESTEN!!!!!!!
+        // This is pure the frontEnd for the Update statement with alle name to make the post. 
+        // And values given in the input fields to see what needs to be updated.
         echo "<div class=innerflex>";
         echo "<div class='info'>";
         echo "<form method=POST action='adminUpdateBack.php'>";
@@ -49,7 +51,8 @@ if (isset($_SESSION['id'])) {
         echo "</div>";
         echo "</div>";
     }
-
+    //This shows for every product the specs. with every spec_type there is a if statement because of the different specifications.
+    // And sending further to adminUpdateBack.php to get the UPdate statement used and sending instant back to adminDetail.php
     $specData = json_decode($product['specificaties'], true);
     if ($specData['specs_type'] == "cpu") {
         echo "<tr>" . "<td>" . "Spec Type" . "</td>" . "<td>" . $specData['specs_type'] . "</td>" . "</tr>";

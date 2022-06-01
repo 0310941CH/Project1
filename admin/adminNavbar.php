@@ -1,3 +1,6 @@
+<?php
+// Navbar for the other admin pages.
+?>
 <nav>   
         <a href="index.php"><img src="./navbarimages/notchLogo.png" class="notchlogo"></a>
         <div class="middlenav">
