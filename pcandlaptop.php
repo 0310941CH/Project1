@@ -9,7 +9,7 @@ include_once("config/connection.php");
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notch | Power supply unit</title>
+    <title>Notch | PC & Laptop</title>
     <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="search.css">
     <script defer src="js/searchbar.js"></script>
@@ -37,17 +37,17 @@ include_once("config/connection.php");
         }
 
         // Output with added filter
-        $stmt  = $pdo->prepare("SELECT * FROM products WHERE subcategorie = :scategorie ORDER BY $columnName $sortBy");
-        $stmt->execute(['scategorie' => "voeding"]);
+        $stmt  = $pdo->prepare("SELECT * FROM products WHERE maincategorie = :mcategorie ORDER BY $columnName $sortBy");
+        $stmt->execute(['mcategorie' => "pcLaptop"]);
         $data = $stmt->fetchAll();
 
         // search order options
         echo '<div class="sortproducts">';
         if (count($data) != 0) {
-            echo '<a href="psu.php?sort=nAsc"><button class ="orderbutton">ABC▲</button></a>
-        <a href="psu.php?sort=nDesc"><button class ="orderbutton">ABC▼</button></a>
-        <a href="psu.php?sort=pAsc"><button class ="orderbutton">€▲</button></a>
-        <a href="psu.php?sort=pDesc"><button class ="orderbutton">€▼</button></a>';
+            echo '<a href="pcandlaptop.php?sort=nAsc"><button class ="orderbutton">ABC▲</button></a>
+        <a href="pcandlaptop.php?sort=nDesc"><button class ="orderbutton">ABC▼</button></a>
+        <a href="pcandlaptop.php?sort=pAsc"><button class ="orderbutton">€▲</button></a>
+        <a href="pcandlaptop.php?sort=pDesc"><button class ="orderbutton">€▼</button></a>';
         }
         echo '</div>';
 
@@ -65,23 +65,23 @@ include_once("config/connection.php");
             echo "<br>";
             echo "<a class='detailbutton' href='product.php?pid=" . $product["id"] . "'>Details</a>";
             echo "<br>";
-            echo "<a class='shopbutton' href='cart_add.php?id=" . $product["id"] . "&&page=psu.php'>Add to cart</a>";
+            echo "<input type='submit' class='shopbutton' value='Add to cart'>";
             echo "</div>";
             echo "</div>";
         }
     } else {
         // output without added filter
-        $stmt  = $pdo->prepare("SELECT * FROM products WHERE subcategorie = :scategorie");
-        $stmt->execute(['scategorie' => "voeding"]);
+        $stmt  = $pdo->prepare("SELECT * FROM products WHERE maincategorie = :mcategorie");
+        $stmt->execute(['mcategorie' => "pcLaptop"]);
         $data = $stmt->fetchAll();
 
         // search order options
         echo '<div class="sortproducts">';
         if (count($data) != 0) {
-            echo '<a href="psu.php?sort=nAsc"><button class ="orderbutton">ABC▲</button></a>
-        <a href="psu.php?sort=nDesc"><button class ="orderbutton">ABC▼</button></a>
-        <a href="psu.php?sort=pAsc"><button class ="orderbutton">€▲</button></a>
-        <a href="psu.php?sort=pDesc"><button class ="orderbutton">€▼</button></a>';
+            echo '<a href="pcandlaptop.php?sort=nAsc"><button class ="orderbutton">ABC▲</button></a>
+        <a href="pcandlaptop.php?sort=nDesc"><button class ="orderbutton">ABC▼</button></a>
+        <a href="pcandlaptop.php?sort=pAsc"><button class ="orderbutton">€▲</button></a>
+        <a href="pcandlaptop.php?sort=pDesc"><button class ="orderbutton">€▼</button></a>';
         }
         echo '</div>';
 
@@ -89,7 +89,7 @@ include_once("config/connection.php");
         foreach ($data as $product) {
             echo "<div class='productinner'>";
             echo "<div class='imagesize'>";
-            echo "<img src='/images/" . $product['pictures'] . "' alt='productAfbeelding'" . "class='products'>" . "<br>";
+            echo "<img src='/images/" . $product['pictures'] . "' alt='productImage'" . "class='products'>" . "<br>";
             echo "</div>" . "<br>";
             echo "<div class='innerinfo'>";
             echo $product["productname"] . "<br>";
@@ -99,7 +99,7 @@ include_once("config/connection.php");
             echo "<br>";
             echo "<a class='detailbutton' href='product.php?pid=" . $product["id"] . "'>Details</a>";
             echo "<br>";
-            echo "<a class='shopbutton' href='cart_add.php?id=" . $product["id"] . "&&page=psu.php'>Add to cart</a>";
+            echo "<input type='submit' class='shopbutton' value='Add to cart'>";
             echo "</div>";
             echo "</div>";
         }

@@ -1,91 +1,3 @@
-/* Login & Register*/
-.loginform {
-    background-color: #05386B;
-    border-radius: 40px 40px 29px 29px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 35px;
-    width: 350px;
-    padding-bottom: 35px;
-
-}
-
-.container {
-    background-color: #05386B;
-    border-radius: 40px 40px 27px 27px;
-    margin-top: 120px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.gray {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 3px;
-}
-
-.inputlogin {
-    width: 300px;
-    height: 25px;
-    text-align: center;
-    background-color: #f5f5f5;
-    border: none;
-    border-radius: 25px;
-}
-
-.test {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-
-
-
-.login {
-
-    width: 350px;
-    border: none;
-    height: 62PX;
-    border-radius: 0 0 25px 25px;
-    font-family: Segoe UI, Frutiger, Frutiger Linotype, Dejavu Sans, Helvetica Neue, Arial, sans-serif;
-}
-
-input[type=submit] {
-    font-family: Segoe UI, Frutiger, Frutiger Linotype, Dejavu Sans, Helvetica Neue, Arial, sans-serif;
-    font-weight: bold;
-}
-
-.gray {
-    color: #707070;
-}
-
-.fout {
-    color: red;
-    font-weight: bold;
-}
-
-/* Body */
-body {
-    background-color: white;
-    font-family: Segoe UI, Frutiger, Frutiger Linotype, Dejavu Sans, Helvetica Neue, Arial, sans-serif;
-    font-size: 14px;
-    margin: 0;
-    padding: 0;
-}
-
-/* Navbar */
-.lock {
-    height: 18px;
-    width: auto;
-}
-
-
 /* Search pagina */
 .products {
     display: flex;
@@ -127,6 +39,7 @@ body {
     width: 200px;
     border-radius: 15px;
     border-color: #05386B;
+    background-color: white;
 }
 .shopbutton:hover {
     background-color:#244362 ;
@@ -181,6 +94,8 @@ body {
     flex-direction: column;
     padding: 5px;
 }
+
+/* order buttons  */
 .orderbutton {
     background-color: #05386B;
     border-color: #05386B;
@@ -195,9 +110,7 @@ body {
     border-color: #244362;
     cursor: pointer;
 }
-.logintext {
-    color: white;
-}
+/* detail buttons  */
 .detailbutton {
     display: flex;
     justify-content: center;
