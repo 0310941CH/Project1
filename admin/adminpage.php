@@ -2,12 +2,7 @@
 session_start();
 include_once("./config/connection.php");
 // Checking if admin is logged in otherwise sending it back to adminlogin.php
-if ($_SESSION['loggedInAdmin'] == 1) {
-    
-} else {
-    header("Location: adminlogin.php");
-    exit();
-}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,4 +19,8 @@ if ($_SESSION['loggedInAdmin'] == 1) {
 
 <body>
     <?php include "adminNavbar.php" ?>
+
+    <form method="POST" action="adminCreate.php">
+        <button type="submit" class="button" name="submitCreate">Create a new product</button>
+    </form>
 </body>

@@ -48,8 +48,8 @@
         <div class="buttons">
             <img onclick="dropdown(4)"  id="tab4" onclick="dropdown4()" src="./navbarimages/register.png" alt="" class=" tabs2"> <img onclick="dropdown4()" src="./navbarimages/caret-down-solidblack.png" alt="" class="dropdownicon " id="dropdownicon4">
             <ul id="list4">
-                    <a href="/login.php"><li class="accountbuttons">LOGIN</li></a>
-                    <li class="accountbuttons">DARKMODE</li>
+                    <a href="/login.php"><li class="accountbuttons">LOGIN</li></a> 
+                    <a href="./adminlogin.php"><li class="accountbuttons">ADMIN</li></a>
                 </ul>
                 <div id="colorbottom4"></div>
             </div>
