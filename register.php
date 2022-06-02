@@ -17,7 +17,7 @@ include_once('config/connection.php');
 </head>
 
 <body>
-    <?php include "navbar.php" ?>
+
     <?php
     $output = "";
     // Checks with first if if submit button is pushed.
@@ -64,6 +64,7 @@ include_once('config/connection.php');
 
     $tabselect = 4;
     ?>
+        <?php include "navbar.php" ?>
     <!-- register form -->
     <div class="test">
         <div class="container">

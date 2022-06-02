@@ -19,7 +19,7 @@ include_once("config/connection.php");
 </head>
 
 <body>
-    <?php include "navbar.php" ?>
+
     <?php
     $output = "";
     if (isset($_POST["submitLogin"])) { //Controleer of submitLogin geset is.
@@ -55,6 +55,7 @@ include_once("config/connection.php");
         }
     }
     ?>
+        <?php include "navbar.php" ?>
 <div class="test">
         <div class="container">
             <h2 class="logintext">LOGIN PAGE <img src="images/lock.png" class="lock"></h2>
