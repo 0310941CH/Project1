@@ -5,5 +5,5 @@ session_start();
 if (!in_array($_GET['id'], $_SESSION['shoppingcart'])) {
     array_push($_SESSION['shoppingcart'], $_GET['id']);
 }
-
+$_SESSION['lastid'] = $_GET['id'];
 header("Location:" . $_GET['page'] . "");

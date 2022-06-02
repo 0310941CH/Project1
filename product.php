@@ -21,6 +21,9 @@ include_once("config/connection.php");
 <?php include "navbar.php" ?>
     <?php
     $id = $_GET["pid"];
+    if (empty($id)) {
+       $id = $_SESSION['lastid'];
+    }
     $stmt = $pdo->prepare("SELECT * FROM products WHERE id=:id");
     $stmt->execute(['id' => $id]);
     $data = $stmt->fetchAll();
@@ -45,12 +48,19 @@ include_once("config/connection.php");
         echo "<td>" . "<p> <b>" . strtoupper($specName) . ":" . " </b><p>" . "</td>";
         echo "<td>" . strtoupper($specData) . "</td>";
         echo "</tr>";
+        
     };
     echo "</table>";
     ?>
-    <div class="detailbuttons">
+    <?php
+    foreach ($data as $product) {
+    echo '<div class="detailbuttons">
     <button class="likebutton"> <img class="likebuttonimage" src="images/heart-regular.png" alt="wtf"></button>
-    <button class="chartbutton"> ADD TO CART <img class="chartimage" src="images/shoppingCard.png" alt="wtf"></button>
+    <a href=cart_add.php?id="' .$product["id"]. '&&page=product.php?pid=' .$product["id"]. '> 
+     <button class="chartbutton"> ADD TO CART <img class="chartimage" src="images/shoppingCard.png" alt="wtf" ></button>
+     </a>';
+    }
+     ?>
     </div>
     </div>
     </div>
