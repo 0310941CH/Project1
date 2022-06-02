@@ -1,13 +1,14 @@
-:root {
-    --bluebackgroundcolor: #05386B;
-    --blackorwhitebackground: white;
-    --blackorwhitetextcolor: #282828;
-    --imagefilterblack: invert(0%) sepia(90%) saturate(0%) hue-rotate(295deg) brightness(100%) contrast(101%);
-    --imagefilterwhite: invert(97%) sepia(0%) saturate(7461%) hue-rotate(54deg) brightness(111%) contrast(101%);
-    --imagefilterblue: invert(20%) sepia(34%) saturate(2363%) hue-rotate(185deg) brightness(89%) contrast(105%);
-  }
+
+  body {
+    background-color: var(--blackorwhitebackground);
+    font-family: Segoe UI, Frutiger, Frutiger Linotype, Dejavu Sans, Helvetica Neue, Arial, sans-serif;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    color: var(--blackorwhitetextcolor);
+}
 .product {
-    height: calc(100vh - 50px);
+    height: calc(700px - 50px);
     display: flex;
     flex-direction: row;
     align-items: stretch;
@@ -19,7 +20,7 @@
     width: 200px;
     
 }
-.line {
+.middleline {
     background-color: #d2d2d2;
     width: 1px;
     height: 60%;
@@ -51,7 +52,7 @@
 }
 .likebuttonimage {
     width: 25px;
-    filter: var(--imagefilterwhite);
+    filter: var(--imagefilterallwayswhite);
 }
 .chartbutton {
     color: white;

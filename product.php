@@ -32,7 +32,7 @@ include_once("config/connection.php");
         echo "<img src='/images/" . $product['pictures'] . "' alt='productAfbeelding'" . "class='products'>";
         echo '<p class="pricetext"> € ' . $product["price"] . "</p>";
         echo "</div>";
-        echo '<div class="line">';
+        echo '<div class="middleline">';
         echo "</div>";
     }
     echo '<div class="productright">';

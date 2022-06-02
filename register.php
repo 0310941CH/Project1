@@ -62,7 +62,7 @@ include_once('config/connection.php');
         }
     }
 
-
+    $tabselect = 4;
     ?>
     <!-- register form -->
     <div class="test">
