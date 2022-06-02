@@ -46,13 +46,13 @@ function dropdown(number) {try {
             opacity = opacity - 1;
             document.getElementById(dropdownlist).style.opacity = opacity;
             //checks if your allready in the tab or not
-            if(!document.getElementById(tab).classList.contains('selectedtab')) {
+            if(!document.getElementById(tab).classList.contains('selectedtab') && (!document.getElementById(tab).classList.contains('selectedlogin'))) {
                 document.getElementById(dropdownnumber).style.filter  = 'var(--imagefilterwhite)';
                 document.getElementById(tab).style.color = 'white';
                 document.getElementById(tab).style.backgroundColor = 'rgba(0, 0, 0, 0)';
             }
                 //checks if its the logindropdown to change the color of the image
-            if(document.getElementById(tab).classList.contains('tabs2')) {
+            if(document.getElementById(tab).classList.contains('tabs2') && (!document.getElementById(tab).classList.contains('selectedlogin'))) {
                 document.getElementById('tab4').style.filter  = 'var(--imagefilterwhite)';
 
             }

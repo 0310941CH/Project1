@@ -7,6 +7,7 @@
     --imagefilterblue: invert(20%) sepia(34%) saturate(2363%) hue-rotate(185deg) brightness(89%) contrast(105%);
   }
 
+
 body {
     background-color: var(--blackorwhitebackground);
     font-family: Segoe UI, Frutiger, Frutiger Linotype, Dejavu Sans, Helvetica Neue, Arial, sans-serif;
@@ -19,7 +20,7 @@ body {
 .dropdownicon {
     height: 7px;
     filter: var(--imagefilterwhite);
-    transition: ease-in-out;
+    transition: ease-in-out 0.4s;
 }
 .selecteddropdownicon {
     filter: var(--imagefilterblack);
@@ -143,6 +144,7 @@ a > li {
 }
 .accountbuttons {
     width: 125px;
+    background-color: var(--blackorwhitebackground);
     color: var(--blackorwhitetextcolor);
 }
 
@@ -176,7 +178,7 @@ a, ul{
 }
 #colorbottom4{
     padding: 5px 125px 15px 0px;
-    top: 155px;
+    top: 140px;
 }
 #tab4 {
     width: 30px;
@@ -267,10 +269,14 @@ nav {
 #searchimage{
     filter: var(--imagefilterblack);
 }
-@media screen and (max-width: 1260px) {
+@media screen and (max-width: 100px) {
     .buttons {
         opacity: 0;
         display: none;
     }
     
     }
+.selectedlogin {
+    background-color: var(--blackorwhitebackground);
+    filter: var(--imagefilterblack);
+}

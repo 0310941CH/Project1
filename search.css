@@ -1,4 +1,11 @@
 /* Search pagina */
+body {
+    background-color: var(--blackorwhitebackground);
+    font-family: Segoe UI, Frutiger, Frutiger Linotype, Dejavu Sans, Helvetica Neue, Arial, sans-serif;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+}
 .products {
     display: flex;
     max-width: 175px;

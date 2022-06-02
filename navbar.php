@@ -10,7 +10,7 @@ include_once("config/connection.php");
         <a href="index.php"><img src="images/notchLogo.png" class="notchlogo"></a>
         <div class="middlenav">
             <div class="buttons">
-                <p onclick="dropdown(1)" id="tab1" class="selectedtab tabs">COMPONENTS <img src="images/caret-down-solidblack.png" alt="" class="dropdownicon selecteddropdownicon" id="dropdownicon1"></p>
+                <p onclick="dropdown(1)" id="tab1" class=" <?php if ($tabselect == 1) {echo "selectedtab"; } ?> tabs">COMPONENTS <img src="images/caret-down-solidblack.png" alt="" class="dropdownicon <?php if ($tabselect == 1) {echo "selecteddropdownicon"; } ?>" id="dropdownicon1"></p>
                 <ul id="list1">
                     <a href="/cpu.php">
                         <li>CPU</li>
@@ -38,7 +38,7 @@ include_once("config/connection.php");
             </div>
 
             <div class="buttons">
-                <p onclick="dropdown(2)" class="tabs" id="tab2">PERIPHERALS <img onclick="dropdown2()" src="images/caret-down-solidblack.png" alt="" class="dropdownicon " id="dropdownicon2"></p>
+                <p onclick="dropdown(2)" class="tabs <?php if ($tabselect == 2) {echo "selectedtab"; } ?>" id="tab2">PERIPHERALS <img onclick="dropdown2()" src="images/caret-down-solidblack.png" alt="" class="dropdownicon <?php if ($tabselect == 2) {echo "selecteddropdownicon"; } ?> " id="dropdownicon2"></p>
                 <ul id="list2">
                     <a href="/mouse.php">
                         <li>MOUSE</li>
@@ -53,7 +53,7 @@ include_once("config/connection.php");
                 <div id="colorbottom2"></div>
             </div>
             <div class="buttons">
-                <p onclick="dropdown(3)" class="tabs" id="tab3">PC'S AND LAPTOPS <img src="images/caret-down-solidblack.png" alt="" class="dropdownicon " id="dropdownicon3"></p>
+                <p onclick="dropdown(3)" class="tabs <?php if ($tabselect == 3) {echo "selectedtab"; } ?>" id="tab3">PC'S AND LAPTOPS <img src="images/caret-down-solidblack.png" alt="" class="dropdownicon <?php if ($tabselect == 3) {echo "selecteddropdownicon"; } ?>" id="dropdownicon3"></p>
                 <ul id="list3">
                     <a href="/pc.php">
                         <li>PC</li>
@@ -80,7 +80,7 @@ include_once("config/connection.php");
         </div>
 
         <div class="buttons">
-            <img onclick="dropdown(4)" id="tab4" onclick="dropdown4()" src="images/register.png" alt="" class=" tabs2"> <img onclick="dropdown4()" src="images/caret-down-solidblack.png" alt="" class="dropdownicon " id="dropdownicon4">
+            <img onclick="dropdown(4)" id="tab4" onclick="dropdown4()" src="images/register.png" alt="" class=" tabs2 <?php if ($tabselect == 4) {echo "selectedlogin"; } ?>"> <img onclick="dropdown4()" src="images/caret-down-solidblack.png" alt="" class="dropdownicon " id="dropdownicon4">
             <ul id="list4">
                 <a href="/login.php">
                     <li class="accountbuttons">LOGIN</li>
