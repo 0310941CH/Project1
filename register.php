@@ -1,5 +1,7 @@
 <?php
+session_start();
 include_once('config/connection.php');
+    	
 ?>
 <!DOCTYPE html>
 
@@ -40,17 +42,15 @@ include_once('config/connection.php');
                     try {
                         $query = 'INSERT INTO users (voornaam, achternaam, username, passwords) VALUES (:vname, :aname, :uname, :pswrd)';
                         $values = [':vname' => $firstname, ':aname' => $surname, ':uname' => $username, ':pswrd' => $hash];
-
-
                         $execute = $pdo->prepare($query);
                         $execute->execute($values);
-                        header('Location: login.php');
-                        session_start();
-                        $_SESSION['username'] = $_POST['username'];
-                        exit();
                     } catch (PDOException $e) {
                         $output = "This username is already in use!";
                     }
+                    $_SESSION['username'] = $_POST['username'];
+                    header("Location: login.php");
+                    exit();
+
                 } else {
                     $output = "Password should be at least 5 characters in length and should include at least one upper case letter, one number, and one special character.";
                 }
