@@ -88,6 +88,7 @@ include_once("config/connection.php");
 
         echo "<div class='productplace'>";
         foreach ($data as $product) {
+            echo "<a href='cart_add.php?id=" . $product["id"] . "&&page=cpu.php'>";
             echo "<div class='productinner'>";
             echo "<div class='imagesize'>";
             echo "<img src='/images/" . $product['pictures'] . "' alt='productAfbeelding'" . "class='products'>" . "<br>";
