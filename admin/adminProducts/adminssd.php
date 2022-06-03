@@ -62,7 +62,7 @@ if ($_SESSION['loggedInAdmin'] == 1) {
         foreach ($data as $product) {
             echo "<div class='productinner'>";
             echo "<div class='imagesize'>";
-            echo "<img src='./images/" . $product['pictures'] . "' alt='productAfbeelding'" . "class='products'>" . "<br>";
+            echo "<img src='/images/" . $product['pictures'] . "' alt='productAfbeelding'" . "class='products'>" . "<br>";
             echo "</div>" . "<br>";
             echo "<div class='innerinfo'>";
             echo $product["productname"] . "<br>";
@@ -96,7 +96,7 @@ if ($_SESSION['loggedInAdmin'] == 1) {
         foreach ($data as $product) {
             echo "<div class='productinner'>";
             echo "<div class='imagesize'>";
-            echo "<img src='./images/" . $product['pictures'] . "' alt='productAfbeelding'" . "class='products'>" . "<br>";
+            echo "<img src='/images/" . $product['pictures'] . "' alt='productAfbeelding'" . "class='products'>" . "<br>";
             echo "</div>" . "<br>";
             echo "<div class='innerinfo'>";
             echo $product["productname"] . "<br>";
