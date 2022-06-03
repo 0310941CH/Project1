@@ -25,6 +25,7 @@ function cartDown(number) { // To substract a number to the quantity at shopping
         document.getElementById(price).value = "€ " + outputPrice;
     }
 }
+// update total price of the shoppingcart 
 function total() {
     var totalloop = true;
     var count = 0;
@@ -33,7 +34,7 @@ function total() {
         count++
         var productprice2 = "priceOutput" + count;
         try {
-            if (typeof document.getElementById(productprice2).value != "undefined") {
+            if (typeof document.getElementById(productprice2).value != "undefined") { // update price if value is not undefined
                 var price2 = parseInt(document.getElementById(productprice2).value.replace("€", ""));
                 totalprice += price2
             }

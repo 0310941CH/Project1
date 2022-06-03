@@ -55,7 +55,7 @@ include_once("config/connection.php");
     foreach ($data as $product) {
         echo '<div class="detailbuttons">
     <button class="likebutton"> <img class="likebuttonimage" src="images/heart-regular.png" alt="wtf"></button>
-    <a href="cart_add.php?id=' . $product["id"] . '&&page=cpu.php"> 
+    <a href="cart_add.php?id=' . $product["id"] . '&&page=product.php?pid=' . $product["id"] . '"> 
      <button class="chartbutton"> ADD TO CART <img class="chartimage" src="images/shoppingCard.png" alt="wtf" ></button>
      </a>';
     }
