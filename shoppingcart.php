@@ -24,12 +24,12 @@ include_once("config/connection.php");
     <script src="js/cart.js"></script>
 </head>
 
-<body>
+<body onload="total()">
     <?php include "navbar.php" ?>
     <?php
     //Variables 
     $total = 0;
-    $countCart = 0;
+    $countCart = count($_SESSION["shoppingcart"]);
 
     if (!empty($_SESSION["shoppingcart"])) { //If the cart isnt empty, display it otherwise show "error" message.
 
@@ -57,17 +57,16 @@ include_once("config/connection.php");
                 echo "<a href='delete_cart.php?pid=" . $product["id"] . "'><img src='images/trash.png' class='binicon'></a>";
                 echo '</div>';
                 echo '<div class="plusminbutton">';
-                echo '<button type="button" class="plusbutton" onclick="cartDown(' . $loop . ')">-</button>';
+                echo '<button type="button" class="plusbutton" onclick="cartDown(' . $loop . '); total()">-</button>';
                 echo '<input type="number" name="form" " class="quantity" id="quantity' . $loop . '" min="1" max="10" value="1">';
-                echo '<button type="button" class="minbutton" onclick="cartUp(' . $loop . ')">+</button></div>'; // Buttons to substract and add to the quantity of a product
+                echo '<button type="button" class="minbutton" onclick="cartUp(' . $loop . '); total()">+</button></div>'; // Buttons to substract and add to the quantity of a product
                 echo '<p class="righttext"><input type="text" name="form" id="priceOutput' . $loop . '" class="inputtext" readonly="readonly" value="€ ' . $product["price"] . '"/></p></div>';
-                $total += $countCart * $product["price"];
             }
         }
         echo '<div class="topshop">
         <p class="lefttext">PRODUCTS</p>';
-        echo '<input type="number" name="form" " class="quantity" id="cartcount" value="' . count($_SESSION["shoppingcart"]) . '">';
-        echo '<p class="righttext"><input type="text" id="priceTotal" class="inputtext" readonly="readonly" value="€ ' . $total . '"/></p>
+        echo '<input type="number" name="form" " class="quantity" id="cartcount" value="' . $countCart . '">';
+        echo '<p class="righttext"><input type="text" id="priceTotal" class="inputtext" readonly="readonly" value=""/></p>
         </div>
         <input class="submitCart" type="submit" name="checkout" value="checkout"></form>';
     } else {
