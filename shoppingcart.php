@@ -27,26 +27,29 @@ include_once("config/connection.php");
 <body>
     <?php include "navbar.php" ?>
     <?php
-    // Needed variables 
+    //Variables 
     $total = 0;
-    $countItems = count($_SESSION["shoppingcart"]);
+    $countCart = 0;
 
     if (!empty($_SESSION["shoppingcart"])) { //If the cart isnt empty, display it otherwise show "error" message.
+
+        $loop = 0; //Loop needed to increase the id's to get the correct amount & prices in cart.js
+
         echo '<div class="shoppingcart">
         <div class="topshop">
         <p class="lefttext">PRODUCTS</p>
         <p class="amount">AMOUNT</p>
         <p class="righttext">PRICE</p>
         </div>';
-        $loop = 0;
         foreach ($_SESSION["shoppingcart"] as $id) {
             $stmt  = $pdo->prepare("SELECT * FROM products WHERE id = :pid");
             $stmt->execute(['pid' => $id]);
             $data = $stmt->fetchAll();
             foreach ($data as $product) {
-                $loop = $loop + 1;
+                $loop++;
                 echo '<form method="POST" action="checkout.php">';
-                echo '<input type="hidden" name="productid" value="' . $product["id"] . '">';
+                echo '<input type="hidden" id="priceid' . $loop . '" name="productid" value="' . $product["id"] . '">';
+                echo '<input type="hidden" name="form" id="productPrice' . $loop . '" value="' . $product["price"] . '">';
                 echo '<div class="firstrowshop">';
                 echo '<div class="productandimage">';
                 echo "<img src='/images/" . $product['pictures'] . "' alt='productAfbeelding'" . "class='imageshop'><br>";
@@ -54,23 +57,22 @@ include_once("config/connection.php");
                 echo "<a href='delete_cart.php?pid=" . $product["id"] . "'><img src='images/trash.png' class='binicon'></a>";
                 echo '</div>';
                 echo '<div class="plusminbutton">';
-                echo '<button type="button" class="plusbutton" onclick="cartDown('. $loop .')">-</button>';
-                echo '<input type="number" class="quantity" id="quantity'. $loop .'" min="1" max="10" value="1">';
-                echo '<button type="button" class="minbutton" onclick="cartUp('. $loop .')">+</button></div>'; // Buttons to substract and add to the quantity of a product
-                echo '<p class="righttext"><input type="text" class="inputtext" readonly="readonly" value="€ ' . $product["price"] . '"/></p></div>';
-                $total += $product["price"];
+                echo '<button type="button" class="plusbutton" onclick="cartDown(' . $loop . ')">-</button>';
+                echo '<input type="number" name="form" " class="quantity" id="quantity' . $loop . '" min="1" max="10" value="1">';
+                echo '<button type="button" class="minbutton" onclick="cartUp(' . $loop . ')">+</button></div>'; // Buttons to substract and add to the quantity of a product
+                echo '<p class="righttext"><input type="text" name="form" id="priceOutput' . $loop . '" class="inputtext" readonly="readonly" value="€ ' . $product["price"] . '"/></p></div>';
+                $total += $countCart * $product["price"];
             }
         }
         echo '<div class="topshop">
-        <p class="lefttext">PRODUCTS</p>
-        <p class="amount">' . $countItems . '</p>
-        <p class="righttext"><input type="text" class="inputtext" readonly="readonly" value="€ ' . $total . '"/></p>
+        <p class="lefttext">PRODUCTS</p>';
+        echo '<input type="number" name="form" " class="quantity" id="cartcount" value="' . count($_SESSION["shoppingcart"]) . '">';
+        echo '<p class="righttext"><input type="text" id="priceTotal" class="inputtext" readonly="readonly" value="€ ' . $total . '"/></p>
         </div>
         <input class="submitCart" type="submit" name="checkout" value="checkout"></form>';
     } else {
         echo "<div class='noitems'><h1>Huh? There is nothing in your cart yet!</h1>
         <p>Add a product to your cart and check again.</p></div>";
-        echo "<div class='animation'></div>";
     }
 
     ?>
