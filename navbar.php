@@ -65,7 +65,7 @@ include_once("config/connection.php");
                 <div id="colorbottom3"></div>
             </div>
         </div>
-        <div class="endnav">
+        <div class="allsearch">
             <img class="xicon" src="images/xicon.png" alt="xicon" id="xicon" onclick="searchbarhider()">
             <div id="divdiv">
 
@@ -78,7 +78,12 @@ include_once("config/connection.php");
                 </form>
             </div>
         </div>
+        <div class="burgerlines">
+    <div id="burgerline1" class="burgerline"></div>
+    <div id="burgerline2" class="burgerline"></div>
+    <div id="burgerline3" class="burgerline"></div>
 
+        </div>
         <div class="buttons">
             <img onclick="dropdown(4)" id="tab4" onclick="dropdown4()" src="images/register.png" alt="" class=" tabs2 <?php if ($tabselect == 4) {echo "selectedlogin"; } ?>"> <img onclick="dropdown4()" src="images/caret-down-solidblack.png" alt="" class="dropdownicon " id="dropdownicon4">
             <ul id="list4">

@@ -280,3 +280,50 @@ nav {
     background-color: var(--blackorwhitebackground);
     filter: var(--imagefilterblack);
 }
+.burgerlines {
+    display: none;
+    flex-direction: column;
+    background-color: none;
+    justify-content: space-around;
+    margin-left: 25px;
+    margin-right: 25px;
+    height: 30px;
+    background-color: none;
+    margin-top: 5px;
+    border-radius: 20px 20px 0px 0px;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 10px;
+}
+.burgerline {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    border-radius: 25px;
+}
+@media screen and (max-width: 1260px) {
+    .buttons {
+        opacity: 0;
+        display: none;
+    }
+    .burgerlines {
+        display: flex;
+    }
+    .allsearch {
+        position: absolute;
+        right: 160px
+    }
+    #search {
+        position: absolute;
+        right: 50px;   
+    }
+    
+    #xicon {
+        position: absolute;
+        right: 190px;    
+    }
+    #submitbutton {
+        right: 15px;
+    }
+    }
