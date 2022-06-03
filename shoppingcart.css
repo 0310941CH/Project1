@@ -202,18 +202,3 @@ input[type=number] {
     flex-direction: column;
     padding: 5px;
 }
-
-.loader {
-    border: 10px solid white;
-    border-radius: 50%;
-    height: 10vmin;
-    width: 10vmin;
-    border-left-color: #244362(280, 50%, 40%);
-    border-right-color: #244362(280, 50%, 40%);
-    animation: spin 1s infinite linear;
-}
-@keyframes spin {
-    100% {
-      transform: rotate(360deg);
-    }
-  }
