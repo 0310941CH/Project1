@@ -23,6 +23,7 @@ if (isset($_SESSION['id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../adminpage.css">
     <link rel="stylesheet" href="adminNavbar.css">
+    <link rel="stylesheet" href="admin.css">
     <script src="./js/searchbar.js"></script>
     <script src="./js/dropdown.js"></script>
     <title>Admin Panel</title>
@@ -31,14 +32,14 @@ if (isset($_SESSION['id'])) {
 <body>
 <?php include "adminNavbar.php";?>
     <?php
+    echo "<div class='moveall'>";
     $stmt = $pdo->prepare('SELECT * FROM products WHERE id=:id');
     $stmt->execute([":id" => $id]);
     $data = $stmt->fetchAll();
     echo "<div class=alignitems>";
     echo "<table>";
     echo "<tr>";
-    echo "<th>" . "<h1>" . "Specificaties" . "</h2>" . "</th>";
-    echo "<th>" . "<h1>" . "Specificaties" . "</h2>" . "</th>";
+    echo "<th>" . "<h1>" . "Product" . "</h2>" . "</th>";
     echo "<tr>";
     foreach ($data as $product) {
         // This is pure the frontEnd for the Update statement with alle name to make the post. 
@@ -59,7 +60,7 @@ if (isset($_SESSION['id'])) {
         echo "<tr>" . "<td>" . "Processor" . "</td>" . "<td>" . "<input type=text name=processor value='$specData[processor]'>" . "</td>" . "</tr>";
         echo "<tr>" . "<td>" . "ProcessorSpeed" . "</td>" . "<td>" . "<input type=text name=processorSpeed value='$specData[processorSpeed]'>" . "</td>" . "</tr>";
         echo "<tr>" . "<td>" . "Wattage" . "</td>" . "<td>" . "<input type=text name=wattage value='$specData[wattage]'>" . "</td>" . "</tr>";
-        echo "<tr>" . "<td>" . "<button type=submit value= '$product[id]' name=submitCPU>Submit your Updates</button>" . "</td>" . "</tr>";
+        echo "<tr>" . "<td>" . "<button class='updateAdmin' type=submit value= '$product[id]' name=submitCPU>Submit your Updates</button>" . "</td>" . "</tr>";
     } elseif ($specData['specs_type'] == "gpu") {
         echo "<tr>" . "<td>" . "Spec Type" . "</td>" . "<td>" . $specData['specs_type'] . "</td>" . "</tr>";
         echo "<tr>" . "<td>" . "Graphics Ram" . "</td>" . "<td>" . "<input type=text name=graphicsRam value='$specData[graphicsRam]'>" . "</td>" . "</tr>";
@@ -133,6 +134,6 @@ if (isset($_SESSION['id'])) {
     echo "</table>";
     echo "</div>";
     echo "</form>";
-
+    echo "</div>";
     ?>
 </body>
