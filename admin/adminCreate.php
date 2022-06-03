@@ -97,15 +97,15 @@ if ($_SESSION['loggedInAdmin'] == 1) {
             </tr>
             <tr>
                 <td>Productname</td>
-                <td><input type="text" name="productname"></td>
+                <td><input type="text" name="productname" required></td>
             </tr>
             <tr>
                 <td>Price</td>
-                <td><input type="number" name="price"></td>
+                <td><input type="number" name="price" required></td>
             </tr>
             <tr>
                 <td>Image</td>
-                <td><input  type="file" name="image" accept=".png"></td>
+                <td><input  type="file" name="image" accept=".png" required></td>
             </tr>
             <tr>
                 <td>Main Categorie</td>
