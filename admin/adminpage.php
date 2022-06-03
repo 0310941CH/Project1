@@ -12,6 +12,7 @@ include_once("./config/connection.php");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="adminNavbar.css">
+     <link rel="stylesheet" href="admin.css">
     <script src="./js/searchbar.js"></script>
     <script src="./js/dropdown.js"></script>
     <title>Admin Panel</title>
@@ -19,8 +20,8 @@ include_once("./config/connection.php");
 
 <body>
     <?php include "adminNavbar.php" ?>
-
-    <form method="POST" action="adminCreate.php">
-        <button type="submit" class="button" name="submitCreate">Create a new product</button>
+    <h1 class="admintitle">Want to create a new product?</h1>
+    <form class="moveCreate" method="POST" action="adminCreate.php">
+        <button class="createAdmin" type="submit" class="button" name="submitCreate">Create a new product</button>
     </form>
 </body>

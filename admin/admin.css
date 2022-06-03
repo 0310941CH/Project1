@@ -1,0 +1,54 @@
+/* Update admin */
+
+.moveall {
+    display: flex;
+    justify-content: center;
+}
+.updateAdmin {
+    background-color: #05386B;
+    border-color: #05386B;
+    color: white;
+    border-radius: 10px;
+    width: 100px;
+    justify-content: center;
+}
+.updateAdmin:hover {
+    background-color: white ;
+    color: #244362;
+    border-color: #244362;
+    cursor: pointer;
+}
+/* Create Admin */
+.moveCreate {
+    display: flex;
+    justify-content: center;
+}
+.createAdmin {
+    background-color: #05386B;
+    border-color: rgb(255, 253, 253);
+    color: white;
+    border-radius: 10px;
+    width: 100px;
+    height: 50px;
+    margin-top: 200px;
+   
+}
+.createAdmin:hover {
+    background-color:  white;
+    color: #244362;
+    border-color: #244362;
+    cursor: pointer;
+}
+.admintitle {
+    display: flex   ;
+    justify-content: center;
+}
+.createText {
+    display: flex;
+    justify-content: center;
+}
+.createform {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}

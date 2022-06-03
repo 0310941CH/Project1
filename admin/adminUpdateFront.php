@@ -23,6 +23,7 @@ if (isset($_SESSION['id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../adminpage.css">
     <link rel="stylesheet" href="adminNavbar.css">
+    <link rel="stylesheet" href="admin.css">
     <script src="./js/searchbar.js"></script>
     <script src="./js/dropdown.js"></script>
     <title>Admin Panel</title>
@@ -31,14 +32,14 @@ if (isset($_SESSION['id'])) {
 <body>
 <?php include "adminNavbar.php";?>
     <?php
+    echo "<div class='moveall'>";
     $stmt = $pdo->prepare('SELECT * FROM products WHERE id=:id');
     $stmt->execute([":id" => $id]);
     $data = $stmt->fetchAll();
     echo "<div class=alignitems>";
     echo "<table>";
     echo "<tr>";
-    echo "<th>" . "<h1>" . "Specificaties" . "</h2>" . "</th>";
-    echo "<th>" . "<h1>" . "Specificaties" . "</h2>" . "</th>";
+    echo "<th>" . "<h1>" . "Product" . "</h2>" . "</th>";
     echo "<tr>";
     foreach ($data as $product) {
         // This is pure the frontEnd for the Update statement with alle name to make the post. 
@@ -59,36 +60,36 @@ if (isset($_SESSION['id'])) {
         echo "<tr>" . "<td>" . "Processor" . "</td>" . "<td>" . "<input type=text name=processor value='$specData[processor]'>" . "</td>" . "</tr>";
         echo "<tr>" . "<td>" . "ProcessorSpeed" . "</td>" . "<td>" . "<input type=text name=processorSpeed value='$specData[processorSpeed]'>" . "</td>" . "</tr>";
         echo "<tr>" . "<td>" . "Wattage" . "</td>" . "<td>" . "<input type=text name=wattage value='$specData[wattage]'>" . "</td>" . "</tr>";
-        echo "<tr>" . "<td>" . "<button type=submit value= '$product[id]' name=submitCPU>Submit your Updates</button>" . "</td>" . "</tr>";
+        echo "<tr>" . "<td>" . "<button class='updateAdmin' type=submit value= '$product[id]' name=submitCPU>Submit your Updates</button>" . "</td>" . "</tr>";
     } elseif ($specData['specs_type'] == "gpu") {
         echo "<tr>" . "<td>" . "Spec Type" . "</td>" . "<td>" . $specData['specs_type'] . "</td>" . "</tr>";
         echo "<tr>" . "<td>" . "Graphics Ram" . "</td>" . "<td>" . "<input type=text name=graphicsRam value='$specData[graphicsRam]'>" . "</td>" . "</tr>";
         echo "<tr>" . "<td>" . "ClockSpeed" . "</td>" . "<td>" . "<input type=text name=clockspeed value='$specData[clockspeed]'>" . "</td>" . "</tr>";
-        echo "<tr>" . "<td>" . "<button type=submit value= '$product[id]' name=submitGPU>Submit your Updates</button>" . "</td>" . "</tr>";
+        echo "<tr>" . "<td>" . "<button class='updateAdmin' type=submit value= '$product[id]' name=submitGPU>Submit your Updates</button>" . "</td>" . "</tr>";
     } elseif ($specData['specs_type'] == "motherboard") {
         echo "<tr>" . "<td>" . "Spec Type" . "</td>" . "<td>" . $specData['specs_type'] . "</td>" . "</tr>";
         echo "<tr>" . "<td>" . "Ram Technology" . "</td>" . "<td>" . "<input type=text name=ramtechnology value='$specData[ramtechnology]'>" . "</td>" . "</tr>";
-        echo "<tr>" . "<td>" . "<button type=submit value= '$product[id]' name=submitMotherboard>Submit your Updates</button>" . "</td>" . "</tr>";
+        echo "<tr>" . "<td>" . "<button class='updateAdmin' type=submit value= '$product[id]' name=submitMotherboard>Submit your Updates</button>" . "</td>" . "</tr>";
     } elseif ($specData['specs_type'] == "ram") {
         echo "<tr>" . "<td>" . "Spec Type" . "</td>" . "<td>" . $specData['specs_type'] . "</td>" . "</tr>";
         echo "<tr>" . "<td>" . "Memory" . "</td>" . "<td>" . "<input type=text name=memory value='$specData[memory]'>" . "</td>" . "</tr>";
         echo "<tr>" . "<td>" . "Clockspeed" . "</td>" . "<td>" . "<input type=text name=clockspeed value='$specData[clockspeed]'>" . "</td>" . "</tr>";
-        echo "<tr>" . "<td>" . "<button type=submit value= '$product[id]' name=submitRAM>Submit your Updates</button>" . "</td>" . "</tr>";
+        echo "<tr>" . "<td>" . "<button class='updateAdmin' type=submit value= '$product[id]' name=submitRAM>Submit your Updates</button>" . "</td>" . "</tr>";
     } elseif ($specData['specs_type'] == "SSD") {
         echo "<tr>" . "<td>" . "Spec Type" . "</td>" . "<td>" . $specData['specs_type'] . "</td>" . "</tr>";
         echo "<tr>" . "<td>" . "Storage" . "</td>" . "<td>" . "<input type=text name=storage value='$specData[storage]'>" . "</td>" . "</tr>";
         echo "<tr>" . "<td>" . "Wattage" . "</td>" . "<td>" . "<input type=text name=wattage value='$specData[wattage]'>" . "</td>" . "</tr>";
-        echo "<tr>" . "<td>" . "<button type=submit value= '$product[id]' name=submitSSD>Submit your Updates</button>" . "</td>" . "</tr>";
+        echo "<tr>" . "<td>" . "<button class='updateAdmin' type=submit value= '$product[id]' name=submitSSD>Submit your Updates</button>" . "</td>" . "</tr>";
     } elseif ($specData['specs_type'] == "fans") {
         echo "<tr>" . "<td>" . "Spec Type" . "</td>" . "<td>" . $specData['specs_type'] . "</td>" . "</tr>";
         echo "<tr>" . "<td>" . "Total Fans" . "</td>" . "<td>" . "<input type=text name=totalFans value='$specData[totalFans]'>" . "</td>" . "</tr>";
         echo "<tr>" . "<td>" . "Fan Speed" . "</td>" . "<td>" . "<input type=text name=fanSpeed value='$specData[fanSpeed]'>" . "</td>" . "</tr>";
-        echo "<tr>" . "<td>" . "<button type=submit value= '$product[id]' name=submitFans>Submit your Updates</button>" . "</td>" . "</tr>";
+        echo "<tr>" . "<td>" . "<button class='updateAdmin' type=submit value= '$product[id]' name=submitFans>Submit your Updates</button>" . "</td>" . "</tr>";
     } elseif ($specData['specs_type'] == "Powersupply") {
         echo "<tr>" . "<td>" . "Spec Type" . "</td>" . "<td>" . $specData['specs_type'] . "</td>" . "</tr>";
         echo "<tr>" . "<td>" . "Wattage" . "</td>" . "<td>" . "<input type=text name=wattage value='$specData[wattage]'>" . "</td>" . "</tr>";
         echo "<tr>" . "<td>" . "Fan Size" . "</td>" . "<td>" . "<input type=text name=fansize value='$specData[fansize]'>" . "</td>" . "</tr>";
-        echo "<tr>" . "<td>" . "<button type=submit value= '$product[id]' name=submitPowersupply>Submit your Updates</button>" . "</td>" . "</tr>";
+        echo "<tr>" . "<td>" . "<button class='updateAdmin' type=submit value= '$product[id]' name=submitPowersupply>Submit your Updates</button>" . "</td>" . "</tr>";
     } elseif ($specData['specs_type'] == "pc") {
         echo "<tr>" . "<td>" . "Spec Type" . "</td>" . "<td>" . $specData['specs_type'] . "</td>" . "</tr>";
         echo "<tr>" . "<td>" . "Operatingsystem" . "</td>" . "<td>" . "<input type=text name=operatingsystem value='$specData[operatingsystem]'>" . "</td>" . "</tr>";
@@ -99,7 +100,7 @@ if (isset($_SESSION['id'])) {
         echo "<tr>" . "<td>" . "CPU Model" . "</td>" . "<td>" . "<input type=text name=cpumodel value='$specData[cpumodel]'>" . "</td>" . "</tr>";
         echo "<tr>" . "<td>" . "GPU" . "</td>" . "<td>" . "<input type=text name=gpu value='$specData[gpu]'>" . "</td>" . "</tr>";
         echo "<tr>" . "<td>" . "SSD" . "</td>" . "<td>" . "<input type=text name=ssd value='$specData[ssd]'>" . "</td>" . "</tr>";
-        echo "<tr>" . "<td>" . "<button type=submit value= '$product[id]' name=submitPC>Submit your Updates</button>" . "</td>" . "</tr>";
+        echo "<tr>" . "<td>" . "<button class='updateAdmin' type=submit value= '$product[id]' name=submitPC>Submit your Updates</button>" . "</td>" . "</tr>";
     } elseif ($specData['specs_type'] == "Laptop") {
         echo "<tr>" . "<td>" . "Spec Type" . "</td>" . "<td>" . $specData['specs_type'] . "</td>" . "</tr>";
         echo "<tr>" . "<td>" . "Screen Size" . "</td>" . "<td>" . "<input type=text name=screenSize value='$specData[screenSize]'>" . "</td>" . "</tr>";
@@ -109,30 +110,30 @@ if (isset($_SESSION['id'])) {
         echo "<tr>" . "<td>" . "Hard Drive" . "</td>" . "<td>" . "<input type=text name=hardDrive value='$specData[hardDrive]'>" . "</td>" . "</tr>";
         echo "<tr>" . "<td>" . "Operartngsystem" . "</td>" . "<td>" . "<input type=text name=operatingsystem value='$specData[operatingsystem]'>" . "</td>" . "</tr>";
         echo "<tr>" . "<td>" . "Bluetooth" . "</td>" . "<td>" . "<input type=text name=bluetooth value='$specData[bluetooth]'>" . "</td>" . "</tr>";
-        echo "<tr>" . "<td>" . "<button type=submit value= '$product[id]' name=submitLaptop>Submit your Updates</button>" . "</td>" . "</tr>";
+        echo "<tr>" . "<td>" . "<button class='updateAdmin' type=submit value= '$product[id]' name=submitLaptop>Submit your Updates</button>" . "</td>" . "</tr>";
     } elseif ($specData['specs_type'] == "keyboard") {
         echo "<tr>" . "<td>" . "Spec Type" . "</td>" . "<td>" . $specData['specs_type'] . "</td>" . "</tr>";
         echo "<tr>" . "<td>" . "Keyboard Type" . "</td>" . "<td>" . "<input type=text name=keyboardtype value='$specData[keyboardtype]'>" . "</td>" . "</tr>";
         echo "<tr>" . "<td>" . "Input Type" . "</td>" . "<td>" . "<input type=text name=inputType value='$specData[inputType]'>" . "</td>" . "</tr>";
         echo "<tr>" . "<td>" . "RGB" . "</td>" . "<td>" . "<input type=text name=RGB value='$specData[RGB]'>" . "</td>" . "</tr>";
-        echo "<tr>" . "<td>" . "<button type=submit value= '$product[id]' name=submitKeyboard>Submit your Updates</button>" . "</td>" . "</tr>";
+        echo "<tr>" . "<td>" . "<button class='updateAdmin' type=submit value= '$product[id]' name=submitKeyboard>Submit your Updates</button>" . "</td>" . "</tr>";
     } elseif ($specData['specs_type'] == "mouse") {
         echo "<tr>" . "<td>" . "Spec Type" . "</td>" . "<td>" . $specData['specs_type'] . "</td>" . "</tr>";
         echo "<tr>" . "<td>" . "Buttons" . "</td>" . "<td>" . "<input type=text name=buttons value='$specData[buttons]'>" . "</td>" . "</tr>";
         echo "<tr>" . "<td>" . "DPI" . "</td>" . "<td>" . "<input type=text name=dpi value='$specData[Dpi]'>" . "</td>" . "</tr>";
         echo "<tr>" . "<td>" . "Mouse Type" . "</td>" . "<td>" . "<input type=text name=mousetype value='$specData[mousetype]'>" . "</td>" . "</tr>";
         echo "<tr>" . "<td>" . "Bluetooth" . "</td>" . "<td>" . "<input type=text name=bluetooth value='$specData[Bluetooth]'>" . "</td>" . "</tr>";
-        echo "<tr>" . "<td>" . "<button type=submit value= '$product[id]' name=submitMouse>Submit your Updates</button>" . "</td>" . "</tr>";
+        echo "<tr>" . "<td>" . "<button class='updateAdmin' type=submit value= '$product[id]' name=submitMouse>Submit your Updates</button>" . "</td>" . "</tr>";
     } elseif ($specData['specs_type'] == "headset") {
         echo "<tr>" . "<td>" . "Spec Type" . "</td>" . "<td>" . $specData['specs_type'] . "</td>" . "</tr>";
         echo "<tr>" . "<td>" . "Wired" . "</td>" . "<td>" . "<input type=text name=wired value='$specData[Wired]'>" . "</td>" . "</tr>";
         echo "<tr>" . "<td>" . "Bluetooth" . "</td>" . "<td>" . "<input type=text name=bluetooth value='$specData[Bluetooth]'>" . "</td>" . "</tr>";
         echo "<tr>" . "<td>" . "Noice Canceling" . "</td>" . "<td>" . "<input type=text name=noiceCanceling value='$specData[NoiceCanceling]'>" . "</td>" . "</tr>";
-        echo "<tr>" . "<td>" . "<button type=submit value= '$product[id]' name=submitHeadset>Submit your Updates</button>" . "</td>" . "</tr>";
+        echo "<tr>" . "<td>" . "<button class='updateAdmin' type=submit value= '$product[id]' name=submitHeadset>Submit your Updates</button>" . "</td>" . "</tr>";
     }
     echo "</table>";
     echo "</div>";
     echo "</form>";
-
+    echo "</div>";
     ?>
 </body>

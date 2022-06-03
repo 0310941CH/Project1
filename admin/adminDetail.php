@@ -39,7 +39,7 @@ if (isset($_POST['id'])) {
         echo '<div class="product">';
         echo '<div class="productleft">';
         echo  '<h1 class="producttitle">' . strtoupper($product["productname"]) . "<h1>";
-        echo "<img src='/admin/adminProducts/images/" . $product['pictures'] . "' alt='productImage'" . "class='products' >" . "<br>";
+        echo "<img src='../images/" . $product['pictures'] . "' alt='productImage'" . "class='products' >" . "<br>";
         echo '<p class="pricetext"> € ' . $product["price"] . "</p>";
         echo "</div>";
         echo '<div class="line">';

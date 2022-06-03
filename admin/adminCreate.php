@@ -78,6 +78,7 @@ if ($_SESSION['loggedInAdmin'] == 1) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="adminNavbar.css">
+    <link rel="stylesheet" href="admin.css">
     <script src="./js/searchbar.js"></script>
     <script src="./js/dropdown.js"></script>
     <title>Admin Panel Create</title>
@@ -85,8 +86,10 @@ if ($_SESSION['loggedInAdmin'] == 1) {
 
 <body>
     <?php include "adminNavbar.php" ?>
-    <h1>Create a new product</h1>
-    <form method="POST" enctype="multipart/form-data">
+    
+    <h1 class="createText">Create a new product</h1>
+  
+    <form class="createform" method="POST" enctype="multipart/form-data">
         <table>
             <tr>
                 <th>Name</th>
@@ -94,15 +97,15 @@ if ($_SESSION['loggedInAdmin'] == 1) {
             </tr>
             <tr>
                 <td>Productname</td>
-                <td><input type="text" name="productname"></td>
+                <td><input type="text" name="productname" required></td>
             </tr>
             <tr>
                 <td>Price</td>
-                <td><input type="number" name="price"></td>
+                <td><input type="number" name="price" required></td>
             </tr>
             <tr>
                 <td>Image</td>
-                <td><input type="file" name="image" accept=".png"></td>
+                <td><input  type="file" name="image" accept=".png" required></td>
             </tr>
             <tr>
                 <td>Main Categorie</td>
@@ -130,9 +133,8 @@ if ($_SESSION['loggedInAdmin'] == 1) {
                     </select></td>
             </tr>
         </table>
-        <button type="submit" name="submit">Submit</button>
+        <button class="createAdmin" type="submit" name="submit">Submit</button>
     </form>
-
     <?php
     /* Notes Uploaden Om te snappen 
         - $_FILES["image"] => haalt alle specificaties die je opgehaald word op. 
