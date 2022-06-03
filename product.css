@@ -1,0 +1,93 @@
+
+  body {
+    background-color: var(--blackorwhitebackground);
+    font-family: Segoe UI, Frutiger, Frutiger Linotype, Dejavu Sans, Helvetica Neue, Arial, sans-serif;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    color: var(--blackorwhitetextcolor);
+}
+.product {
+    height: calc(700px - 50px);
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-around;
+    align-items: center;
+
+}
+.products {
+    width: 200px;
+    
+}
+.middleline {
+    background-color: #d2d2d2;
+    width: 1px;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.productleft{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+}
+.detailbuttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 50px;
+}
+.likebutton, .chartbutton{
+    width: 50px;
+    height: 50px;
+    background-color: var(--bluebackgroundcolor);
+    border: none;
+    border-radius: 15px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.likebuttonimage {
+    width: 25px;
+    filter: var(--imagefilterallwayswhite);
+}
+.chartbutton {
+    color: white;
+    width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+.chartimage {
+    width: 25px;
+}
+.productright{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.pricetext {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 5px 25px 5px 25px;
+    background-color: var(--bluebackgroundcolor);
+    border: none;
+    font-size: 14px;
+    border-radius: 15px;
+}
+@media screen and (max-width: 800px) {
+    .product {
+        height: auto;
+        flex-direction: column;
+       
+    }
+    
+    }

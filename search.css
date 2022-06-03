@@ -1,0 +1,136 @@
+/* Search pagina */
+body {
+    background-color: var(--blackorwhitebackground);
+    font-family: Segoe UI, Frutiger, Frutiger Linotype, Dejavu Sans, Helvetica Neue, Arial, sans-serif;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+}
+.products {
+    display: flex;
+    max-width: 175px;
+    max-height: 175px;
+    width: auto;
+    height: auto; 
+}
+.productplace {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;   
+    gap: 20px;
+}
+.productinner {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 80px 80px 80px 80px;
+    background-color: #05386B;
+    border-radius: 25px;
+    color: white;
+    flex-direction: column;
+    width: 200px;
+    height: 290px;
+    transition: transform .2s;
+}
+.productinner:hover {
+    background-color: #07417a;
+    transform: scale(1.05);
+}
+.shopbutton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    border-radius: 15px;
+    border-color: #05386B;
+    background-color: white;
+}
+.shopbutton:hover {
+    background-color:#244362 ;
+    color: white;
+    border-color: white;
+    cursor: pointer;
+}
+
+
+.imagesize {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    min-width: 300px;
+    min-height: 200px;
+    width: auto;
+    height: auto; 
+    border-radius: 25px;
+}
+.innerinfo {
+    display: flex;
+    width: 350px;
+    justify-content: center;  
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+.pricebutton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.sortproducts {
+    display: flex;
+    justify-content: center;  
+    padding: 5px;
+    margin-top: 30px;
+    gap: 5px;
+}
+.results {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+.noitems {
+    display: flex;
+    justify-content: center;  
+    align-items: center;
+    flex-direction: column;
+    padding: 5px;
+}
+
+/* order buttons  */
+.orderbutton {
+    background-color: #05386B;
+    border-color: #05386B;
+    color: white;
+    border-radius: 10px;
+    width: 80px;
+    justify-content: center;
+}
+.orderbutton:hover {
+    background-color: white ;
+    color: #244362;
+    border-color: #244362;
+    cursor: pointer;
+}
+/* detail buttons  */
+.detailbutton {
+    display: flex;
+    justify-content: center;
+    width: 50px;
+    background-color: white;
+    border-radius: 5px;
+    color: black;
+    border-color: #05386B;
+}
+.detailbutton:hover {
+    background-color:#244362;
+    border-radius: 5px;
+    color: white;
+    border-color: white;
+    cursor: pointer;
+}
