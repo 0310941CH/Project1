@@ -6,6 +6,8 @@ if ($_SESSION['loggedInAdmin'] == 1) {
     if (isset($_POST['submit'])) {
         // The Image paths and setup for the specific image uploading
         $path_dir = "adminProducts/images/";
+        $pathDirectory = "../images/";
+        $otherFullPath = $pathDirectory . basename($_FILES["image"]["name"]);
         $fullpath = $path_dir . basename($_FILES["image"]["name"]);
         $uploadValidation = 1; // This is for if the image is valid for moving => 0 is not valid || 1 is valid for moving
         $fileType = strtolower(pathinfo($fullpath, PATHINFO_EXTENSION));
@@ -19,7 +21,7 @@ if ($_SESSION['loggedInAdmin'] == 1) {
             exit();
         }
         // Looking in the images map if the image exists
-        if (file_exists($fullpath)) {
+        if (file_exists($fullpath) && file_exists($otherFullPath)) {
             echo "Sorry the image already exists.";
             $uploadValidation = 0;
             exit();
@@ -35,6 +37,7 @@ if ($_SESSION['loggedInAdmin'] == 1) {
             echo "Sorry your image wasn't uploaded. Try again";
         } else {
             if (move_uploaded_file($_FILES["image"]["tmp_name"], $fullpath)) {
+                copy($fullpath, $otherFullPath);
 
                 if ($_POST['productname'] != "" && $_POST['price'] != "" && $_POST['mCategorie'] != "" && $_POST['sCategorie'] != "") {
                     $productname = $_POST['productname'];
