@@ -1,3 +1,5 @@
+/* Update admin */
+
 .moveall {
     display: flex;
     justify-content: center;
@@ -16,6 +18,7 @@
     border-color: #244362;
     cursor: pointer;
 }
+/* Create Admin */
 .moveCreate {
     display: flex;
     justify-content: center;
