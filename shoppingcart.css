@@ -202,3 +202,47 @@ input[type=number] {
     flex-direction: column;
     padding: 5px;
 }
+
+.animation1 {
+    background-color: #05386B;
+    width: 35px;
+    height: 10px;
+    border-radius: 5px;
+    position: relative;
+    animation: animation1 5s infinite;
+  
+}
+.animation2 {
+    background-color: #05386B;
+    width: 35px;
+    height: 10px;
+    border-radius: 5px;
+}
+.animation3 {
+    background-color: #05386B;
+    width: 35px;
+    height: 10px;
+    border-radius: 5px;
+    position: relative;
+    animation: animation1 5s infinite;
+}
+.animationplace {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 6px;
+}
+@keyframes animation1 {
+    0% {top: 0px; left: 0px;}
+    25% {top: 0px; left: 25px;}
+    50% {top: 0px; left: 25px;}
+    100% {top: 0px; left: 0px;}
+}
+
+@keyframes animation3 {
+    0% {top: 0px; left: 0px;}
+    25% {top: 0px; left: 25px;}
+    50% {top: 0px; left: 25px;}
+    100% {top: 0px; left: 0px;}
+}
