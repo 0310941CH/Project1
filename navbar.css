@@ -280,7 +280,7 @@ nav {
     background-color: var(--blackorwhitebackground);
     filter: var(--imagefilterblack);
 }
-.burgerlines {
+#burgerlines {
     position: absolute;
     right: 50px;
     display: none;
@@ -319,7 +319,7 @@ nav {
     .middlenav {
         display: none;
     }
-    .burgerlines {
+    #burgerlines {
         display: flex;
     }
     .allsearch {

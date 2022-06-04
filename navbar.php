@@ -81,7 +81,7 @@ include_once("config/connection.php");
                 </form>
             </div>
         </div>
-        <div class="burgerlines" onclick="iconchange()">
+        <div id="burgerlines" onclick="iconchange()">
     <div id="burgerline1" class="burgerline"></div>
     <div id="burgerline2" class="burgerline"></div>
     <div id="burgerline3" class="burgerline"></div>
