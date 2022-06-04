@@ -39,7 +39,7 @@ include_once("config/connection.php");
 
         // Output with added filter
         $stmt  = $pdo->prepare("SELECT * FROM products WHERE subcategorie = :scategorie ORDER BY $columnName $sortBy");
-        $stmt->execute(['scategorie' => "moederbord"]);
+        $stmt->execute(['scategorie' => "motherboard"]);
         $data = $stmt->fetchAll();
 
         // search order options
@@ -72,7 +72,7 @@ include_once("config/connection.php");
     } else {
         // output without added filter
         $stmt  = $pdo->prepare("SELECT * FROM products WHERE subcategorie = :scategorie");
-        $stmt->execute(['scategorie' => "moederbord"]);
+        $stmt->execute(['scategorie' => "motherboard"]);
         $data = $stmt->fetchAll();
 
         // search order options
