@@ -61,11 +61,11 @@ if (isset($_POST['id'])) {
     <div class="detailbuttons">
     <form action="adminUpdateFront.php" method="POST">
        <?php $_SESSION['id'] = $product['id']; ?>
-    <button type="submit" class="updatebutton" name="toUpdate"> Update Products</button>
+    <button type="submit" class="updatebutton" name="toUpdate"> UPDATE PRODUCT</button>
     </form>
-    <form action="adminUpdateFront.php" method="POST">
+    <form action="admindeleteproduct.php" method="POST">
        <?php $_SESSION['id'] = $product['id']; ?>
-    <button type="submit" class="updatebutton" name="toUpdate"> Update Products</button>
+    <button type="submit" class="updatebutton" name="delete"> DELETE PRODUCT</button>
     </form>
     </div>
     </div>

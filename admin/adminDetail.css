@@ -83,3 +83,10 @@
     }
     
     }
+    .detailbuttons {
+        display: flex;
+        flex-direction: column;
+    }
+    .detailbuttons > * {
+        margin-bottom: 5px;
+    }
