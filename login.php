@@ -37,6 +37,10 @@ include_once("config/connection.php");
             $prepare->execute($data);
             $user = $prepare->fetch(PDO::FETCH_ASSOC);
 
+            if ($user["rank"] == 1) {
+                $_SESSION['loggedInAdmin'] = 1;
+
+            }
             if ($user === false) {
                 $output = "There is no user with that name!";
             } else {

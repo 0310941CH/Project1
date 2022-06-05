@@ -48,8 +48,16 @@
         <div class="buttons">
             <img onclick="dropdown(4)"  id="tab4" onclick="dropdown4()" src="./navbarimages/register.png" alt="" class=" tabs2"> <img onclick="dropdown4()" src="./navbarimages/caret-down-solidblack.png" alt="" class="dropdownicon " id="dropdownicon4">
             <ul id="list4">
-                    <a href="/login.php"><li class="accountbuttons">LOGIN</li></a> 
-                    <a href="./adminlogin.php"><li class="accountbuttons">ADMIN</li></a>
+                <?php
+                                    if (isset($_SESSION["loggedInUser"])) {
+                                        echo "<a href='../logout.php'>";
+                                        echo '<li class="accountbuttons">LOGOUT</li></a>';
+                                    }
+                                    else {
+                                        echo "<a href='login.php'>";
+                                    echo '<li class="accountbuttons">LOGIN</li></a>';}
+                    ?>
+                    <a href="../index.php"><li class="accountbuttons">CUSTOMER PAGE</li></a>
                 </ul>
                 <div id="colorbottom4"></div>
             </div>
