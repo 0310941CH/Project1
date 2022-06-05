@@ -2,7 +2,11 @@
 // Navbar for the other admin pages.
 ?>
 <nav>   
+<<<<<<< HEAD
+        <a href="adminpage.php"><img src="./navbarimages/notchLogo.png" class="notchlogo"></a>
+=======
         <a href="../adminpage.php"><img src="./navbarimages/notchLogo.png" class="notchlogo"></a>
+>>>>>>> 309f71b37818ad736b3e8991b9f90ffb83535a6a
         <div class="middlenav">
             <div class="buttons">
                 <p onclick="dropdown(1)" id="tab1" class="selectedtab tabs">COMPONENTS <img src="./navbarimages/caret-down-solidblack.png" alt="" class="dropdownicon selecteddropdownicon" id="dropdownicon1"></p>
@@ -62,5 +66,5 @@
                 <div id="colorbottom4"></div>
             </div>
         </div>
-        <a href="shoppingcart.php"><img src="./navbarimages/shoppingCard.png" class="icon" ></a>
+        <a><img src="./navbarimages/shoppingCard.png" class="icon" ></a>
     </nav>

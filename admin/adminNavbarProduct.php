@@ -54,5 +54,5 @@
                 <div id="colorbottom4"></div>
             </div>
         </div>
-        <a href="shoppingcart.php"><img src="../navbarimages/shoppingCard.png" class="icon" ></a>
+        <a><img src="../navbarimages/shoppingCard.png" class="icon" ></a>
     </nav>

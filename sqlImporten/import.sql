@@ -18,11 +18,11 @@ CREATE TABLE `users` (
       components                          laptop
       peripherals                         cpu
                                           gpu
-                                          moederbord
+                                          motherboard
                                           ram
                                           ssd
-                                          vent
-                                          voeding
+                                          fans
+                                          powersupply
                                           headset
                                           keyboard
                                           mouse

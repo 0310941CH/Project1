@@ -45,14 +45,15 @@ if ($_SESSION['loggedInAdmin'] == 1) {
                     $mainCategorie = $_POST['mCategorie'];
                     $subCategorie = $_POST['sCategorie'];
                     $image = basename($_FILES["image"]["name"]);
-
+                    $specificaties = "Test";
                     try {
-                        $data = $pdo->prepare("INSERT INTO `products` (`productname`, `price`, `pictures`, `maincategorie`, `subcategorie`) VALUES
-                        ('$productname', '$price', '$image', '$mainCategorie', '$subCategorie')");
+                        $data = $pdo->prepare("INSERT INTO `products` (`productname`, `price`, `pictures`, `maincategorie`, `subcategorie`, `specificaties`) VALUES
+                        ('$productname', '$price', '$image', '$mainCategorie', '$subCategorie', '$specificaties')");
                         $data->execute();
                     } catch (PDOException $e) {
                         echo "There was a error";
                     }
+                    $_SESSION['productname'] = $productname;
                     $_SESSION['subcategorie'] = $subCategorie;
                     header("Location: adminCreateSpecs.php");
                     exit();
