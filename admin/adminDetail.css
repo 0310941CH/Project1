@@ -83,3 +83,33 @@
     }
     
     }
+    .detailbuttons {
+        display: flex;
+        flex-direction: column;
+    }
+    .detailbuttons > * {
+        margin-bottom: 5px;
+    }
+    #deletepopup {
+        display: none;
+        flex-direction: column;
+        top: 0px;
+        position: absolute;
+        
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 100%;
+        height: 100%;
+
+    }
+    #deletepopupbuttons {
+        display: flex;
+        flex-direction: row;
+    
+
+    }
+    .cancel {
+        background-color: white;
+        color: black;
+    }

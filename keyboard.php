@@ -66,6 +66,7 @@ include_once("config/connection.php");
             echo "<br>";
             echo "<a class='detailbutton' href='product.php?pid=" . $product["id"] . "'>Details</a>";
             echo "<br>";
+            echo "<a class='shopbutton' href='cart_add.php?id=" . $product["id"] . "&&page=keyboard.php'>Add to cart</a>";
             echo "</div>";
             echo "</div>";
         }
@@ -99,6 +100,7 @@ include_once("config/connection.php");
             echo "<br>";
             echo "<a class='detailbutton' href='product.php?pid=" . $product["id"] . "'>Details</a>";
             echo "<br>";
+            echo "<a class='shopbutton' href='cart_add.php?id=" . $product["id"] . "&&page=keyboard.php'>Add to cart</a>";
             echo "</div>";
             echo "</div>";
         }

@@ -203,17 +203,46 @@ input[type=number] {
     padding: 5px;
 }
 
-.loader {
-    border: 10px solid white;
-    border-radius: 50%;
-    height: 10vmin;
-    width: 10vmin;
-    border-left-color: #244362(280, 50%, 40%);
-    border-right-color: #244362(280, 50%, 40%);
-    animation: spin 1s infinite linear;
+.animation1 {
+    background-color: #05386B;
+    width: 35px;
+    height: 10px;
+    border-radius: 5px;
+    position: relative;
+    animation: animation1 5s infinite;
+  
 }
-@keyframes spin {
-    100% {
-      transform: rotate(360deg);
-    }
-  }
+.animation2 {
+    background-color: #05386B;
+    width: 35px;
+    height: 10px;
+    border-radius: 5px;
+}
+.animation3 {
+    background-color: #05386B;
+    width: 35px;
+    height: 10px;
+    border-radius: 5px;
+    position: relative;
+    animation: animation1 5s infinite;
+}
+.animationplace {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 6px;
+}
+@keyframes animation1 {
+    0% {top: 0px; left: 0px;}
+    25% {top: 0px; left: 25px;}
+    50% {top: 0px; left: 25px;}
+    100% {top: 0px; left: 0px;}
+}
+
+@keyframes animation3 {
+    0% {top: 0px; left: 0px;}
+    25% {top: 0px; left: 25px;}
+    50% {top: 0px; left: 25px;}
+    100% {top: 0px; left: 0px;}
+}

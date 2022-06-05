@@ -72,7 +72,6 @@ include_once("config/connection.php");
     } else {
         echo "<div class='noitems'><h1>Huh? There is nothing in your cart yet!</h1>
         <p>Add a product to your cart and check again.</p></div>";
-      echo"<div class='loader'></div>";
     }
 
     ?>

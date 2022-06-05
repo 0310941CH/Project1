@@ -7,7 +7,8 @@ if ($_SESSION['loggedInAdmin'] == 1) {
     header("Location: adminlogin.php");
     exit();
 }
-$id = $_SESSION['updateID'];
+if (isset($_SESSION['updateID'])){
+$id = $_SESSION['updateID'];}
 if (isset($_POST['id'])) {
     $id = $_POST['id'];
 };   
@@ -24,6 +25,7 @@ if (isset($_POST['id'])) {
     <link rel="stylesheet" href="adminNavbar.css">
     <script src="./js/searchbar.js"></script>
     <script src="./js/dropdown.js"></script>
+    <script src="./js/delete.js"></script>
     <title>Admin Panel</title>
 </head>
 
@@ -60,9 +62,20 @@ if (isset($_POST['id'])) {
     <div class="detailbuttons">
     <form action="adminUpdateFront.php" method="POST">
        <?php $_SESSION['id'] = $product['id']; ?>
-    <button type="submit" class="updatebutton" name="toUpdate"> Update Products</button>
+    <button type="submit" class="updatebutton" name="toUpdate"> UPDATE PRODUCT</button>
+    </form>
+    <button type="submit" class="updatebutton" name="delete" onclick="showpopup()"> DELETE PRODUCT</button>
+    </div>
+    </div>
+    </div>
+    <div id="deletepopup" class="invisable">
+        <p style="color:white">ARE YOU SURE YOU WANNA DELETE THIS PRODUCT?</p>
+    <div id="deletepopupbuttons">
+    <button type="submit" class="updatebutton" name="toUpdate" onclick="hidepopup()"> CANCEL</button>
+    <form action="admindeleteproduct.php" method="POST">
+       <?php $_SESSION['id'] = $product['id']; ?>
+    <button type="submit" class="updatebutton cancel" name="toUpdate"> DELETE PRODUCT</button>
     </form>
     </div>
-    </div>
-    </div>
+</div>
 </body>

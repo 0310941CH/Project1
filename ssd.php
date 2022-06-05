@@ -42,7 +42,7 @@ include_once("config/connection.php");
         $stmt->execute(['scategorie' => "ssd"]);
         $data = $stmt->fetchAll();
 
-        // search order manieren
+        // search order options
         echo '<div class="sortproducts">';
         if (count($data) != 0) {
             echo '<a href="ssd.php?sort=nAsc"><button class ="orderbutton">ABC▲</button></a>
@@ -75,7 +75,7 @@ include_once("config/connection.php");
         $stmt->execute(['scategorie' => "ssd"]);
         $data = $stmt->fetchAll();
 
-        // search order manieren
+        // search order options
         echo '<div class="sortproducts">';
         if (count($data) != 0) {
             echo '<a href="ssd.php?sort=nAsc"><button class ="orderbutton">ABC▲</button></a>
