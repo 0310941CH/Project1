@@ -47,8 +47,8 @@ if ($_SESSION['loggedInAdmin'] == 1) {
                     $image = basename($_FILES["image"]["name"]);
                     $specificaties = "Test";
                     try {
-                        $data = $pdo->prepare("INSERT INTO `products` (`productname`, `price`, `pictures`, `maincategorie`, `subcategorie`, `specificaties`) VALUES
-                        ('$productname', '$price', '$image', '$mainCategorie', '$subCategorie', '$specificaties')");
+                        $data = $pdo->prepare("INSERT INTO `products` (`productname`, `price`, `pictures`, `maincategorie`, `subcategorie`) VALUES
+                        ('$productname', '$price', '$image', '$mainCategorie', '$subCategorie')");
                         $data->execute();
                     } catch (PDOException $e) {
                         echo "There was a error";
