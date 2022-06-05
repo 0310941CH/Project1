@@ -19,9 +19,9 @@ if ($_SESSION['loggedInAdmin'] == 1) {
         $dbspecCPU = json_encode($specCPU);
 
         $imagename = $_SESSION['image'];
-            $data = $pdo->prepare("INSERT INTO products (specificaties) VALUES ('$dbspecCPU')");
-            $data->execute();
-
+            $sql = "UPDATE products SET specificaties=? WHERE pictures=?";
+            $pdo->prepare($sql)->execute([$dbspecCPU, $imagename]);
+            header("Location: adminpage.php");
     } elseif (isset($_POST['submitGPU'])) {
     } elseif (isset($_POST['submitGPU'])) {
     } elseif (isset($_POST['submitMotherboard'])) {
