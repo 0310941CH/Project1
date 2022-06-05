@@ -5,50 +5,96 @@ if ($_SESSION['loggedInAdmin'] == 1) {
     $productname = $_SESSION['productname'];
 
     if (isset($_POST['submitCPU'])) {
+        $specCPU = [
+            "specs_type" => $_SESSION['subcategorie'],
+            "processor" => $_POST['processor'],
+            "processorSpeed" => $_POST['processorSpeed'],
+            "wattage" => $_POST['wattage']];
+
+    } elseif (isset($_POST['submitGPU'])) {
+        $specCPU = [
+            "specs_type" => $_SESSION['subcategorie'],
+            "graphicsRam" => $_POST['graphicsRam'],
+            "clockspeed" => $_POST['clockspeed']];
+    } elseif (isset($_POST['submitMotherboard'])) {
+        $specCPU = [
+            "specs_type" => $_SESSION['subcategorie'],
+            "ramtechnology" => $_POST['ramtechnology']];
+    } elseif (isset($_POST['submitRAM'])) {
+        $specCPU = [
+            "specs_type" => $_SESSION['subcategorie'],
+            "memory" => $_POST['memory'],
+            "clockspeed" => $_POST['clockspeed'],
+            "wattage" => $_POST['wattage']];
+    } elseif (isset($_POST['submitSSD'])) {
+        $specCPU = [
+            "specs_type" => $_SESSION['subcategorie'],
+            "storage" => $_POST['storage'],
+            "wattage" => $_POST['wattage']];
+    } elseif (isset($_POST['submitFans'])) {
+        $specCPU = [
+            "specs_type" => $_SESSION['subcategorie'],
+            "totalFans" => $_POST['totalFans'],
+            "fanSpeed" => $_POST['fanSpeed']];
+    } elseif (isset($_POST['submitPowersupply'])) {
+        $specCPU = [
+            "specs_type" => $_SESSION['subcategorie'],
+            "wattage" => $_POST['wattage'],
+            "fansize" => $_POST['fansize']];
+    } elseif (isset($_POST['submitHeadset'])) {
+        $specCPU = [
+            "specs_type" => $_SESSION['subcategorie'],
+            "Wired" => $_POST['wired'],
+            "Bluetooth" => $_POST['bluetooth'],
+            "NoiceCanceling" => $_POST['noiceCanceling']];
+    } elseif (isset($_POST['submitKeyboard'])) {
+        $specCPU = [
+            "specs_type" => $_SESSION['subcategorie'],
+            "keyboardtype" => $_POST['keyboardtype'],
+            "inputType" => $_POST['inputType'],
+            "RGB" => $_POST['RGB']];
+    } elseif (isset($_POST['submitMouse'])) {
+        $specCPU = [
+            "specs_type" => $_SESSION['subcategorie'],
+            "buttons" => $_POST['buttons'],
+            "dpi" => $_POST['dpi'],
+            "mousetype" => $_POST['mousetype'],
+            "bluetooth" => $_POST['bluetooth']];
+    } elseif (isset($_POST['submitPC'])) {
+        $specCPU = [
+            "specs_type" => $_SESSION['subcategorie'],
+            "operatingsystem" => $_POST['operatingsystem'],
+            "motherboard" => $_POST['motherboard'],
+            "ramtype" => $_POST['ramtype'],
+            "rammemory" => $_POST['rammemory'],
+            "cpu" => $_POST['cpu'],
+            "cpumodel" => $_POST['cpumodel'],
+            "gpu" => $_POST['gpu'],
+            "ssd" => $_POST['ssd']];
+    } elseif (isset($_POST['submitLaptop'])) {
+        $specCPU = [
+            "specs_type" => $_SESSION['subcategorie'],
+            "screenSize" => $_POST['screenSize'],
+            "resolution" => $_POST['resolution'],
+            "processor" => $_POST['processor'],
+            "ram" => $_POST['ram'],
+            "hardDrive" => $_POST['hardDrive'],
+            "operatingsystem" => $_POST['operatingsystem'],
+            "bluetooth" => $_POST['bluetooth']];
+    }
+    if (!empty($_POST))
+     {
         $stmt = $pdo->prepare('SELECT * FROM products WHERE productname=:product');
         $stmt->execute([":product" => $productname]);
         $data = $stmt->fetchAll();
         foreach ($data as $product) {
         };
-        $specCPU = [
-            "specs_type" => $_SESSION['subcategorie'],
-            "processor" => $_POST['processor'],
-            "processorSpeed" => $_POST['processorSpeed'],
-            "wattage" => $_POST['wattage']
-        ];
         $dbspecCPU = json_encode($specCPU);
 
         $imagename = $_SESSION['image'];
             $sql = "UPDATE products SET specificaties=? WHERE pictures=?";
             $pdo->prepare($sql)->execute([$dbspecCPU, $imagename]);
             header("Location: adminpage.php");
-    } elseif (isset($_POST['submitGPU'])) {
-    } elseif (isset($_POST['submitGPU'])) {
-    } elseif (isset($_POST['submitMotherboard'])) {
-    } elseif (isset($_POST['submitRAM'])) {
-    } elseif (isset($_POST['submitSSD'])) {
-    } elseif (isset($_POST['submitFans'])) {
-    } elseif (isset($_POST['submitPowersupply'])) {
-    } elseif (isset($_POST['submitHeadset'])) {
-    } elseif (isset($_POST['submitKeyboard'])) {
-    } elseif (isset($_POST['submitMouse'])) {
-        $specData = json_decode($product['specificaties'], true);
-        $specData = [
-            "specs_type" => $_SESSION['subcategorie'],
-            "buttons" => $_POST['buttons'],
-            "Dpi" => $_POST['dpi'],
-            "mousetype" => $_POST['mousetype'],
-            "Bluetooth" => $_POST['bluetooth']
-        ];
-        $dbspecMouse = json_encode($specData);
-
-        $update = $pdo->prepare("UPDATE products SET specificaties=:specificaties WHERE `productname` = '$product[id]'");
-        $information = [
-            ":specificaties" => $dbspecMouse,
-        ];
-        $update->execute($information);
-    } elseif (isset($_POST['submitPC'])) {
-    } elseif (isset($_POST['submitLaptop'])) {
     }
 } else {
     header("Location: adminlogin.php");
@@ -96,6 +142,7 @@ if ($_SESSION['loggedInAdmin'] == 1) {
                 echo "<tr>" . "<td>" . "spec_type " . "</td>" . "<td>" . $_SESSION['subcategorie'] . "</td>" . "</tr>";
                 echo "<tr>" . "<td>" . "Memory" . "</td>" . "<td>" . "<input type=text name=memory required>" . "</td>" . "</tr>";
                 echo "<tr>" . "<td>" . "Clockspeed" . "</td>" . "<td>" . "<input type=text name=clockspeed required>" . "</td>" . "</tr>";
+                echo "<tr>" . "<td>" . "Wattage" . "</td>" . "<td>" . "<input type=text name=wattage required>" . "</td>" . "</tr>";
                 echo "<tr>" . "<td>" . "<button type=submit name=submitRAM>Submit your Updates</button>" . "</td>" . "</tr>";
             } elseif ($_SESSION['subcategorie'] == "ssd") {
                 echo "<tr>" . "<td>" . "spec_type " . "</td>" . "<td>" . $_SESSION['subcategorie'] . "</td>" . "</tr>";
