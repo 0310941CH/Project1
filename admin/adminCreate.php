@@ -53,6 +53,7 @@ if ($_SESSION['loggedInAdmin'] == 1) {
                     } catch (PDOException $e) {
                         echo "There was a error";
                     }
+                    $_SESSION['image'] = $image;
                     $_SESSION['productname'] = $productname;
                     $_SESSION['subcategorie'] = $subCategorie;
                     header("Location: adminCreateSpecs.php");

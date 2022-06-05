@@ -12,12 +12,10 @@ if ($_SESSION['loggedInAdmin'] == 1) {
         ];
         $dbspecCPU = json_encode($specCPU);
 
-        try {
-            $data = $pdo->prepare("INSERT INTO `products` (`specificaties`) VALUES '$dbspecCPU'");
+        $imagename = $_SESSION['image'];
+            $data = $pdo->prepare("INSERT INTO products (specificaties) VALUES ('$dbspecCPU')");
             $data->execute();
-        } catch (PDOException $e) {
-            echo "An error occured";
-        };
+
     } elseif (isset($_POST['submitGPU'])) {
     } elseif (isset($_POST['submitGPU'])) {
     } elseif (isset($_POST['submitMotherboard'])) {
