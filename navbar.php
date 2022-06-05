@@ -1,5 +1,4 @@
 <?php
-
 if (!isset($_SESSION["shoppingcart"])) {
     $_SESSION["shoppingcart"] = array();
 }
@@ -99,11 +98,14 @@ include_once("config/connection.php");
                 else {
                     echo "<a href='login.php'>";
                 echo '<li class="accountbuttons">LOGIN</li></a>';}
+                
+                if (isset($_SESSION['loggedInAdmin'])) {
+                    if ($_SESSION['loggedInAdmin'] == 1){
+                    echo "<a href='/admin/adminpage.php'>";
+                    echo '<li class="accountbuttons">ADMIN</li></a>';
+                    }
+                }
                 ?>
-                </a>
-                <a href="/admin/adminlogin.php">
-                    <li class="accountbuttons">ADMIN</li>
-                </a>
 
                     <li class="accountbuttons">DARKMODE</li>
                 
