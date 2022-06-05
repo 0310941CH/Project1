@@ -3,7 +3,13 @@ session_start();
 include_once("./config/connection.php");
 if ($_SESSION['loggedInAdmin'] == 1) {
     $productname = $_SESSION['productname'];
+
     if (isset($_POST['submitCPU'])) {
+        $stmt = $pdo->prepare('SELECT * FROM products WHERE productname=:product');
+        $stmt->execute([":product" => $productname]);
+        $data = $stmt->fetchAll();
+        foreach ($data as $product) {
+        };
         $specCPU = [
             "specs_type" => $_SESSION['subcategorie'],
             "processor" => $_POST['processor'],
@@ -12,12 +18,10 @@ if ($_SESSION['loggedInAdmin'] == 1) {
         ];
         $dbspecCPU = json_encode($specCPU);
 
-        try {
-            $data = $pdo->prepare("INSERT INTO `products` (`specificaties`) VALUES '$dbspecCPU'");
+        
+            $data = $pdo->prepare("INSERT INTO `products` (`specificaties`) VALUES '$dbspecCPU' WHERE productname = '$product[productname]'");
             $data->execute();
-        } catch (PDOException $e) {
-            echo "An error occured";
-        };
+        
     } elseif (isset($_POST['submitGPU'])) {
     } elseif (isset($_POST['submitGPU'])) {
     } elseif (isset($_POST['submitMotherboard'])) {
@@ -28,21 +32,21 @@ if ($_SESSION['loggedInAdmin'] == 1) {
     } elseif (isset($_POST['submitHeadset'])) {
     } elseif (isset($_POST['submitKeyboard'])) {
     } elseif (isset($_POST['submitMouse'])) {
-        $specMouse = [
+        $specData = json_decode($product['specificaties'], true);
+        $specData = [
             "specs_type" => $_SESSION['subcategorie'],
             "buttons" => $_POST['buttons'],
             "Dpi" => $_POST['dpi'],
             "mousetype" => $_POST['mousetype'],
             "Bluetooth" => $_POST['bluetooth']
         ];
-        $dbspecMouse = json_encode($specMouse);
+        $dbspecMouse = json_encode($specData);
 
-            $update = $pdo->prepare("UPDATE products SET specificaties=:specificaties WHERE `productname` = 37" );
-            $information = [
-                ":specificaties" => $dbspecMouse,
-            ];
-            $update->execute($information);
-        
+        $update = $pdo->prepare("UPDATE products SET specificaties=:specificaties WHERE `productname` = '$product[id]'");
+        $information = [
+            ":specificaties" => $dbspecMouse,
+        ];
+        $update->execute($information);
     } elseif (isset($_POST['submitPC'])) {
     } elseif (isset($_POST['submitLaptop'])) {
     }
