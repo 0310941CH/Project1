@@ -1,12 +1,6 @@
-:root {
-    --bluebackgroundcolor: #05386B;
-    --blackorwhitebackground: white;
-    --blackorwhitetextcolor: #282828;
-    --imagefilterblack: invert(0%) sepia(90%) saturate(0%) hue-rotate(295deg) brightness(100%) contrast(101%);
-    --imagefilterwhite: invert(97%) sepia(0%) saturate(7461%) hue-rotate(54deg) brightness(111%) contrast(101%);
-    --imagefilterblue: invert(20%) sepia(34%) saturate(2363%) hue-rotate(185deg) brightness(89%) contrast(105%);
-  }
-
+* {
+    transition: ease-in-out 0.4s;
+}
 
 body {
     background-color: var(--blackorwhitebackground);
@@ -23,7 +17,7 @@ body {
     transition: ease-in-out 0.4s;
 }
 .selecteddropdownicon {
-    filter: var(--imagefilterblack);
+    filter: var(--imagefilterallwaysblack);
 }
 
 
@@ -66,7 +60,7 @@ body {
 
 }
 .search2 {
-    background-color: var(--blackorwhitebackground);
+    background-color: white;
 }
 
 
@@ -89,17 +83,17 @@ body {
     right: 375px;
     transition: 0.4s ease-in-out;
     display: none;
-    filter: var(--imagefilterblack);
+    filter: var(--imagefilterallwaysblack);
     
 }
 
 textarea:focus,
 input:focus {
     outline: none;
-    background-color: var(--blackorwhitebackground);
+    background-color: white;
 }
 input{
-    background-color: var(--blackorwhitebackground);
+    background-color: white;
     color: var(--blackorwhitetextcolor);
 }
 .buttonsearch {
@@ -151,6 +145,9 @@ a > li {
 a:link {
     color: var(--blackorwhitetextcolor);
 }
+
+    
+
 a, ul{
     color: var(--blackorwhitetextcolor);
     list-style-type: none;
@@ -186,7 +183,7 @@ a, ul{
     background-color: none;
 }
 .tabs2{
-    filter: var(--imagefilterwhite);
+    filter: var(--imagefilterallwayswhite);
     transition: 0.4s ease-in-out;
     text-align: center;
     width: auto;
@@ -249,9 +246,12 @@ nav {
     width: auto;
     padding: 5px 50px 15px 50px;
     margin-top: 26px;
-    color: var(--blackorwhitebackground);
+    color: white;
     border-radius: 15px 15px 0px 0px
 }
+a:visited {
+    color: var(--blackorwhitetextcolor);
+  }
 .selectedtab {
     background-color: var(--blackorwhitebackground);
     color: var(--blackorwhitetextcolor);
@@ -267,7 +267,7 @@ nav {
     cursor: pointer;
 }
 #searchimage{
-    filter: var(--imagefilterblack);
+    filter: var(--imagefilterallwaysblack);
 }
 @media screen and (max-width: 100px) {
     .buttons {
@@ -310,8 +310,17 @@ nav {
     background-color: white;
     border-radius: 25px;
 }
-
+@media screen and (min-width: 1260px) { 
+    #hideburgeritems {
+        display: none;
+    }
+}
 @media screen and (max-width: 1260px) {
+    .cart {
+        position: absolute;
+        top: 25;
+        right: 10px;
+    }
     .buttons {
         opacity: 0;
         display: none;
@@ -328,7 +337,8 @@ nav {
     }
     #search {
         position: absolute;
-        right: 50px;   
+        right: 50px;
+        background-color: white;
     }
     
     #xicon {
@@ -338,4 +348,52 @@ nav {
     #submitbutton {
         right: 15px;
     }
+
+    }
+    #burgermenuitems {
+        z-index: 2;
+        transition: ease-in-out 0.4s;
+        display: none;
+        top: 50px;
+        left: 0;
+        right: 0;
+        position: absolute;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    #burgermenuitems > a > li {
+        transition: ease-in-out 0.4s;
+        display: flex;
+        padding: 0;
+        margin: 0;
+        width: 100vw;
+        height: 50px;
+        align-items: center;
+        border-bottom: #d2d2d2 solid 1px;
+        background-color: var(--blackorwhitebackground);
+        justify-content: center;
+
+        
+    }
+
+    
+    #burgermenuitems > a {
+        transition: ease-in-out 0.4s;
+        padding: 0;
+        margin: 0;
+        border: none;
+        opacity: 0;
+
+    }
+    .my-class {
+        transition: ease-in-out 0.4s;
+        opacity: 1;
+    }
+    
+    .maincatburger {
+        transition: ease-in-out 0.4s;
+        font-weight: bold;
+        border-bottom: #d2d2d2 solid 3px;
     }

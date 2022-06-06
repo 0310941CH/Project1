@@ -6,6 +6,7 @@ body {
     padding: 0;
 }
 .shoppingcart {
+    color: var(--blackorwhitetextcolor);
     margin-top: 30px;
     display: flex;
     margin-left: 250px;
@@ -13,6 +14,9 @@ body {
     flex-direction: column;
     justify-content: space-between;
     text-align: center;
+}
+input {
+    background-color: var(--blackorwhitebackground);
 }
 
 .topshop,
@@ -160,9 +164,7 @@ input::-webkit-inner-spin-button {
     margin: 0;
 }
 
-input[type=number] {
-    -moz-appearance: textfield;
-}
+
 
 .inputtext {
     border-style: hidden;
