@@ -12,7 +12,7 @@ function dropdown(number) {try {
     //displays the list with items and the buttom color anch changes the color of text and background
     document.getElementById(dropdownlist).style.display = 'block';
     document.getElementById(colorbottom).style.display = 'block';
-    document.getElementById(tab).style.color = 'black';
+    document.getElementById(tab).style.color = 'var(--blackorwhitetextcolor)';
     document.getElementById(tab).style.backgroundColor = 'var(--blackorwhitebackground)';
     //slowly changes the opacity to fade in the dropdown smooth
     var opacity = 0;
@@ -39,11 +39,10 @@ function dropdown(number) {try {
     //rotates image to go up
     document.getElementById(dropdownnumber).style.transform = 'rotate(0deg)';
         //slowly changes the opacity to fade out the dropdown smooth
-    var opacity = 1;
+
     opacitychanger2();
     function opacitychanger2() {
-        if(opacity>0) {
-            opacity = opacity - 1;
+            opacity = 0;
             document.getElementById(dropdownlist).style.opacity = opacity;
             //checks if your allready in the tab or not
             if(!document.getElementById(tab).classList.contains('selectedtab') && (!document.getElementById(tab).classList.contains('selectedlogin'))) {
@@ -53,7 +52,7 @@ function dropdown(number) {try {
             }
                 //checks if its the logindropdown to change the color of the image
             if(document.getElementById(tab).classList.contains('tabs2') && (!document.getElementById(tab).classList.contains('selectedlogin'))) {
-                document.getElementById('tab4').style.filter  = 'var(--imagefilterwhite)';
+                document.getElementById('tab4').style.filter  = 'var(--imagefilterallwayswhite)';
 
             }
 
@@ -67,7 +66,7 @@ function dropdown(number) {try {
             }, 200);
 
 
-        }
+        
     }
 }
 } catch (error) {

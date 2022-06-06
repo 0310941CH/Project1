@@ -30,8 +30,8 @@ WE DELIVER TWO THINGS HERE AT NOTCH: THE BEST PC'S/LAPTOP PARTS AND THE BEST PRI
 <a href="peripherals.php" class="clickbuttons">CLICK HERE!</a>
 </div>
 <div id="flyer3" class="flyer" onmouseover="zoomin(3)" onmouseout="zoomout(3)">
-    <p>PC'S AND LAPTOPS</p>
-    <img class="indexphotos" src="images/pcandlaptop.png" alt="">
+    <p id="text3">PC'S AND LAPTOPS</p>
+    <img  class="indexphotos" src="images/pcandlaptop.png" alt="">
 <a href="pcandlaptop.php" class="clickbuttons">CLICK HERE!</a>
 </div>
 

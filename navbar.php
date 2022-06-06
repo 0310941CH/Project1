@@ -5,9 +5,40 @@ if (!isset($_SESSION["shoppingcart"])) {
 
 include_once("config/connection.php");
 ?>
+<?php
+    if ($_COOKIE['mode'] == "dark") {
+        echo "<script>";
+        echo "document.documentElement.style.setProperty('--bluebackgroundcolor', '#05386B');
+        document.documentElement.style.setProperty('--blackorwhitebackground', '#282828');
+        document.documentElement.style.setProperty('--blackorwhitetextcolor', 'white');
+        document.documentElement.style.setProperty('--tab', '#1e1e1e');
+        document.documentElement.style.setProperty('--imagefilterallwayswhite', 'invert(97%) sepia(0%) saturate(7461%) hue-rotate(54deg) brightness(111%) contrast(101%)');
+        document.documentElement.style.setProperty('--imagefilterallwaysblack', 'invert(0%) sepia(90%) saturate(0%) hue-rotate(295deg) brightness(100%) contrast(101%)');
+        document.documentElement.style.setProperty('--imagefilterwhite', 'invert(0%) sepia(90%) saturate(0%) hue-rotate(295deg) brightness(100%) contrast(101%)');
+        document.documentElement.style.setProperty('--imagefilterblack', 'invert(97%) sepia(0%) saturate(7461%) hue-rotate(54deg) brightness(111%) contrast(101%)');
+        document.documentElement.style.setProperty('--imagefilterblue', 'invert(20%) sepia(34%) saturate(2363%) hue-rotate(185deg) brightness(89%) contrast(105%)');
+        ";
+        echo "</script>";
+    }
+    else {
+        echo "<script>";
+        echo "document.documentElement.style.setProperty('--bluebackgroundcolor', '#05386B');
+        document.documentElement.style.setProperty('--blackorwhitebackground', 'white');
+        document.documentElement.style.setProperty('--blackorwhitetextcolor', '#282828');
+        document.documentElement.style.setProperty('--tab', 'whitesmoke');
+        document.documentElement.style.setProperty('--imagefilterallwayswhite', 'invert(97%) sepia(0%) saturate(7461%) hue-rotate(54deg) brightness(111%) contrast(101%)');
+        document.documentElement.style.setProperty('--imagefilterallwaysblack', 'invert(0%) sepia(90%) saturate(0%) hue-rotate(295deg) brightness(100%) contrast(101%)');
+        document.documentElement.style.setProperty('--imagefilterblack', 'invert(0%) sepia(90%) saturate(0%) hue-rotate(295deg) brightness(100%) contrast(101%)');
+        document.documentElement.style.setProperty('--imagefilterwhite', 'invert(97%) sepia(0%) saturate(7461%) hue-rotate(54deg) brightness(111%) contrast(101%)');
+        document.documentElement.style.setProperty('--imagefilterblue', 'invert(20%) sepia(34%) saturate(2363%) hue-rotate(185deg) brightness(89%) contrast(105%)');
+        ";
+        echo "</script>";
+    }
+?>
 <head>
     <script src="js/burgermenu.js" defer></script>
-</head>
+    <script src="js/darkmode.js" defer></script>
+</head >
     <nav>
         <a href="index.php"><img src="images/notchLogo.png" class="notchlogo"></a>
         <div class="middlenav">
@@ -107,7 +138,7 @@ include_once("config/connection.php");
                 }
                 ?>
 
-                    <li class="accountbuttons">DARKMODE</li>
+                    <li class="accountbuttons" onclick="darkmode()">DARKMODE</li>
                 
             </ul>
             <div id="colorbottom4"></div>
@@ -121,5 +152,55 @@ include_once("config/connection.php");
             if (isset($_SESSION["shoppingcart"])) {
                 echo '<div class="cartproducts">' . count($_SESSION["shoppingcart"]) . '</div>';}
         ?>
+        </div>
+        <div id="hideburgeritems">
+        <div id="burgermenuitems">
+                    <a href="/components.php">
+                        <li class="maincatburger">COMPONENTS</li>
+                    </a>
+                    <a href="/cpu.php">
+                        <li>CPU</li>
+                    </a>
+                    <a href="/gpu.php">
+                        <li>GPU</li>
+                    </a>
+                    <a href="/motherboard.php">
+                        <li>MOTHERBOARD</li>
+                    </a>
+                    <a href="/ram.php">
+                        <li>RAM</li>
+                    </a>
+                    <a href="/ssd.php">
+                        <li>SSD</li>
+                    </a>
+                    <a href="/vent.php">
+                        <li>FANS</li>
+                    </a>
+                    <a href="/psu.php">
+                        <li>POWER SUPPLY</li>
+                    </a>
+                    <a href="/peripherals.php">
+                        <li class="maincatburger">PERIPHERALS</li>
+                    </a>
+                    <a href="/mouse.php">
+                        <li>MOUSE</li>
+                    </a>
+                    <a href="/keyboard.php">
+                        <li>KEYBOARD</li>
+                    </a>
+                    <a href="/headset.php">
+                        <li>HEADSET</li>
+                    </a>
+                    <a href="/pcandlaptop.php">
+                        <li class="maincatburger">PC'S AND LAPTOPS</li>
+                    </a>
+                    <a href="/pc.php">
+                        <li>PC</li>
+                    </a>
+                    <a href="/laptop.php">
+                        <li>LAPTOPS</li>
+                    </a>
+
+        </div>
         </div>
     </nav>

@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+$tabselect = 0;
 if (!isset($_SESSION["shoppingcart"])) {
     $_SESSION["shoppingcart"] = array();
 }
@@ -15,9 +15,9 @@ include_once("config/connection.php");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notch | Shoppingcart</title>
+    <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="shoppingcart.css">
-    <link rel="stylesheet" href="index.css">
     <script defer src="js/searchbar.js"></script>
     <script src="js/zoom.js"></script>
     <script src="js/dropdown.js"></script>
