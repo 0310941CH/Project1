@@ -20,6 +20,7 @@
     width: 200px;
     
 }
+
 .middleline {
     background-color: #d2d2d2;
     width: 1px;
@@ -61,6 +62,9 @@
     align-items: center;
     justify-content: space-around;
 
+}
+.chartbutton:hover {
+    cursor: pointer;
 }
 .chartimage {
     width: 25px;

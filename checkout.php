@@ -27,7 +27,7 @@ header("refresh:8;url=index.php");
     <script src="js/dropdown.js"></script>
 </head>
 
-<body>
+<body class="waitCursor">
     <?php include "navbar.php" ?>
     <div class="centertext">
         <h1>We have no way of processing your payment</h1>
