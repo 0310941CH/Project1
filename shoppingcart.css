@@ -248,3 +248,6 @@ input::-webkit-inner-spin-button {
     50% {top: 0px; left: 25px;}
     100% {top: 0px; left: 0px;}
 }
+.waitCursor:hover {
+    cursor: wait;
+}
