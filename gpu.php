@@ -53,22 +53,7 @@ include_once("config/connection.php");
         echo '</div>';
 
         echo "<div class='productplace'>";
-        foreach ($data as $product) {
-            echo "<div class='productinner'>";
-            echo "<div class='imagesize'>";
-            echo "<img src='/images/" . $product['pictures'] . "' alt='productAfbeelding'" . "class='products'>" . "<br>";
-            echo "</div>" . "<br>";
-            echo "<div class='innerinfo'>";
-            echo $product["productname"] . "<br>";
-            echo "</div> " . "<br>";
-            echo "<div class='pricebutton'>";
-            echo "€ " . $product["price"];
-            echo "<br>";
-            echo "<a class='detailbutton' href='product.php?pid=" . $product["id"] . "'>Details</a>"; 
-            echo "<br>";
-            echo "</div>";
-            echo "</div>";
-        }
+        include "productLoad.php";
     } else {
         // output without added filter
         $stmt  = $pdo->prepare("SELECT * FROM products WHERE subcategorie = :scategorie");
@@ -86,22 +71,7 @@ include_once("config/connection.php");
         echo '</div>';
 
         echo "<div class='productplace'>";
-        foreach ($data as $product) {
-            echo "<div class='productinner'>";
-            echo "<div class='imagesize'>";
-            echo "<img src='/images/" . $product['pictures'] . "' alt='productAfbeelding'" . "class='products'>" . "<br>";
-            echo "</div>" . "<br>";
-            echo "<div class='innerinfo'>";
-            echo $product["productname"] . "<br>";
-            echo "</div> " . "<br>";
-            echo "<div class='pricebutton'>";
-            echo "€ " . $product["price"];
-            echo "<br>";
-            echo "<a class='detailbutton' href='product.php?pid=" . $product["id"] . "'>Details</a>";
-            echo "<br>";
-            echo "</div>";
-            echo "</div>";
-        }
+        include "productLoad.php";
     }
     echo "</div>";
     ?>

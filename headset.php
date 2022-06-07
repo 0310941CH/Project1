@@ -19,92 +19,62 @@ include_once("config/connection.php");
 </head>
 
 <body>
-<?php include "navbar.php"?>
+    <?php include "navbar.php" ?>
     <?php
     if (isset($_GET["sort"])) {
-    
-    if (strpos($_GET["sort"], 'nAsc') !== false) { // if $_GET["sort"] nAsc includes then..
-        $columnName = "productname";
-        $sortBy = "asc";
-    } else if (strpos($_GET["sort"], 'nDesc') !== false) {
-        $columnName = "productname";
-        $sortBy = "desc";
-    } else if (strpos($_GET["sort"], 'pDesc') !== false) {
-        $columnName = "price";
-        $sortBy = "desc";
-    } else if (strpos($_GET["sort"], 'pAsc') !== false) {
-        $columnName = "price";
-        $sortBy = "asc";
-    }
 
-    // Output with added filter
-    $stmt  = $pdo->prepare("SELECT * FROM products WHERE subcategorie = :scategorie ORDER BY $columnName $sortBy");
-    $stmt->execute(['scategorie' => "headset"]);
-    $data = $stmt->fetchAll();
+        if (strpos($_GET["sort"], 'nAsc') !== false) { // if $_GET["sort"] nAsc includes then..
+            $columnName = "productname";
+            $sortBy = "asc";
+        } else if (strpos($_GET["sort"], 'nDesc') !== false) {
+            $columnName = "productname";
+            $sortBy = "desc";
+        } else if (strpos($_GET["sort"], 'pDesc') !== false) {
+            $columnName = "price";
+            $sortBy = "desc";
+        } else if (strpos($_GET["sort"], 'pAsc') !== false) {
+            $columnName = "price";
+            $sortBy = "asc";
+        }
 
-    // search order manieren
-    echo '<div class="sortproducts">';
-    if (count($data) != 0) {
-        echo '<a href="headset.php?sort=nAsc"><button class ="orderbutton">ABC▲</button></a>
+        // Output with added filter
+        $stmt  = $pdo->prepare("SELECT * FROM products WHERE subcategorie = :scategorie ORDER BY $columnName $sortBy");
+        $stmt->execute(['scategorie' => "headset"]);
+        $data = $stmt->fetchAll();
+
+        // search order manieren
+        echo '<div class="sortproducts">';
+        if (count($data) != 0) {
+            echo '<a href="headset.php?sort=nAsc"><button class ="orderbutton">ABC▲</button></a>
         <a href="headset.php?sort=nDesc"><button class ="orderbutton">ABC▼</button></a>
         <a href="headset.php?sort=pAsc"><button class ="orderbutton">€▲</button></a>
         <a href="headset.php?sort=pDesc"><button class ="orderbutton">€▼</button></a>';
         }
         echo '</div>';
 
-    echo "<div class='productplace'>";
-    foreach ($data as $product) {
-        echo "<div class='productinner'>";
-        echo "<div class='imagesize'>";
-        echo "<img src='/images/" . $product['pictures'] . "' alt='productAfbeelding'" . "class='products'>". "<br>" ;
-        echo "</div>" . "<br>";
-        echo "<div class='innerinfo'>";
-        echo $product["productname"] . "<br>";
-        echo "</div> " . "<br>";
-        echo "<div class='pricebutton'>";
-        echo "€ " . $product["price"];
-        echo "<br>";
-        echo "<a class='detailbutton' href='product.php?pid=" . $product["id"] . "'>Details</a>";
-        echo "<br>";  
-        echo "</div>";
-        echo "</div>";
-    }
+        echo "<div class='productplace'>";
+        include "productLoad.php";
     } else {
-    // output without added filter
-    $stmt  = $pdo->prepare("SELECT * FROM products WHERE subcategorie = :scategorie");
-    $stmt->execute(['scategorie' => "headset"]);
-    $data = $stmt->fetchAll();
+        // output without added filter
+        $stmt  = $pdo->prepare("SELECT * FROM products WHERE subcategorie = :scategorie");
+        $stmt->execute(['scategorie' => "headset"]);
+        $data = $stmt->fetchAll();
 
-    // search order options
-    echo '<div class="sortproducts">';
-    if (count($data) != 0) {
-        echo '<a href="headset.php?sort=nAsc"><button class ="orderbutton">ABC▲</button></a>
+        // search order options
+        echo '<div class="sortproducts">';
+        if (count($data) != 0) {
+            echo '<a href="headset.php?sort=nAsc"><button class ="orderbutton">ABC▲</button></a>
         <a href="headset.php?sort=nDesc"><button class ="orderbutton">ABC▼</button></a>
         <a href="headset.php?sort=pAsc"><button class ="orderbutton">€▲</button></a>
         <a href="headset.php?sort=pDesc"><button class ="orderbutton">€▼</button></a>';
         }
         echo '</div>';
 
-    echo "<div class='productplace'>";
-    foreach ($data as $product) {
-        echo "<div class='productinner'>";
-        echo "<div class='imagesize'>";
-        echo "<img src='/images/" . $product['pictures'] . "' alt='productAfbeelding'" . "class='products'>". "<br>" ;
-        echo "</div>" . "<br>";
-        echo "<div class='innerinfo'>";
-        echo $product["productname"] . "<br>";
-        echo "</div> " . "<br>";
-        echo "<div class='pricebutton'>";
-        echo "€ " . $product["price"];
-        echo "<br>";
-        echo "<a class='detailbutton' href='product.php?pid=" . $product["id"] . "'>Details</a>";
-        echo "<br>";  
-        echo "</div>";
-        echo "</div>";
+        echo "<div class='productplace'>";
+        include "productLoad.php";
     }
-}
     echo "</div>";
-?>
+    ?>
 
 </body>
 
