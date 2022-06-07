@@ -278,7 +278,7 @@ a:visited {
     }
 .selectedlogin {
     background-color: var(--blackorwhitebackground);
-    filter: var(--imagefilterblack);
+    filter: var(--none);
 }
 #burgerlines {
     position: absolute;

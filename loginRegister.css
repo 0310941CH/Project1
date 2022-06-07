@@ -1,7 +1,7 @@
 /* Login & Register*/
 
 .loginform {
-    background-color: #05386B;
+    background-color: var(--bluebackgroundcolor);
     border-radius: 40px 40px 29px 29px;
     display: flex;
     align-items: center;
@@ -14,7 +14,7 @@
 }
 
 .container {
-    background-color: #05386B;
+    background-color: var(--bluebackgroundcolor);
     border-radius: 40px 40px 27px 27px;
     margin-top: 120px;
     display: flex;
@@ -35,7 +35,7 @@
     width: 300px;
     height: 25px;
     text-align: center;
-    background-color: #f5f5f5;
+    background-color: var(--tab);
     border: none;
     border-radius: 25px;
 }
@@ -56,7 +56,7 @@
     height: 62PX;
     border-radius: 0 0 25px 25px;
     font-family: Segoe UI, Frutiger, Frutiger Linotype, Dejavu Sans, Helvetica Neue, Arial, sans-serif;
-    background-color: whitesmoke;
+    background-color: var(--tab);
 }
 
 input[type=submit] {
@@ -78,7 +78,7 @@ input[type=submit] {
 }
 /* Body */
 body {
-    background-color: white;
+    background-color: var(--blackorwhitebackground);
     font-family: Segoe UI, Frutiger, Frutiger Linotype, Dejavu Sans, Helvetica Neue, Arial, sans-serif;
     font-size: 14px;
     margin: 0;

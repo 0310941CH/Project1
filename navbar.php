@@ -6,7 +6,7 @@ if (!isset($_SESSION["shoppingcart"])) {
 include_once("config/connection.php");
 ?>
 <?php
-    if ($_COOKIE['mode'] == "dark") {
+    if (isset($_COOKIE['mode']) && $_COOKIE['mode'] == "dark") {
         echo "<script>";
         echo "document.documentElement.style.setProperty('--bluebackgroundcolor', '#05386B');
         document.documentElement.style.setProperty('--blackorwhitebackground', '#282828');
