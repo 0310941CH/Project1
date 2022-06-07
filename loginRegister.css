@@ -16,7 +16,7 @@
 .container {
     background-color: #05386B;
     border-radius: 40px 40px 27px 27px;
-    margin-top: 120px;
+    margin-top: 78px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -85,3 +85,12 @@ body {
     padding: 0;
 }
 
+#mustHave {
+    display: none;
+}
+.displayForm {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}

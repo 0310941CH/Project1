@@ -1,7 +1,7 @@
 <?php
 session_start();
 include_once('config/connection.php');
-    	
+
 ?>
 <!DOCTYPE html>
 
@@ -12,6 +12,7 @@ include_once('config/connection.php');
     <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="loginRegister.css">
     <script defer src="js/searchbar.js"></script>
+    <script defer src="js/password.js"></script>
     <script src="js/zoom.js"></script>
     <script src="js/dropdown.js"></script>
 </head>
@@ -50,7 +51,6 @@ include_once('config/connection.php');
                     $_SESSION['username'] = $_POST['username'];
                     header("Location: login.php");
                     exit();
-
                 } else {
                     $output = "Password should be at least 5 characters in length and should include at least one upper case letter, one number, and one special character.";
                 }
@@ -64,23 +64,39 @@ include_once('config/connection.php');
 
     $tabselect = 4;
     ?>
-        <?php include "navbar.php" ?>
+    <?php include "navbar.php" ?>
     <!-- register form -->
-    <div class="test">
-        <div class="container">
-            <h2 class="logintext">Apply here</h2>
-            <form action="" method="POST">
-                <div class="loginform">
-                    <input class="inputlogin" type="text" <?php if (!empty($_POST["voornaam"])) { echo 'value="' . $_POST["voornaam"] . '"' ;}?>  name="voornaam" placeholder="FIRSTNAME">
-                    <input class="inputlogin" type="text" <?php if (!empty($_POST["achternaam"])) { echo 'value="' . $_POST["achternaam"] . '"' ;}?> name="achternaam" placeholder="SURNAME">
-                    <input class="inputlogin" type="text" <?php if (!empty($_POST["username"])) { echo 'value="' . $_POST["username"] . '"' ;}?> name="username" placeholder="USERNAME">
-                    <input class="inputlogin" type="password" name="password" placeholder="PASSWORD">
-                    <input class="inputlogin" type="password" name="confirmpassword" placeholder="CONFIRM PASSWORD">
-                </div>
-                <input class="login" type="submit" name="submitLogin" value="SUBMIT YOUR DATA">
+    <div class="displayForm">
+        <div class="hiddenblock"></div>
+        <div class="test">
+            <div class="container">
+                <h2 class="logintext">Apply here</h2>
+                <form action="" method="POST">
+                    <div class="loginform">
+                        <input class="inputlogin" type="text" <?php if (!empty($_POST["voornaam"])) {
+                                                                    echo 'value="' . $_POST["voornaam"] . '"';
+                                                                } ?> name="voornaam" placeholder="FIRSTNAME">
+                        <input class="inputlogin" type="text" <?php if (!empty($_POST["achternaam"])) {
+                                                                    echo 'value="' . $_POST["achternaam"] . '"';
+                                                                } ?> name="achternaam" placeholder="SURNAME">
+                        <input class="inputlogin" type="text" <?php if (!empty($_POST["username"])) {
+                                                                    echo 'value="' . $_POST["username"] . '"';
+                                                                } ?> name="username" placeholder="USERNAME">
+                        <input class="inputlogin" id="password" type="password" name="password" placeholder="PASSWORD">
+                        <input class="inputlogin" type="password" name="confirmpassword" placeholder="CONFIRM PASSWORD">
+                    </div>
+                    <input class="login" type="submit" name="submitLogin" value="SUBMIT YOUR DATA">
 
-            </form>
+                </form>
+            </div>
+        </div>
+        <div id="mustHave">
+            <p>Your password requires:</p>
+            <p> • minimal 5 characters</p>
+            <p> • minimal 1 capital</p>
+            <p> • minimal 1 special character</p>
         </div>
         <?php echo '<p class="fout" >' . $output . "</p>" ?>
     </div>
+   
 </body>
