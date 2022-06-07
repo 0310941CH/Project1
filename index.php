@@ -19,10 +19,11 @@
 WE DELIVER TWO THINGS HERE AT NOTCH: THE BEST PC'S/LAPTOP PARTS AND THE BEST PRICES </p>
 </div>
 <div class="flyers">
-<div id="flyer1" class="flyer" onmouseover="zoomin(1)" onmouseout="zoomout(1)">
+    <div id="flyer1" class="flyer" onmouseover="zoomin(1)" onmouseout="zoomout(1)">
     <p id="text1">COMPONENTS</p>
     <img id="img1" class="indexphotos" src="images/components.png" alt="" >
 <a href="components.php" class="clickbuttons">CLICK HERE!</a>
+</a>
 </div>
 <div id="flyer2" class="flyer" onmouseover="zoomin(2)" onmouseout="zoomout(2)">
 <p id="text2">PERIPHERALS</p>

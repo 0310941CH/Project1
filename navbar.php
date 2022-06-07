@@ -134,6 +134,12 @@ include_once("config/connection.php");
                     if ($_SESSION['loggedInAdmin'] == 1){
                     echo "<a href='/admin/adminpage.php'>";
                     echo '<li class="accountbuttons">ADMIN</li></a>';
+                    echo '<style>';
+                    echo '#colorbottom4{
+                        padding: 5px 125px 15px 0px;
+                        top: 140px;
+                    }';
+                    echo '</style>';
                     }
                 }
                 ?>
