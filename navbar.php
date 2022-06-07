@@ -206,6 +206,22 @@ include_once("config/connection.php");
                     <a href="/laptop.php">
                         <li>LAPTOPS</li>
                     </a>
+                    <?php
+                    if (isset($_SESSION["loggedInUser"])) {
+                        echo "<a href='logout.php'>";
+                        echo '<li class="maincatburger">LOGOUT</li></a>';
+                    }
+                    else {
+                        echo "<a href='login.php'>";
+                    echo '<li class="maincatburger">LOGIN</li></a>';}
+                    if (isset($_SESSION['loggedInAdmin'])) {
+                        if ($_SESSION['loggedInAdmin'] == 1){
+                        echo "<a href='/admin/adminpage.php'>";
+                        echo '<li class="maincatburger">ADMIN</li></a>';}}
+                    ?>
+                    <a>
+                    <li class="maincatburger" onclick="darkmode()">DARKMODE</li>
+                        </a>
 
         </div>
         </div>

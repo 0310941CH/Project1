@@ -24,7 +24,7 @@ body {
 }
 .productinner {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-around;
     align-items: center;
     padding: 80px 80px 80px 80px;
     background-color: #05386B;
@@ -32,7 +32,7 @@ body {
     color: white;
     flex-direction: column;
     width: 200px;
-    height: 290px;
+    height: 180px;
     transition: transform .2s;
 }
 .productinner:hover {
@@ -75,20 +75,7 @@ body {
     flex-wrap: wrap;
     text-align: center;
 }
-.pricebutton {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-}
 
-.sortproducts {
-    display: flex;
-    justify-content: center;  
-    padding: 5px;
-    margin-top: 30px;
-    gap: 5px;
-}
 .results {
     display: flex;
     justify-content: center;
@@ -102,10 +89,29 @@ body {
     padding: 5px;
 }
 
+.pricetext {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--bluebackgroundcolor);
+    font-weight: bold;
+    padding: 5px 25px 5px 25px;
+    background-color: white;
+    border: none;
+    font-size: 14px;
+    border-radius: 15px;
+}
 /* order buttons  */
+.sortproducts {
+    display: flex;
+    justify-content: center;  
+    padding: 5px;
+    margin-top: 30px;
+    gap: 5px;
+}
 .orderbutton {
-    background-color: #05386B;
-    border-color: #05386B;
+    background-color: var(--bluebackgroundcolor);
+    border-color: var(--bluebackgroundcolor);
     color: white;
     border-radius: 10px;
     width: 80px;
@@ -113,8 +119,8 @@ body {
 }
 .orderbutton:hover {
     background-color: white ;
-    color: #244362;
-    border-color: #244362;
+    color: var(--bluebackgroundcolor);
+    border-color: var(--bluebackgroundcolor);
     cursor: pointer;
 }
 /* detail buttons  */
@@ -122,10 +128,10 @@ body {
     display: flex;
     justify-content: center;
     width: 50px;
-    background-color: var(--blackorwhitebackground);
+    background-color: var(--bluebackgroundcolor);
     border-radius: 5px;
     color: black;
-    border-color: #05386B;
+    border-color: var(--bluebackgroundcolor);
 }
 .detailbutton:hover {
     background-color:#244362;
