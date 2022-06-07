@@ -6,7 +6,7 @@ if (!isset($_SESSION["shoppingcart"])) {
 include_once("config/connection.php");
 ?>
 <?php
-    if ($_COOKIE['mode'] == "dark") {
+    if (isset($_COOKIE['mode']) && $_COOKIE['mode'] == "dark") {
         echo "<script>";
         echo "document.documentElement.style.setProperty('--bluebackgroundcolor', '#05386B');
         document.documentElement.style.setProperty('--blackorwhitebackground', '#282828');
@@ -134,6 +134,12 @@ include_once("config/connection.php");
                     if ($_SESSION['loggedInAdmin'] == 1){
                     echo "<a href='/admin/adminpage.php'>";
                     echo '<li class="accountbuttons">ADMIN</li></a>';
+                    echo '<style>';
+                    echo '#colorbottom4{
+                        padding: 5px 125px 15px 0px;
+                        top: 140px;
+                    }';
+                    echo '</style>';
                     }
                 }
                 ?>

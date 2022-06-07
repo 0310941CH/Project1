@@ -8,7 +8,7 @@ function cartUp(number) { // To add a number to the quantity at shoppingcart.php
         var cost = document.getElementById(productPrice).value;// Gets the product price
         var productQuantity = document.getElementById(quantity).value;// Gets the quantity
         var outputPrice = productQuantity * cost; // Calculate total price
-        document.getElementById(price).value = "€ " + outputPrice; // Output the total price back to shoppingcart.php
+        document.getElementById(price).value = "€ " + outputPrice.toFixed(2); // Output the total price back to shoppingcart.php
     }
 }
 
