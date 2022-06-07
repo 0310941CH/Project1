@@ -141,7 +141,9 @@ a > li {
     background-color: var(--blackorwhitebackground);
     color: var(--blackorwhitetextcolor);
 }
-
+.accountbuttons:hover{
+    cursor: pointer;
+}
 a:link {
     color: var(--blackorwhitetextcolor);
 }

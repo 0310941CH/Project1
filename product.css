@@ -62,6 +62,9 @@
     justify-content: space-around;
 
 }
+.chartbutton:hover {
+    cursor: pointer;
+}
 .chartimage {
     width: 25px;
 }
