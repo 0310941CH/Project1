@@ -37,7 +37,7 @@ include_once("config/connection.php");
             $prepare->execute($data);
             $user = $prepare->fetch(PDO::FETCH_ASSOC);
 
-            if (isset($user["rank"]) == 1) {
+            if ( isset($user["rank"]) && $user["rank"] == 1) {
                 $_SESSION['loggedInAdmin'] = 1;
 
             }
