@@ -2,7 +2,6 @@
 session_start();
 include_once("../config/connection.php");
 if ($_SESSION['loggedInAdmin'] == 1) {
-    
 } else {
     header("Location: ../adminlogin.php");
     exit();
@@ -24,7 +23,7 @@ if ($_SESSION['loggedInAdmin'] == 1) {
 </head>
 
 <body>
-    <?php include "../adminNavbarProduct.php" ?>
+    <?php include "../adminNavbar.php" ?>
 
     <?php
     if (isset($_GET["sort"])) {
@@ -42,7 +41,7 @@ if ($_SESSION['loggedInAdmin'] == 1) {
             $columnName = "price";
             $sortBy = "asc";
         }
-    
+
         // Output with filter
         $stmt  = $pdo->prepare("SELECT * FROM products WHERE subcategorie = :scategorie ORDER BY $columnName $sortBy");
         $stmt->execute(['scategorie' => "gpu"]);

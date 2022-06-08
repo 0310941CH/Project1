@@ -11,7 +11,8 @@ if (isset($_SESSION['updateID'])){
 $id = $_SESSION['updateID'];}
 if (isset($_POST['id'])) {
     $id = $_POST['id'];
-};   
+        };
+$tabselect = 0;
 ?>
 
 <!DOCTYPE html>
