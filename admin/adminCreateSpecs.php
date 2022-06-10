@@ -57,9 +57,9 @@ if ($_SESSION['loggedInAdmin'] == 1) {
         $specCPU = [
             "specs_type" => $_SESSION['subcategorie'],
             "buttons" => $_POST['buttons'],
-            "dpi" => $_POST['dpi'],
+            "Dpi" => $_POST['dpi'],
             "mousetype" => $_POST['mousetype'],
-            "bluetooth" => $_POST['bluetooth']];
+            "Bluetooth" => $_POST['bluetooth']];
     } elseif (isset($_POST['submitPC'])) {
         $specCPU = [
             "specs_type" => $_SESSION['subcategorie'],

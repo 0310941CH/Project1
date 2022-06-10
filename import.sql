@@ -87,7 +87,7 @@
     ("Razer Basilisk X Hyperspeed", 37.21 , "muis3.jpg", "peripherals", "mouse");
 
 
-    /* Specificatie tables moeten nog: Doet Thomas */
+   
     /* Specificaties PC Table */
     CREATE TABLE `specsPC` (
         id MEDIUMINT NOT NULL PRIMARY KEY,
@@ -110,7 +110,7 @@
     (3, "Game PC Redux Gamer i230 R37", "Windows", "", "DIMM", "16GB", "Intel", "Core i5", "NVIDIA GeForce RTX 3070", "1TB SSD", "", "pc");
 
     /* Specificaties Laptop Table */
-    /* Bluetooth is alleen ja of nee input */
+    /* Bluetooth is only yes or no input */
     CREATE TABLE `specsLaptop` (
         id MEDIUMINT NOT NULL PRIMARY KEY,
         productname VARCHAR(255) NOT NULL,
@@ -242,7 +242,7 @@
     (27, "MSI MPG A850GF - 850W", "MSI", "850 watts", "Unknown", "voeding");
 
     /* Specificaties headset */
-    /* Wired , Bluetooth en NoiceCancelation is alleen ja of nee */
+    /* Wired , Bluetooth en NoiceCancelation is only yes or no */
 
     CREATE TABLE `specsHeadset` (
         id MEDIUMINT NOT NULL PRIMARY KEY,
@@ -260,7 +260,7 @@
     (30, "HyperX Cloud II - Gaming Headset", "HyperX", "Yes", "No", "Yes", "headset");
 
     /* Specificaties keyboard */
-    /* RGB is ja of nee */
+    /* RGB is yes or no */
     CREATE TABLE `specsKeyboard` (
         id MEDIUMINT NOT NULL PRIMARY KEY,
         productname VARCHAR(255) NOT NULL,
@@ -277,7 +277,7 @@
     (33, "Mars Gaming MKREVOES", "MarsGaming", "Gaming", "USB", "Yes", "keyboard");
 
     /* Specificaties Mouse */
-    /* Bluetooth is alleen ja of nee */
+    /* Bluetooth is only yes or no */
     CREATE TABLE `specsMouse` (
         id MEDIUMINT NOT NULL PRIMARY KEY,
         productname VARCHAR(255) NOT NULL,
